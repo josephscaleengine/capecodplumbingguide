@@ -34,10 +34,36 @@ const TownDetail = () => {
     <>
       <Helmet>
         <title>{town.name} Plumbing Resources | Cape Cod Plumbing Guide</title>
-        <meta
-          name="description"
-          content={`Plumbing tips and resources for ${town.name}, Cape Cod. ${town.description}. Find local guidance for your home.`}
-        />
+        <meta name="description" content={town.metaDescription} />
+        <link rel="canonical" href={`https://capecodplumbingguide.com/towns/${town.slug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: `${town.name} Plumbing Resources`,
+            description: town.metaDescription,
+            url: `https://capecodplumbingguide.com/towns/${town.slug}`,
+            about: {
+              '@type': 'Place',
+              name: `${town.name}, Massachusetts`,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: town.name,
+                addressRegion: 'MA',
+                addressCountry: 'US',
+              },
+            },
+            mainEntity: {
+              '@type': 'ItemList',
+              itemListElement: townArticles.map((article, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: article.title,
+                url: `https://capecodplumbingguide.com/blog/${article.slug}`,
+              })),
+            },
+          })}
+        </script>
       </Helmet>
       <Layout>
         {/* Hero */}
@@ -45,7 +71,7 @@ const TownDetail = () => {
           <div className="aspect-[21/9] md:aspect-[3/1] relative">
             <img
               src={town.image}
-              alt={`${town.name}, Cape Cod`}
+              alt={`${town.name}, Cape Cod, Massachusetts`}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep via-ocean-deep/60 to-transparent" />

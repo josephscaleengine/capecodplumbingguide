@@ -15,8 +15,29 @@ const Blog = () => {
         <title>Plumbing Resources & Tips | Cape Cod Plumbing Guide</title>
         <meta
           name="description"
-          content="Expert plumbing tips, guides, and resources for Cape Cod homeowners. Learn about seasonal issues, maintenance, and more."
+          content="Expert plumbing tips, guides, and resources for Cape Cod homeowners. Covering seasonal issues, emergency repairs, maintenance, and historic home plumbing."
         />
+        <link rel="canonical" href="https://capecodplumbingguide.com/blog" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Blog',
+            name: 'Cape Cod Plumbing Guide Resources',
+            description: 'Expert plumbing tips and guides for Cape Cod homeowners',
+            url: 'https://capecodplumbingguide.com/blog',
+            publisher: {
+              '@type': 'Organization',
+              name: 'Cape Cod Plumbing Guide',
+            },
+            blogPost: articles.slice(0, 10).map((article) => ({
+              '@type': 'BlogPosting',
+              headline: article.title,
+              description: article.metaDescription,
+              url: `https://capecodplumbingguide.com/blog/${article.slug}`,
+              datePublished: new Date(article.publishedAt).toISOString(),
+            })),
+          })}
+        </script>
       </Helmet>
       <Layout>
         {/* Hero */}

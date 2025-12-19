@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { towns } from '@/data/articles';
+import { towns, articles } from '@/data/articles';
 
 const TownGrid = () => {
+  const getArticleCountForTown = (townSlug: string) => {
+    return articles.filter((article) => article.town === townSlug).length;
+  };
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -29,8 +33,9 @@ const TownGrid = () => {
               <div className="aspect-[4/3] relative">
                 <img
                   src={town.image}
-                  alt={`${town.name}, Cape Cod`}
+                  alt={`${town.name}, Cape Cod, Massachusetts`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/40 to-transparent" />
@@ -38,6 +43,9 @@ const TownGrid = () => {
 
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="flex items-center gap-2 text-seafoam-light text-sm mb-2">
+                  <span>{getArticleCountForTown(town.slug)} articles</span>
+                </div>
                 <h3 className="font-heading text-2xl font-bold text-primary-foreground mb-2 group-hover:text-seafoam-light transition-colors">
                   {town.name}
                 </h3>
