@@ -40,26 +40,82 @@ const ArticleDetail = () => {
     });
   };
 
+  const isoDate = new Date(article.publishedAt).toISOString();
+
   return (
     <>
       <Helmet>
         <title>{article.title} | Cape Cod Plumbing Guide</title>
-        <meta name="description" content={article.excerpt} />
+        <meta name="description" content={article.metaDescription} />
+        <link rel="canonical" href={`https://capecodplumbingguide.com/blog/${article.slug}`} />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://capecodplumbingguide.com/blog/${article.slug}`} />
+        <meta property="article:published_time" content={isoDate} />
+        <meta property="article:section" content={category?.name} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Article',
             headline: article.title,
-            description: article.excerpt,
-            datePublished: article.publishedAt,
+            description: article.metaDescription,
+            datePublished: isoDate,
+            dateModified: isoDate,
             author: {
               '@type': 'Organization',
               name: 'Cape Cod Plumbing Guide',
+              url: 'https://capecodplumbingguide.com',
             },
             publisher: {
               '@type': 'Organization',
               name: 'Cape Cod Plumbing Guide',
+              url: 'https://capecodplumbingguide.com',
             },
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `https://capecodplumbingguide.com/blog/${article.slug}`,
+            },
+            articleSection: category?.name,
+            wordCount: article.content.split(/\s+/).length,
+            ...(town && {
+              about: {
+                '@type': 'Place',
+                name: `${town.name}, Massachusetts`,
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: town.name,
+                  addressRegion: 'MA',
+                  addressCountry: 'US',
+                },
+              },
+            }),
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://capecodplumbingguide.com',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Resources',
+                item: 'https://capecodplumbingguide.com/blog',
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: article.title,
+                item: `https://capecodplumbingguide.com/blog/${article.slug}`,
+              },
+            ],
           })}
         </script>
       </Helmet>
@@ -109,7 +165,7 @@ const ArticleDetail = () => {
               <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>{formatDate(article.publishedAt)}</span>
+                  <time dateTime={isoDate}>{formatDate(article.publishedAt)}</time>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />

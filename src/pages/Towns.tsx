@@ -15,8 +15,27 @@ const Towns = () => {
         <title>Cape Cod Towns | Plumbing Resources by Location</title>
         <meta
           name="description"
-          content="Find plumbing resources specific to your Cape Cod town. Local tips and guides for Falmouth, Mashpee, Sandwich, Bourne, Osterville, and Hyannis."
+          content="Find plumbing resources specific to your Cape Cod town. Local tips and guides for Falmouth, Mashpee, Sandwich, Bourne, Osterville, and Hyannis homeowners."
         />
+        <link rel="canonical" href="https://capecodplumbingguide.com/towns" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Cape Cod Towns - Plumbing Resources',
+            description: 'Local plumbing resources organized by Cape Cod town',
+            url: 'https://capecodplumbingguide.com/towns',
+            mainEntity: {
+              '@type': 'ItemList',
+              itemListElement: towns.map((town, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: town.name,
+                url: `https://capecodplumbingguide.com/towns/${town.slug}`,
+              })),
+            },
+          })}
+        </script>
       </Helmet>
       <Layout>
         {/* Hero */}
@@ -54,8 +73,9 @@ const Towns = () => {
                   <div className="aspect-[16/10] relative">
                     <img
                       src={town.image}
-                      alt={`${town.name}, Cape Cod`}
+                      alt={`${town.name}, Cape Cod, Massachusetts`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/50 to-transparent" />
                   </div>
