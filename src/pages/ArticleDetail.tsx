@@ -182,17 +182,61 @@ const ArticleDetail = () => {
             <div className="grid lg:grid-cols-3 gap-12">
               {/* Main Content */}
               <article className="lg:col-span-2">
-                <div className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-li:text-muted-foreground">
+                <div className="prose prose-lg max-w-none
+                  prose-headings:font-heading 
+                  prose-headings:text-foreground 
+                  prose-headings:font-bold
+                  prose-h1:text-3xl prose-h1:mt-0 prose-h1:mb-6
+                  prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-border prose-h2:pb-2
+                  prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                  prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-4
+                  prose-a:text-primary prose-a:font-medium prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-primary/80
+                  prose-strong:text-foreground prose-strong:font-semibold
+                  prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+                  prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
+                  prose-li:text-muted-foreground prose-li:my-2 prose-li:leading-relaxed
+                  prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-muted-foreground
+                  prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+                  prose-hr:border-border prose-hr:my-8
+                ">
                   <ReactMarkdown
                     components={{
+                      h1: ({ children }) => (
+                        <h1 className="text-3xl font-bold font-heading text-foreground mt-0 mb-6">{children}</h1>
+                      ),
+                      h2: ({ children }) => (
+                        <h2 className="text-2xl font-bold font-heading text-foreground mt-10 mb-4 pb-2 border-b border-border">{children}</h2>
+                      ),
+                      h3: ({ children }) => (
+                        <h3 className="text-xl font-bold font-heading text-foreground mt-8 mb-3">{children}</h3>
+                      ),
+                      p: ({ children }) => (
+                        <p className="text-muted-foreground leading-relaxed mb-4">{children}</p>
+                      ),
+                      ul: ({ children }) => (
+                        <ul className="my-6 list-disc pl-6 space-y-2">{children}</ul>
+                      ),
+                      ol: ({ children }) => (
+                        <ol className="my-6 list-decimal pl-6 space-y-2">{children}</ol>
+                      ),
+                      li: ({ children }) => (
+                        <li className="text-muted-foreground leading-relaxed">{children}</li>
+                      ),
+                      strong: ({ children }) => (
+                        <strong className="font-semibold text-foreground">{children}</strong>
+                      ),
                       a: ({ href, children }) => (
                         <a
                           href={href}
                           target={href?.startsWith('http') ? '_blank' : undefined}
                           rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-primary font-medium underline underline-offset-2 hover:text-primary/80 transition-colors"
                         >
                           {children}
                         </a>
+                      ),
+                      blockquote: ({ children }) => (
+                        <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground my-6">{children}</blockquote>
                       ),
                     }}
                   >
