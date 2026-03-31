@@ -1,5 +1,6 @@
 import { ExternalLink, Shield, Clock, Award, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import bpLogo from '@/assets/blue-pacific-logo.png';
 
 const RecommendedPartner = () => {
   return (
@@ -8,9 +9,7 @@ const RecommendedPartner = () => {
         <div className="max-w-4xl mx-auto">
           <div className="card-double-border p-8 md:p-12 bg-[hsl(220,45%,18%)] border-white/10 hover:border-[hsl(var(--warm-orange))]/30">
             {/* Logo */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-ocean flex items-center justify-center mb-6">
-              <span className="text-2xl font-black text-white">BP</span>
-            </div>
+            <img src={bpLogo} alt="Blue Pacific Cape Cod logo" className="w-20 h-20 rounded-full mb-6" />
 
             <p className="text-[hsl(var(--warm-orange))] font-bold text-sm uppercase tracking-widest mb-3">
               Our Recommended Partner

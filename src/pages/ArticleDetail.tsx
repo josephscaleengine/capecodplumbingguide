@@ -110,7 +110,7 @@ const ArticleDetail = () => {
         </section>
 
         {/* Article Content */}
-        <section className="py-12 md:py-16 bg-sand">
+        <section className="py-12 md:py-16 bg-[hsl(var(--pale-white))]">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 gap-12">
               <article className="lg:col-span-2">

@@ -76,7 +76,7 @@ const Blog = () => {
         </section>
 
         {/* Unified: Pills + Articles */}
-        <section className="py-12 md:py-16 bg-sand">
+        <section className="py-12 md:py-16 bg-[hsl(var(--pale-white))]">
           <div className="container mx-auto px-4">
             {/* Topic pills */}
             <div className="flex flex-wrap items-center gap-2 mb-10">
