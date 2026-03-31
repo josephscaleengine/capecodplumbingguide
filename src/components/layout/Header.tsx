@@ -26,7 +26,7 @@ const Header = () => {
               <Droplets className="w-6 h-6 text-primary-foreground" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-heading font-bold text-lg text-foreground">Cape Cod</span>
+              <span className="font-heading font-black text-lg text-foreground">Cape Cod</span>
               <span className="block text-xs text-muted-foreground -mt-1">Plumbing Guide</span>
             </div>
           </Link>
@@ -37,7 +37,7 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                className={`px-4 py-2 rounded-md font-semibold transition-colors ${
                   isActive(link.path)
                     ? 'text-primary bg-secondary'
                     : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
@@ -48,14 +48,14 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button — Orange */}
           <div className="hidden md:block">
             <a
               href="https://bluepacificcapecod.com/plumbing-falmouth-ma/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="hero" size="default">
+              <Button variant="cta" size="default">
                 Get Professional Help
               </Button>
             </a>
@@ -80,7 +80,7 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 rounded-md font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-md font-semibold transition-colors ${
                     isActive(link.path)
                       ? 'text-primary bg-secondary'
                       : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
@@ -95,7 +95,7 @@ const Header = () => {
                 rel="noopener noreferrer"
                 className="mt-2"
               >
-                <Button variant="hero" className="w-full">
+                <Button variant="cta" className="w-full">
                   Get Professional Help
                 </Button>
               </a>

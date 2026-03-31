@@ -1,41 +1,42 @@
-import { ArrowRight, Droplets, Shield, MapPin } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import heroBg from '@/assets/hero-cape-cod.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-hero overflow-hidden">
-      {/* Decorative Wave Pattern */}
-      <div className="absolute inset-0 wave-pattern opacity-50" />
-      
-      {/* Content */}
-      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-secondary/80 backdrop-blur-sm px-4 py-2 rounded-full mb-6 animate-fade-up">
-            <MapPin className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-secondary-foreground">
-              Your Local Cape Cod Plumbing Resource
-            </span>
-          </div>
+    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden">
+      {/* Background Image */}
+      <img
+        src={heroBg}
+        alt="Cape Cod harbor with fishing boats in Cape Cod, Massachusetts"
+        className="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={1080}
+      />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,50%,14%,0.88)] via-[hsl(220,50%,14%,0.72)] to-[hsl(220,50%,14%,0.45)]" />
 
-          {/* Main Headline */}
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            Expert Plumbing Guidance for{' '}
-            <span className="text-gradient-ocean">Cape Cod</span>{' '}
-            Homeowners
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            Trusted tips, local insights, and professional resources to help you maintain your home's plumbing—from Falmouth to Provincetown.
+      {/* Content — LEFT aligned */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-2xl">
+          <p className="text-[hsl(var(--warm-orange))] font-semibold text-sm uppercase tracking-widest mb-4 animate-fade-up">
+            Cape Cod Plumbing Guide
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            Your Local Cape Cod{' '}
+            <span className="text-[hsl(var(--ocean-light))]">Plumbing Resource</span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            Trusted tips, local insights, and expert guidance to help Cape Cod homeowners maintain their plumbing — from Falmouth to Provincetown.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-start gap-4 animate-fade-up" style={{ animationDelay: '0.3s' }}>
             <Link to="/blog">
               <Button variant="hero" size="xl">
-                Browse Resources
+                Browse Guides
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
@@ -44,53 +45,13 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="xl">
+              <Button variant="cta" size="xl">
                 Need a Plumber?
+                <ExternalLink className="w-5 h-5" />
               </Button>
             </a>
           </div>
-
-          {/* Trust Indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-center justify-center gap-3 p-4 bg-card rounded-lg shadow-soft">
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-primary" />
-              </div>
-              <div className="text-left">
-                <p className="font-semibold text-foreground">Local Focus</p>
-                <p className="text-sm text-muted-foreground">Cape Cod expertise</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-center gap-3 p-4 bg-card rounded-lg shadow-soft">
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                <Droplets className="w-5 h-5 text-primary" />
-              </div>
-              <div className="text-left">
-                <p className="font-semibold text-foreground">Free Resources</p>
-                <p className="text-sm text-muted-foreground">Educational guides</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-center gap-3 p-4 bg-card rounded-lg shadow-soft">
-              <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                <Shield className="w-5 h-5 text-primary" />
-              </div>
-              <div className="text-left">
-                <p className="font-semibold text-foreground">Trusted Advice</p>
-                <p className="text-sm text-muted-foreground">From local pros</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      {/* Bottom Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path
-            d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="hsl(var(--background))"
-          />
-        </svg>
       </div>
     </section>
   );

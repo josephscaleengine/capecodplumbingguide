@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Merriweather', 'Georgia', 'serif'],
-        body: ['Open Sans', 'system-ui', 'sans-serif'],
+        heading: ['DM Sans', 'system-ui', 'sans-serif'],
+        body: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,22 +61,25 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          deep: "hsl(var(--navy-deep))",
+        },
         ocean: {
-          deep: "hsl(var(--ocean-deep))",
-          mid: "hsl(var(--ocean-mid))",
+          teal: "hsl(var(--ocean-teal))",
           light: "hsl(var(--ocean-light))",
-          pale: "hsl(var(--ocean-pale))",
         },
         sand: {
-          warm: "hsl(var(--sand-warm))",
+          DEFAULT: "hsl(var(--sand))",
           dark: "hsl(var(--sand-dark))",
+        },
+        "warm-orange": {
+          DEFAULT: "hsl(var(--warm-orange))",
+          hover: "hsl(var(--warm-orange-hover))",
         },
         seafoam: {
           DEFAULT: "hsl(var(--seafoam))",
           light: "hsl(var(--seafoam-light))",
-        },
-        cape: {
-          sky: "hsl(var(--cape-sky))",
         },
         coral: {
           DEFAULT: "hsl(var(--coral))",
