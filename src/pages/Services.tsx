@@ -60,7 +60,7 @@ const Services = () => {
                   <p className="text-muted-foreground text-sm mb-4">
                     {service.shortDescription}
                   </p>
-                  <div className="flex items-center gap-2 text-accent font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-2 text-accent font-semibold text-sm">
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
