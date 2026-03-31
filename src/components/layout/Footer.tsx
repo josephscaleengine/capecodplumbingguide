@@ -1,24 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Droplets, ExternalLink, Phone, MapPin } from 'lucide-react';
+import { towns, categories } from '@/data/articles';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const towns = [
-    { name: 'Falmouth', slug: 'falmouth' },
-    { name: 'Mashpee', slug: 'mashpee' },
-    { name: 'Sandwich', slug: 'sandwich' },
-    { name: 'Bourne', slug: 'bourne' },
-    { name: 'Osterville', slug: 'osterville' },
-    { name: 'Hyannis', slug: 'hyannis' },
-  ];
-
-  const resources = [
-    { name: 'Seasonal Tips', path: '/blog/category/seasonal' },
-    { name: 'Emergency Guides', path: '/blog/category/emergency' },
-    { name: 'Maintenance Tips', path: '/blog/category/maintenance' },
-    { name: 'Older Homes', path: '/blog/category/older-homes' },
-  ];
 
   return (
     <footer className="bg-ocean-deep text-primary-foreground">
@@ -71,31 +56,30 @@ const Footer = () => {
           {/* Towns */}
           <div>
             <h4 className="font-heading font-bold text-lg mb-4">Towns We Cover</h4>
-            <ul className="space-y-2">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
               {towns.map((town) => (
-                <li key={town.slug}>
-                  <Link
-                    to={`/towns/${town.slug}`}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
-                  >
-                    {town.name}
-                  </Link>
-                </li>
+                <Link
+                  key={town.slug}
+                  to={`/towns/${town.slug}`}
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm py-0.5"
+                >
+                  {town.name}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Resources */}
           <div>
             <h4 className="font-heading font-bold text-lg mb-4">Resources</h4>
             <ul className="space-y-2">
-              {resources.map((resource) => (
-                <li key={resource.path}>
+              {categories.slice(0, 7).map((cat) => (
+                <li key={cat.slug}>
                   <Link
-                    to={resource.path}
+                    to={`/blog/category/${cat.slug}`}
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                   >
-                    {resource.name}
+                    {cat.icon} {cat.name}
                   </Link>
                 </li>
               ))}

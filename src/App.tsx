@@ -11,6 +11,8 @@ import TownDetail from "./pages/TownDetail";
 import Blog from "./pages/Blog";
 import BlogCategory from "./pages/BlogCategory";
 import ArticleDetail from "./pages/ArticleDetail";
+import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -31,6 +33,8 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/category/:categorySlug" element={<BlogCategory />} />
             <Route path="/blog/:slug" element={<ArticleDetail />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

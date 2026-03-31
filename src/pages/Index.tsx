@@ -1,10 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/layout/Layout';
 import Hero from '@/components/home/Hero';
-import TownGrid from '@/components/home/TownGrid';
 import FeaturedArticles from '@/components/home/FeaturedArticles';
 import CategorySection from '@/components/home/CategorySection';
-import CTABanner from '@/components/home/CTABanner';
+import ServicesPreview from '@/components/home/ServicesPreview';
+import TownsReference from '@/components/home/TownsReference';
+import RecommendedPartner from '@/components/home/RecommendedPartner';
 
 const Index = () => {
   return (
@@ -37,10 +38,11 @@ const Index = () => {
       </Helmet>
       <Layout>
         <Hero />
-        <TownGrid />
         <FeaturedArticles />
         <CategorySection />
-        <CTABanner />
+        <ServicesPreview />
+        <TownsReference />
+        <RecommendedPartner />
       </Layout>
     </>
   );

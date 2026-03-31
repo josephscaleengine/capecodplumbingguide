@@ -13,27 +13,24 @@ const FeaturedArticles = () => {
   return (
     <section className="py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Featured Resources
+            Featured Plumbing Guides
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             In-depth guides on common plumbing challenges facing Cape Cod homeowners.
           </p>
         </div>
 
-        {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredArticles.map((article, index) => {
             const category = getCategoryInfo(article.category);
             return (
               <article
                 key={article.id}
-                className="bg-card rounded-xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
+                className="card-double-border overflow-hidden animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Category Badge */}
                 <div className="p-6 pb-0">
                   <div className="inline-flex items-center gap-2 bg-secondary px-3 py-1.5 rounded-full">
                     <span>{category?.icon}</span>
@@ -43,7 +40,6 @@ const FeaturedArticles = () => {
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2">
                     <Link
@@ -57,19 +53,12 @@ const FeaturedArticles = () => {
                     {article.excerpt}
                   </p>
 
-                  {/* Meta */}
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1">
                         <Clock className="w-4 h-4" />
                         <span>{article.readTime} min read</span>
                       </div>
-                      {article.town && (
-                        <div className="flex items-center gap-1">
-                          <Tag className="w-4 h-4" />
-                          <span className="capitalize">{article.town}</span>
-                        </div>
-                      )}
                     </div>
                     <Link
                       to={`/blog/${article.slug}`}
@@ -84,7 +73,6 @@ const FeaturedArticles = () => {
           })}
         </div>
 
-        {/* View All Button */}
         <div className="text-center mt-12">
           <Link to="/blog">
             <Button variant="outline" size="lg">
