@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Droplets } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import siteLogo from '@/assets/site-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +23,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-ocean flex items-center justify-center shadow-soft group-hover:shadow-card transition-shadow">
-              <Droplets className="w-6 h-6 text-primary-foreground" />
-            </div>
+            <img src={siteLogo} alt="Cape Cod Plumbing Guide logo" className="w-10 h-10 rounded-lg object-contain" />
             <div className="hidden sm:block">
               <span className="font-heading font-black text-lg text-foreground">Cape Cod</span>
               <span className="block text-xs text-muted-foreground -mt-1">Plumbing Guide</span>
