@@ -1,5 +1,6 @@
 import { ExternalLink, Shield, Clock, Award, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import bpLogo from '@/assets/blue-pacific-logo.png';
 
 const RecommendedPartner = () => {
   return (
