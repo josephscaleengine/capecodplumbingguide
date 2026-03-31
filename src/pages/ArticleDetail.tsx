@@ -1,10 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Clock, Tag, Calendar, ExternalLink, MapPin } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, ExternalLink } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { articles, categories, towns } from '@/data/articles';
+import { articles, categories } from '@/data/articles';
 
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -23,9 +23,8 @@ const ArticleDetail = () => {
   }
 
   const category = categories.find((c) => c.slug === article.category);
-  const town = article.town ? towns.find((t) => t.slug === article.town) : null;
   const relatedArticles = articles
-    .filter((a) => a.id !== article.id && (a.category === article.category || a.town === article.town))
+    .filter((a) => a.id !== article.id && a.category === article.category)
     .slice(0, 3);
 
   const formatDate = (dateStr: string) => {
@@ -59,13 +58,6 @@ const ArticleDetail = () => {
             mainEntityOfPage: { '@type': 'WebPage', '@id': `https://capecodplumbingguide.com/blog/${article.slug}` },
             articleSection: category?.name,
             wordCount: article.content.split(/\s+/).length,
-            ...(town && {
-              about: {
-                '@type': 'Place',
-                name: `${town.name}, Massachusetts`,
-                address: { '@type': 'PostalAddress', addressLocality: town.name, addressRegion: 'MA', addressCountry: 'US' },
-              },
-            }),
           })}
         </script>
         <script type="application/ld+json">
@@ -97,15 +89,6 @@ const ArticleDetail = () => {
                 >
                   <span className="text-sm font-semibold">{category?.name}</span>
                 </Link>
-                {town && (
-                  <Link
-                    to={`/towns/${town.slug}`}
-                    className="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
-                  >
-                    <MapPin className="w-4 h-4 text-[hsl(var(--warm-orange))]" />
-                    <span className="text-sm font-semibold text-white/80">{town.name}</span>
-                  </Link>
-                )}
               </div>
 
               <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
@@ -127,7 +110,7 @@ const ArticleDetail = () => {
         </section>
 
         {/* Article Content */}
-        <section className="py-12 md:py-16 bg-background">
+        <section className="py-12 md:py-16 bg-sand">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 gap-12">
               <article className="lg:col-span-2">

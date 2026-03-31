@@ -4,17 +4,17 @@ import { Clock, Tag, ArrowRight, BookOpen } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { articles, categories } from '@/data/articles';
 
-const categoryColors: Record<string, { pill: string; cardBorder: string }> = {
-  seasonal: { pill: 'bg-[hsl(200,60%,50%,0.12)] text-[hsl(200,60%,40%)] hover:bg-[hsl(200,60%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(200,60%,50%)]' },
-  emergency: { pill: 'bg-[hsl(0,65%,55%,0.12)] text-[hsl(0,65%,45%)] hover:bg-[hsl(0,65%,55%)] hover:text-white', cardBorder: 'border-l-[hsl(0,65%,55%)]' },
-  coastal: { pill: 'bg-[hsl(174,55%,36%,0.12)] text-[hsl(var(--ocean-teal))] hover:bg-[hsl(var(--ocean-teal))] hover:text-white', cardBorder: 'border-l-[hsl(var(--ocean-teal))]' },
-  'older-homes': { pill: 'bg-[hsl(30,30%,50%,0.12)] text-[hsl(30,30%,40%)] hover:bg-[hsl(30,30%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(30,30%,50%)]' },
-  'well-water': { pill: 'bg-[hsl(190,55%,50%,0.12)] text-[hsl(190,55%,40%)] hover:bg-[hsl(190,55%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(190,55%,50%)]' },
-  'cost-guide': { pill: 'bg-[hsl(var(--warm-orange)/0.12)] text-[hsl(var(--warm-orange))] hover:bg-[hsl(var(--warm-orange))] hover:text-white', cardBorder: 'border-l-[hsl(var(--warm-orange))]' },
-  'homeowner-guide': { pill: 'bg-[hsl(var(--navy)/0.12)] text-[hsl(var(--navy))] hover:bg-[hsl(var(--navy))] hover:text-white', cardBorder: 'border-l-[hsl(var(--navy))]' },
-  septic: { pill: 'bg-[hsl(140,40%,45%,0.12)] text-[hsl(140,40%,35%)] hover:bg-[hsl(140,40%,45%)] hover:text-white', cardBorder: 'border-l-[hsl(140,40%,45%)]' },
-  rental: { pill: 'bg-[hsl(var(--sand)/0.5)] text-[hsl(var(--sand-dark))] hover:bg-[hsl(var(--sand-dark))] hover:text-white', cardBorder: 'border-l-[hsl(var(--sand-dark))]' },
-  maintenance: { pill: 'bg-[hsl(220,10%,50%,0.12)] text-[hsl(220,10%,40%)] hover:bg-[hsl(220,10%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(220,10%,50%)]' },
+const categoryColors: Record<string, string> = {
+  seasonal: 'bg-[hsl(200,60%,50%,0.15)] text-[hsl(200,60%,35%)] hover:bg-[hsl(200,60%,50%)] hover:text-white',
+  emergency: 'bg-[hsl(0,65%,55%,0.15)] text-[hsl(0,65%,40%)] hover:bg-[hsl(0,65%,55%)] hover:text-white',
+  coastal: 'bg-[hsl(174,55%,36%,0.15)] text-[hsl(174,55%,30%)] hover:bg-[hsl(var(--ocean-teal))] hover:text-white',
+  'older-homes': 'bg-[hsl(30,30%,50%,0.15)] text-[hsl(30,30%,32%)] hover:bg-[hsl(30,30%,50%)] hover:text-white',
+  'well-water': 'bg-[hsl(190,55%,50%,0.15)] text-[hsl(190,55%,32%)] hover:bg-[hsl(190,55%,50%)] hover:text-white',
+  'cost-guide': 'bg-[hsl(var(--warm-orange)/0.15)] text-[hsl(14,76%,48%)] hover:bg-[hsl(var(--warm-orange))] hover:text-white',
+  'homeowner-guide': 'bg-[hsl(var(--navy)/0.15)] text-[hsl(var(--navy))] hover:bg-[hsl(var(--navy))] hover:text-white',
+  septic: 'bg-[hsl(140,40%,45%,0.15)] text-[hsl(140,40%,30%)] hover:bg-[hsl(140,40%,45%)] hover:text-white',
+  rental: 'bg-[hsl(30,40%,50%,0.15)] text-[hsl(30,40%,32%)] hover:bg-[hsl(30,40%,45%)] hover:text-white',
+  maintenance: 'bg-[hsl(220,15%,50%,0.15)] text-[hsl(220,15%,35%)] hover:bg-[hsl(220,15%,50%)] hover:text-white',
 };
 
 const getArticleCount = (slug: string) => articles.filter((a) => a.category === slug).length;
@@ -76,7 +76,7 @@ const Blog = () => {
         </section>
 
         {/* Unified: Pills + Articles */}
-        <section className="py-12 md:py-16 bg-background">
+        <section className="py-12 md:py-16 bg-sand">
           <div className="container mx-auto px-4">
             {/* Topic pills */}
             <div className="flex flex-wrap items-center gap-2 mb-10">
@@ -92,7 +92,7 @@ const Blog = () => {
                   <Link
                     key={category.slug}
                     to={`/blog/category/${category.slug}`}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${colors.pill}`}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${colors}`}
                   >
                     {category.name} ({getArticleCount(category.slug)})
                   </Link>
@@ -108,13 +108,13 @@ const Blog = () => {
                 return (
                   <article
                     key={article.id}
-                    className={`card-double-border overflow-hidden animate-fade-up border-l-4 ${colors.cardBorder}`}
+                    className="card-double-border overflow-hidden animate-fade-up"
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     <div className="p-6">
                       {/* Category */}
                       <div className="flex items-center gap-2 mb-4">
-                        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${colors.pill}`}>
+                        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${colors}`}>
                           {category?.name}
                         </span>
                         {article.featured && (

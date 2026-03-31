@@ -37,7 +37,6 @@ const ServiceDetail = () => {
   }
 
   const isBluePacific = bluePacificServices.includes(service.slug);
-  const isMaybe = maybeBluePacific.includes(service.slug);
 
   return (
     <>
@@ -77,7 +76,7 @@ const ServiceDetail = () => {
         </section>
 
         {/* Content */}
-        <section className="py-12 md:py-16 bg-background">
+        <section className="py-12 md:py-16 bg-sand">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2 space-y-10">
@@ -97,7 +96,7 @@ const ServiceDetail = () => {
                 {/* Why Cape Cod */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-sand flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center border border-border">
                       <MapPin className="w-5 h-5 text-accent" />
                     </div>
                     <h2 className="font-heading text-2xl font-bold text-foreground">Why Cape Cod Homeowners Need This</h2>
@@ -108,7 +107,7 @@ const ServiceDetail = () => {
                 {/* Warning Signs */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-coral-light flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-lg bg-[hsl(var(--coral-light))] flex items-center justify-center">
                       <AlertTriangle className="w-5 h-5 text-accent" />
                     </div>
                     <h2 className="font-heading text-2xl font-bold text-foreground">Common Signs You Need This Service</h2>
@@ -126,8 +125,8 @@ const ServiceDetail = () => {
                 {/* What to Expect */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-seafoam-light flex items-center justify-center">
-                      <CheckCircle className="w-5 h-5 text-seafoam" />
+                    <div className="w-10 h-10 rounded-lg bg-[hsl(var(--seafoam-light))] flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-[hsl(var(--seafoam))]" />
                     </div>
                     <h2 className="font-heading text-2xl font-bold text-foreground">What to Expect</h2>
                   </div>
@@ -142,7 +141,7 @@ const ServiceDetail = () => {
                 </div>
 
                 {/* CTA — varies based on Blue Pacific match */}
-                <div className="card-double-border p-8 bg-sand">
+                <div className="card-double-border p-8 bg-background">
                   <h3 className="font-heading text-xl font-bold text-foreground mb-3">
                     Need {service.name}?
                   </h3>
