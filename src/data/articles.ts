@@ -1000,14 +1000,14 @@ export const towns: Town[] = [
 ];
 
 export const categories = [
-  { slug: 'seasonal', name: 'Seasonal Tips', icon: '❄️', description: 'Prepare your plumbing for every Cape Cod season' },
-  { slug: 'emergency', name: 'Emergency Guides', icon: '🚨', description: 'What to do when plumbing problems strike' },
-  { slug: 'coastal', name: 'Coastal Living', icon: '🌊', description: 'Address salt air and waterfront challenges' },
-  { slug: 'older-homes', name: 'Older Homes', icon: '🏠', description: 'Special considerations for historic Cape properties' },
-  { slug: 'well-water', name: 'Well Water', icon: '💧', description: 'Private well water challenges and solutions' },
-  { slug: 'cost-guide', name: 'Cost Guides', icon: '💰', description: 'Transparent pricing for plumbing services' },
-  { slug: 'homeowner-guide', name: 'Homeowner Guides', icon: '🔍', description: 'Essential knowledge for Cape Cod homeowners' },
-  { slug: 'septic', name: 'Septic Systems', icon: '🏡', description: 'Septic maintenance and compliance' },
-  { slug: 'rental', name: 'Vacation Rentals', icon: '🏖️', description: 'Plumbing tips for rental property owners' },
-  { slug: 'maintenance', name: 'Maintenance', icon: '🔧', description: 'Keep your system running smoothly year-round' },
+  { slug: 'seasonal', name: 'Seasonal Tips', description: 'Prepare your plumbing for every Cape Cod season' },
+  { slug: 'emergency', name: 'Emergency Guides', description: 'What to do when plumbing problems strike' },
+  { slug: 'coastal', name: 'Coastal Living', description: 'Address salt air and waterfront challenges' },
+  { slug: 'older-homes', name: 'Older Homes', description: 'Special considerations for historic Cape properties' },
+  { slug: 'well-water', name: 'Well Water', description: 'Private well water challenges and solutions' },
+  { slug: 'cost-guide', name: 'Cost Guides', description: 'Transparent pricing for plumbing services' },
+  { slug: 'homeowner-guide', name: 'Homeowner Guides', description: 'Essential knowledge for Cape Cod homeowners' },
+  { slug: 'septic', name: 'Septic Systems', description: 'Septic maintenance and compliance' },
+  { slug: 'rental', name: 'Vacation Rentals', description: 'Plumbing tips for rental property owners' },
+  { slug: 'maintenance', name: 'Maintenance', description: 'Keep your system running smoothly year-round' },
 ];

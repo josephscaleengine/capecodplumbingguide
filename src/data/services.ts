@@ -3,7 +3,6 @@ export interface Service {
   slug: string;
   name: string;
   shortDescription: string;
-  icon: string;
   metaDescription: string;
   content: {
     whatIs: string;
@@ -20,7 +19,6 @@ export const services: Service[] = [
     slug: 'water-heater-repair',
     name: 'Water Heater Installation & Repair',
     shortDescription: 'Expert water heater services for tank and tankless systems.',
-    icon: '🔥',
     metaDescription: 'Water heater installation and repair services on Cape Cod. Learn about tank vs tankless options, costs, and when to replace your water heater.',
     content: {
       whatIs: `Water heater installation and repair covers everything from routine maintenance to full system replacement. Whether you have a traditional tank water heater or a modern tankless unit, professional service ensures you have reliable hot water year-round.\n\nModern water heaters come in several types: traditional storage tanks (40-80 gallons), tankless on-demand systems, heat pump (hybrid) water heaters, and solar-assisted units. Each has distinct advantages depending on your home's needs and your household size.`,
@@ -43,7 +41,6 @@ export const services: Service[] = [
     slug: 'drain-cleaning',
     name: 'Drain Cleaning & Unclogging',
     shortDescription: 'Clear stubborn clogs and restore proper drainage flow.',
-    icon: '🚿',
     metaDescription: 'Professional drain cleaning services on Cape Cod. Clear stubborn clogs, prevent backups, and maintain healthy drainage in your MA home.',
     content: {
       whatIs: `Professional drain cleaning goes beyond what a plunger or store-bought chemical can accomplish. Using specialized equipment like motorized augers, hydro-jetting machines, and video inspection cameras, plumbers can clear even the most stubborn blockages and identify underlying issues.\n\nRegular drain maintenance prevents the gradual buildup of grease, soap scum, hair, and mineral deposits that lead to slow drains and eventual backups.`,
@@ -65,7 +62,6 @@ export const services: Service[] = [
     slug: 'sewer-line-repair',
     name: 'Sewer Line Repair & Replacement',
     shortDescription: 'Diagnose and fix sewer line issues with minimal disruption.',
-    icon: '🔧',
     metaDescription: 'Sewer line repair and replacement on Cape Cod. Trenchless options, root removal, and pipe relining for MA homeowners.',
     content: {
       whatIs: `Sewer line services address problems in the main pipe that carries wastewater from your home to the municipal sewer or septic system. Modern techniques like trenchless pipe lining and pipe bursting can often repair or replace damaged sewer lines without extensive excavation.\n\nTraditional excavation is sometimes still necessary for severely damaged or collapsed lines, but trenchless methods have made sewer repair far less disruptive for homeowners.`,
@@ -87,7 +83,6 @@ export const services: Service[] = [
     slug: 'pipe-leak-repair',
     name: 'Pipe Leak Detection & Repair',
     shortDescription: 'Find and fix hidden leaks before they cause major damage.',
-    icon: '💧',
     metaDescription: 'Pipe leak detection and repair on Cape Cod. Advanced equipment finds hidden leaks in walls, floors, and underground pipes.',
     content: {
       whatIs: `Leak detection services use advanced technology—acoustic sensors, thermal imaging, and moisture meters—to pinpoint leaks hidden behind walls, under floors, or underground. Early detection prevents water damage, mold growth, and structural deterioration.\n\nOnce located, leaks are repaired using methods appropriate to the pipe material and location, from simple fitting replacements to pipe section repairs.`,
@@ -110,7 +105,6 @@ export const services: Service[] = [
     slug: 'frozen-pipe-repair',
     name: 'Frozen Pipe Repair & Prevention',
     shortDescription: 'Thaw frozen pipes safely and prevent future freeze damage.',
-    icon: '❄️',
     metaDescription: 'Frozen pipe repair and prevention on Cape Cod. Emergency thawing, burst pipe repair, and winterization for MA coastal homes.',
     content: {
       whatIs: `Frozen pipe services include emergency thawing of frozen pipes, repair of pipes that have burst due to ice expansion, and preventive measures like pipe insulation, heat tape installation, and winterization. Quick response is critical to minimize water damage from burst pipes.\n\nPrevention is always more cost-effective than emergency repair, and professional winterization can protect your home's entire plumbing system.`,
@@ -132,7 +126,6 @@ export const services: Service[] = [
     slug: 'well-pump-services',
     name: 'Well Pump Services',
     shortDescription: 'Installation, repair, and maintenance for private well systems.',
-    icon: '⛽',
     metaDescription: 'Well pump services on Cape Cod. Installation, repair, and maintenance for private well systems in Barnstable County, MA.',
     content: {
       whatIs: `Well pump services cover the installation, repair, and maintenance of submersible and jet pumps that bring groundwater into your home. This includes the pump itself, pressure tanks, pressure switches, and control systems that work together to provide consistent water pressure.\n\nRegular maintenance extends pump life and prevents the inconvenience of losing water supply unexpectedly.`,
@@ -155,7 +148,6 @@ export const services: Service[] = [
     slug: 'water-filtration',
     name: 'Water Filtration & Treatment',
     shortDescription: 'Clean, safe water with whole-house and point-of-use filtration.',
-    icon: '🧊',
     metaDescription: 'Water filtration and treatment systems for Cape Cod homes. Address iron, manganese, hard water, and well water quality issues in MA.',
     content: {
       whatIs: `Water filtration and treatment systems improve water quality by removing contaminants, minerals, and impurities. Options range from simple under-sink filters to comprehensive whole-house treatment systems that include sediment filters, water softeners, iron removal, UV purification, and reverse osmosis.\n\nThe right system depends on your water source, test results, and household needs.`,
@@ -178,7 +170,6 @@ export const services: Service[] = [
     slug: 'sump-pump-installation',
     name: 'Sump Pump Installation',
     shortDescription: 'Protect your basement from flooding with reliable sump pump systems.',
-    icon: '🏗️',
     metaDescription: 'Sump pump installation and repair on Cape Cod. Protect your basement from flooding with primary and backup pump systems.',
     content: {
       whatIs: `A sump pump system collects water that accumulates in a basement or crawl space sump pit and pumps it away from your foundation. Modern installations include primary pumps, battery backup systems, water-powered backups, and alarm systems to provide comprehensive flood protection.\n\nProper installation includes sizing the pump for your water volume, installing a quality check valve, and routing the discharge line to prevent freezing and re-entry.`,
@@ -201,7 +192,6 @@ export const services: Service[] = [
     slug: 'garbage-disposal',
     name: 'Garbage Disposal Installation',
     shortDescription: 'Install or replace kitchen garbage disposal units.',
-    icon: '🗑️',
     metaDescription: 'Garbage disposal installation and replacement on Cape Cod. Choose the right disposal for your home and avoid common septic system conflicts.',
     content: {
       whatIs: `Garbage disposal installation involves mounting the unit under your kitchen sink, connecting it to the drain system and electrical supply, and ensuring proper operation with your existing plumbing. Replacements are straightforward when switching to a similar model, while new installations may require minor plumbing and electrical modifications.\n\nModern disposals come in various power ratings and features, from basic models to premium units with sound insulation and multi-stage grinding.`,
@@ -220,32 +210,9 @@ export const services: Service[] = [
   },
   {
     id: 's10',
-    slug: 'gas-line-installation',
-    name: 'Gas Line Installation',
-    shortDescription: 'Safe gas line installation for appliances and outdoor features.',
-    icon: '🔥',
-    metaDescription: 'Gas line installation services on Cape Cod. Safe connections for stoves, dryers, fireplaces, outdoor grills, and pool heaters.',
-    content: {
-      whatIs: `Gas line installation involves running new gas piping to connect appliances like stoves, dryers, water heaters, fireplaces, and outdoor grills. This work requires licensed professionals due to the safety-critical nature of gas systems. Proper installation includes sizing the line correctly, pressure testing, and ensuring compliance with local building codes.\n\nGas line work also includes leak detection, repair of existing lines, and conversion of appliances from electric to gas.`,
-      whyCapeCod: `Many Cape Cod homes use propane rather than natural gas, which has its own set of installation requirements and safety considerations. Outdoor gas lines for grills, fire pits, and pool heaters are popular additions for Cape Cod living but require weatherproofing against coastal conditions. Converting seasonal homes to gas heating often involves significant line work.`,
-      signs: [
-        'Rotten egg smell near gas appliances or lines',
-        'Hissing sound near gas connections',
-        'Higher than expected gas bills',
-        'Appliance pilot lights going out frequently',
-        'Soot buildup on gas appliances',
-        'Yellow or irregular burner flames (should be blue)',
-      ],
-      whatToExpect: `Installation begins with a site assessment to plan the route, followed by running the gas line (through walls, floors, or underground), connecting to the appliance, pressure testing the entire system, and obtaining required inspections.`,
-      costRange: 'New gas line run: $300–$800 per line. Outdoor grill connection: $200–$500. Gas leak repair: $150–$400. Full kitchen gas conversion: $1,000–$3,000.',
-    },
-  },
-  {
-    id: 's11',
     slug: 'septic-system-services',
     name: 'Septic System Services',
     shortDescription: 'Comprehensive septic system maintenance, repair, and installation.',
-    icon: '🏡',
     metaDescription: 'Septic system services on Cape Cod. Pumping, inspection, repair, and Title 5 compliance for Barnstable County homeowners.',
     content: {
       whatIs: `Septic system services encompass routine pumping, inspections (including Title 5 inspections for property transfers), repairs, and full system replacements. A properly maintained septic system can last 25-30 years, but neglect can lead to costly failures and environmental contamination.\n\nServices include tank pumping, distribution box repair, leach field maintenance, baffle replacement, and system upgrades to meet current regulations.`,
@@ -264,11 +231,10 @@ export const services: Service[] = [
     },
   },
   {
-    id: 's12',
+    id: 's11',
     slug: 'bathroom-kitchen-remodel',
     name: 'Bathroom & Kitchen Plumbing Remodel',
     shortDescription: 'Expert plumbing for renovation and remodeling projects.',
-    icon: '🛁',
     metaDescription: 'Bathroom and kitchen plumbing remodel services on Cape Cod. Fixture upgrades, layout changes, and code-compliant rough-in for MA home renovations.',
     content: {
       whatIs: `Remodel plumbing covers everything from simple fixture upgrades to complete layout changes. This includes rough-in work (moving or adding supply and drain lines), fixture installation (sinks, toilets, showers, tubs, dishwashers), and ensuring all work meets current plumbing codes.\n\nA skilled plumber works with your contractor to plan efficient layouts, select appropriate materials, and complete the work on schedule within your renovation timeline.`,
