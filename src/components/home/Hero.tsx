@@ -1,7 +1,7 @@
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import heroBg from '@/assets/hero-cape-cod.jpg';
+import heroBg from '@/assets/hero-cape-cod-new.jpg';
 
 const Hero = () => {
   return (
