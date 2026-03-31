@@ -13,7 +13,7 @@ export interface Article {
   excerpt: string;
   metaDescription: string;
   content: string;
-  category: 'seasonal' | 'emergency' | 'maintenance' | 'older-homes' | 'coastal';
+  category: string;
   town?: string;
   readTime: number;
   publishedAt: string;
@@ -23,56 +23,6 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: '1',
-    slug: 'common-plumbing-problems-older-falmouth-homes',
-    title: 'Common Plumbing Problems in Older Falmouth Homes',
-    excerpt: 'Historic Falmouth homes have unique plumbing challenges. Learn what to watch for and how to protect your vintage property.',
-    metaDescription: 'Discover the most common plumbing issues in older Falmouth, MA homes. Expert tips on galvanized pipes, cast iron drains, and maintaining vintage Cape Cod properties.',
-    content: `
-# Common Plumbing Problems in Older Falmouth Homes
-
-Falmouth is home to many beautiful historic properties, some dating back to the 18th and 19th centuries. While these homes have incredible charm and character, they often come with plumbing systems that have seen better days.
-
-## The Age Factor
-
-Many older Falmouth homes still have original plumbing infrastructure, including:
-
-- **Galvanized steel pipes** that corrode from the inside out
-- **Cast iron drain lines** prone to rust and buildup
-- **Outdated fixtures** that waste water and energy
-- **Tree root intrusion** in sewer lines from mature landscaping
-
-## Signs of Trouble
-
-If you own an older home in Falmouth, watch for these warning signs:
-
-1. **Discolored water** - Rusty or brown water indicates pipe corrosion
-2. **Low water pressure** - Often caused by mineral buildup or failing pipes
-3. **Slow drains** - Could signal sewer line issues
-4. **Frequent clogs** - May indicate pipe deterioration
-
-## Preventive Measures
-
-To protect your older Falmouth home:
-
-- Schedule annual plumbing inspections
-- Consider pipe relining for aging sewer lines
-- Upgrade to modern fixtures gradually
-- Address small issues before they become emergencies
-
-## When to Call a Professional
-
-If you're dealing with persistent plumbing issues in your older Falmouth home, it's important to work with a plumber who understands historic properties.
-
-For professional plumbing help in Falmouth, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides expert services throughout the area.
-    `,
-    category: 'older-homes',
-    town: 'falmouth',
-    readTime: 5,
-    publishedAt: '2024-01-15',
-    featured: true,
-  },
-  {
-    id: '2',
     slug: 'why-cape-cod-homes-prone-frozen-pipes',
     title: 'Why Cape Cod Homes Are Prone to Frozen Pipes',
     excerpt: "The unique Cape Cod climate and home construction styles create perfect conditions for frozen pipes. Here's what you need to know.",
@@ -136,76 +86,7 @@ If you're dealing with frozen pipes and need professional assistance, trusted lo
     featured: true,
   },
   {
-    id: '3',
-    slug: 'plumbing-freezes-mashpee-what-to-do',
-    title: 'What to Do When Your Plumbing Freezes in Mashpee',
-    excerpt: 'A step-by-step emergency guide for Mashpee homeowners dealing with frozen or burst pipes during Cape Cod winters.',
-    metaDescription: 'Emergency guide for Mashpee, MA homeowners with frozen pipes. Step-by-step thawing instructions, burst pipe prevention, and when to call a professional plumber.',
-    content: `
-# What to Do When Your Plumbing Freezes in Mashpee
-
-Mashpee's location on the south shore of Cape Cod doesn't exempt it from harsh winter conditions. When temperatures plummet, frozen pipes become a real concern for local homeowners.
-
-## Immediate Steps
-
-If you discover frozen pipes in your Mashpee home, act quickly:
-
-### 1. Locate the Frozen Section
-
-- Check for frost on exposed pipes
-- Feel for unusually cold sections
-- Look for bulges indicating ice blockage
-
-### 2. Turn Off the Water
-
-Before attempting to thaw:
-- Locate your main shut-off valve
-- Turn off water to prevent flooding if pipes have cracked
-
-### 3. Open Faucets
-
-- Open affected faucets slightly
-- This allows water to flow as ice melts
-- Relieves pressure buildup
-
-## Safe Thawing Methods
-
-**DO use:**
-- Hair dryers on low heat
-- Heating pads wrapped around pipes
-- Space heaters (kept away from flammables)
-- Warm towels applied to frozen areas
-
-**DON'T use:**
-- Blowtorches or open flames
-- Propane heaters indoors
-- Heat guns at high settings
-
-## Signs of Burst Pipes
-
-Watch for:
-- Water stains on walls or ceilings
-- Unusually high water meter readings
-- Sounds of running water when none should be on
-- Decreased water pressure
-
-## Preventing Future Freezes
-
-Mashpee homeowners should:
-- Insulate all exposed pipes
-- Keep garage doors closed
-- Disconnect outdoor hoses before winter
-- Consider smart water sensors
-
-If you experience a plumbing emergency in Mashpee, professional help is just a call away. [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) serves homeowners throughout the region.
-    `,
-    category: 'emergency',
-    town: 'mashpee',
-    readTime: 5,
-    publishedAt: '2024-02-01',
-  },
-  {
-    id: '4',
+    id: '2',
     slug: 'salt-air-plumbing-corrosion-cape-cod',
     title: 'Salt Air & Plumbing Corrosion on Cape Cod',
     excerpt: 'Living near the ocean has its perks, but salt air can accelerate plumbing deterioration. Learn how to protect your system.',
@@ -270,138 +151,11 @@ For a professional assessment of salt-related plumbing issues, local experts und
     featured: true,
   },
   {
-    id: '5',
-    slug: 'spring-plumbing-checklist-cape-cod',
-    title: 'Spring Plumbing Checklist for Cape Cod Homeowners',
-    excerpt: 'After a harsh New England winter, spring is the perfect time to inspect and maintain your plumbing system.',
-    metaDescription: 'Complete spring plumbing checklist for Cape Cod homeowners. Post-winter inspection guide for outdoor faucets, sump pumps, water heaters, and seasonal property opening.',
-    content: `
-# Spring Plumbing Checklist for Cape Cod Homeowners
-
-As the snow melts and temperatures rise across Cape Cod, it's the ideal time to assess any winter damage and prepare your plumbing for the busy summer season ahead.
-
-## Exterior Inspection
-
-### Check Outdoor Faucets
-1. Turn on each hose bib
-2. Check for leaks at the handle and spout
-3. Look for signs of frost damage
-4. Ensure proper drainage
-
-### Inspect Visible Pipes
-- Look under decks and porches
-- Check crawl space access points
-- Note any new stains or wet spots
-
-### Sump Pump Testing
-- Pour water into the pit
-- Verify pump activates
-- Check discharge line is clear
-- Test backup power if equipped
-
-## Interior Checks
-
-### Water Heater Maintenance
-- Check for rust or leaks
-- Test pressure relief valve
-- Drain a few gallons to remove sediment
-- Note the age of your unit
-
-### Under-Sink Inspection
-- Look for moisture or water damage
-- Check P-traps for leaks
-- Test shut-off valves
-
-### Toilet Function
-- Check for running or leaking
-- Test flush mechanisms
-- Look for base leaks
-
-## Seasonal Transitions
-
-### Opening Seasonal Properties
-Many Cape Cod homes are seasonal. When opening:
-- Turn water on slowly
-- Check all fixtures systematically
-- Run each faucet to clear lines
-- Test water heater before regular use
-
-## Professional Inspection
-
-Spring is an excellent time for a professional plumbing inspection, especially for older Cape Cod homes. [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) offers comprehensive assessments for local homeowners.
-    `,
-    category: 'maintenance',
-    readTime: 5,
-    publishedAt: '2024-03-01',
-  },
-  {
-    id: '6',
-    slug: 'sandwich-historic-home-plumbing-guide',
-    title: 'Plumbing Guide for Sandwich Historic Homes',
-    excerpt: "Sandwich is one of Cape Cod's oldest towns. Here's how to maintain plumbing in its historic properties.",
-    metaDescription: 'Expert plumbing guide for Sandwich, MA historic homes. Tips for maintaining antique pipes, wells, septic systems, and updating plumbing in Cape Cod heritage properties.',
-    content: `
-# Plumbing Guide for Sandwich Historic Homes
-
-As the oldest town on Cape Cod, Sandwich is home to numerous historic properties, many dating back to the 1600s and 1700s. These beautiful homes require special consideration when it comes to plumbing maintenance and updates.
-
-## Understanding Historic Plumbing
-
-### Common Characteristics
-- Lead or galvanized steel supply lines
-- Clay or cast iron drain pipes
-- Original well and septic systems
-- Hand-dug wells with limited capacity
-
-### Preservation Considerations
-When updating plumbing in historic Sandwich homes:
-- Work with the Historical Commission when required
-- Preserve original features where possible
-- Choose materials that complement the home's age
-- Document changes for future owners
-
-## Common Issues in Sandwich Historic Homes
-
-### Water Supply Problems
-- Well yield reduction over time
-- Lead service line concerns
-- Outdated pressure tanks
-- Mineral buildup in old pipes
-
-### Drainage Concerns
-- Tree root intrusion in old clay pipes
-- Bellied or sagging sewer lines
-- Inadequate venting
-- Septic system capacity issues
-
-## Upgrade Options
-
-### Minimally Invasive Solutions
-- Pipe relining instead of replacement
-- Point repairs rather than full replacement
-- Modern fixtures with vintage aesthetics
-- Trenchless sewer repair
-
-### When Full Replacement Is Needed
-- Lead pipe removal for safety
-- Failed septic system replacement
-- Complete re-piping for water quality
-
-## Working with Local Experts
-
-Historic home plumbing requires expertise and sensitivity. For Sandwich homeowners needing professional help, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) understands the unique needs of historic Cape properties.
-    `,
-    category: 'older-homes',
-    town: 'sandwich',
-    readTime: 6,
-    publishedAt: '2024-03-15',
-  },
-  {
-    id: '7',
+    id: '3',
     slug: 'winterizing-cape-cod-vacation-home-plumbing',
     title: 'How to Winterize Your Cape Cod Vacation Home Plumbing',
     excerpt: 'Protect your seasonal Cape Cod property from costly freeze damage with this complete winterization guide.',
-    metaDescription: 'Complete guide to winterizing vacation home plumbing on Cape Cod. Step-by-step instructions for draining pipes, protecting fixtures, and preventing freeze damage in MA.',
+    metaDescription: 'Complete guide to winterizing vacation home plumbing on Cape Cod. Step-by-step instructions for draining pipes, protecting fixtures, and preventing freeze damage.',
     content: `
 # How to Winterize Your Cape Cod Vacation Home Plumbing
 
@@ -469,13 +223,204 @@ If you need professional help winterizing or have questions about your system, [
     featured: true,
   },
   {
-    id: '8',
-    slug: 'well-water-issues-barnstable-county',
-    title: 'Well Water Issues Common in Barnstable County',
-    excerpt: 'Understanding and addressing the unique well water challenges faced by Cape Cod homeowners on private wells.',
-    metaDescription: 'Common well water problems in Barnstable County, MA. Expert guide on iron, manganese, low yield, and contamination issues affecting Cape Cod private well owners.',
+    id: '4',
+    slug: 'common-plumbing-problems-older-cape-cod-homes',
+    title: 'Common Plumbing Problems in Older Cape Cod Homes',
+    excerpt: 'Historic Cape Cod homes have unique plumbing challenges. Learn what to watch for and how to protect your vintage property.',
+    metaDescription: 'Common plumbing issues in older Cape Cod homes. Expert tips on galvanized pipes, cast iron drains, and maintaining vintage MA properties.',
     content: `
-# Well Water Issues Common in Barnstable County
+# Common Plumbing Problems in Older Cape Cod Homes
+
+Cape Cod is home to many beautiful historic properties, some dating back to the 18th and 19th centuries. While these homes have incredible charm and character, they often come with plumbing systems that have seen better days.
+
+## The Age Factor
+
+Many older Cape Cod homes still have original plumbing infrastructure, including:
+
+- **Galvanized steel pipes** that corrode from the inside out
+- **Cast iron drain lines** prone to rust and buildup
+- **Outdated fixtures** that waste water and energy
+- **Tree root intrusion** in sewer lines from mature landscaping
+
+## Signs of Trouble
+
+If you own an older home on Cape Cod, watch for these warning signs:
+
+1. **Discolored water** - Rusty or brown water indicates pipe corrosion
+2. **Low water pressure** - Often caused by mineral buildup or failing pipes
+3. **Slow drains** - Could signal sewer line issues
+4. **Frequent clogs** - May indicate pipe deterioration
+
+## Preventive Measures
+
+To protect your older Cape Cod home:
+
+- Schedule annual plumbing inspections
+- Consider pipe relining for aging sewer lines
+- Upgrade to modern fixtures gradually
+- Address small issues before they become emergencies
+
+## When to Call a Professional
+
+If you're dealing with persistent plumbing issues in your older Cape Cod home, it's important to work with a plumber who understands historic properties.
+
+For professional plumbing help, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides expert services throughout the area.
+    `,
+    category: 'older-homes',
+    readTime: 5,
+    publishedAt: '2024-01-15',
+    featured: true,
+  },
+  {
+    id: '5',
+    slug: 'average-plumbing-costs-cape-cod',
+    title: 'Average Plumbing Costs on Cape Cod (2026)',
+    excerpt: "What should you expect to pay for common plumbing services on Cape Cod? A transparent breakdown of typical costs.",
+    metaDescription: 'Average plumbing costs on Cape Cod in 2026. Transparent price guide for water heaters, drain cleaning, pipe repairs, and more for MA homeowners.',
+    content: `
+# Average Plumbing Costs on Cape Cod (2026)
+
+Understanding what plumbing services cost on Cape Cod helps homeowners budget appropriately and avoid overpaying. Here's a comprehensive breakdown of typical costs in the area.
+
+## Why Cape Cod Costs May Differ
+
+Several factors affect plumbing costs on the Cape:
+- **Geographic isolation** — Cape Cod's peninsula location means higher material delivery costs
+- **Seasonal demand** — Summer population surges create peak-season pricing
+- **Labor market** — Skilled trades are in high demand locally
+- **Older housing stock** — Complex work in historic homes takes more time
+- **Code requirements** — Massachusetts and local building codes add compliance costs
+
+## Common Service Costs
+
+### Emergency Services
+- Emergency call (after hours): $150–$300 service call
+- Burst pipe repair: $500–$2,000
+- Sewer backup clearing: $200–$500
+- Water shut-off assistance: $100–$200
+
+### Water Heater Services
+- Tank water heater replacement: $1,200–$2,500
+- Tankless water heater installation: $2,500–$4,500
+- Water heater repair: $150–$600
+- Annual maintenance flush: $100–$200
+
+### Drain Services
+- Simple drain clearing: $100–$250
+- Hydro-jetting: $300–$600
+- Video camera inspection: $150–$400
+- Main sewer line clearing: $200–$500
+
+### Pipe Services
+- Leak repair: $150–$500
+- Pipe section replacement: $500–$2,000
+- Whole-house repiping: $5,000–$15,000
+- Frozen pipe thawing: $200–$500
+
+### Fixture Installation
+- Toilet replacement: $300–$600
+- Faucet installation: $150–$350
+- Garbage disposal: $250–$500
+- Sump pump: $800–$2,000
+
+## Tips for Managing Plumbing Costs
+
+1. **Get multiple quotes** — Always compare at least 2-3 estimates
+2. **Ask about guarantees** — Quality plumbers stand behind their work
+3. **Schedule non-emergency work off-season** — Fall and spring often have better availability
+4. **Invest in maintenance** — Preventive care is always cheaper than emergency repairs
+5. **Ask about package deals** — Some plumbers offer discounts for multiple services
+
+## Choosing the Right Plumber
+
+Price matters, but so does quality and reliability. For fair, transparent pricing on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides professional services throughout the area.
+    `,
+    category: 'cost-guide',
+    readTime: 6,
+    publishedAt: '2024-03-01',
+    featured: true,
+  },
+  {
+    id: '6',
+    slug: 'how-to-choose-plumber-cape-cod',
+    title: 'How to Choose a Plumber on Cape Cod',
+    excerpt: "Not all plumbers are created equal. Here's what to look for when hiring a plumbing professional in the Cape Cod area.",
+    metaDescription: 'How to choose the right plumber on Cape Cod. Licensing, insurance, reviews, and what to ask before hiring a plumbing professional in MA.',
+    content: `
+# How to Choose a Plumber on Cape Cod
+
+Finding a reliable, skilled plumber is one of the most important decisions a homeowner can make. On Cape Cod, where homes face unique challenges from salt air, freezing winters, and aging infrastructure, the right plumber makes all the difference.
+
+## Essential Qualifications
+
+### Licensing
+In Massachusetts, plumbers must hold a valid license:
+- **Journeyman Plumber License** — Can perform plumbing work under supervision
+- **Master Plumber License** — Can operate independently and pull permits
+- Always verify license status through the state Division of Professional Licensure
+
+### Insurance
+Confirm your plumber carries:
+- General liability insurance
+- Workers' compensation insurance
+- These protect you from liability if accidents occur on your property
+
+## What to Look For
+
+### Local Experience
+Cape Cod plumbing has unique aspects:
+- Understanding of coastal corrosion issues
+- Experience with older home construction
+- Knowledge of local codes and permit requirements
+- Familiarity with well water and septic systems
+
+### Reputation
+- Check online reviews (Google, Yelp, BBB)
+- Ask for references from recent Cape Cod jobs
+- Look for consistent positive feedback over time
+- Ask neighbors and friends for recommendations
+
+### Communication
+A good plumber should:
+- Return calls and messages promptly
+- Explain problems in plain language
+- Provide written estimates before starting work
+- Keep you informed of progress and any changes
+
+## Questions to Ask Before Hiring
+
+1. Are you licensed and insured in Massachusetts?
+2. How long have you been serving Cape Cod?
+3. Can you provide references from similar jobs?
+4. What's your estimated timeline?
+5. Do you offer a warranty on your work?
+6. What's included in your estimate?
+7. How do you handle unexpected issues or cost changes?
+
+## Red Flags to Watch For
+
+- Won't provide license number
+- No written estimate
+- Demands full payment upfront
+- Pressure to decide immediately
+- No references or reviews available
+- Significantly lower price than competitors
+
+For trusted, licensed plumbing services on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) has built a reputation for quality workmanship and transparent communication.
+    `,
+    category: 'homeowner-guide',
+    readTime: 5,
+    publishedAt: '2024-03-15',
+    featured: true,
+  },
+  {
+    id: '7',
+    slug: 'cape-cod-well-water-plumbing-issues',
+    title: 'Cape Cod Well Water: Common Plumbing Issues',
+    excerpt: 'Many Cape Cod homes rely on well water. Learn about the unique plumbing challenges this creates and how to address them.',
+    metaDescription: 'Common well water plumbing issues on Cape Cod. Iron, manganese, low yield, and contamination solutions for private well owners in Barnstable County.',
+    content: `
+# Cape Cod Well Water: Common Plumbing Issues
 
 Many Cape Cod homes, particularly in less developed areas, rely on private wells for their water supply. Understanding local well water challenges helps homeowners maintain safe, quality water.
 
@@ -542,354 +487,385 @@ Causes include:
 
 Annual testing is recommended for private wells on Cape Cod. For plumbing issues related to well water, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) understands local water conditions and treatment needs.
     `,
-    category: 'maintenance',
+    category: 'well-water',
     readTime: 6,
     publishedAt: '2024-04-15',
   },
   {
-    id: '9',
-    slug: 'bourne-canal-area-plumbing-considerations',
-    title: 'Plumbing Considerations for Bourne Canal-Area Homes',
-    excerpt: 'Living near the Cape Cod Canal presents unique plumbing challenges. Learn what Bourne homeowners need to know.',
-    metaDescription: 'Plumbing guide for Bourne, MA homes near the Cape Cod Canal. Address unique challenges from humidity, tidal influences, and coastal exposure in the canal gateway area.',
+    id: '8',
+    slug: 'signs-you-need-emergency-plumbing-help',
+    title: 'Signs You Need Emergency Plumbing Help',
+    excerpt: "Some plumbing problems can't wait. Learn to recognize the warning signs that require immediate professional attention.",
+    metaDescription: 'Emergency plumbing warning signs every Cape Cod homeowner should know. When to call for immediate help and how to minimize damage before the plumber arrives.',
     content: `
-# Plumbing Considerations for Bourne Canal-Area Homes
+# Signs You Need Emergency Plumbing Help
 
-Bourne serves as the gateway to Cape Cod, with many homes located near the famous Cape Cod Canal. This proximity to the waterway creates specific plumbing considerations for local homeowners.
+Not every plumbing issue is an emergency, but some problems require immediate professional attention to prevent serious damage to your home. Knowing the difference can save you thousands of dollars.
 
-## Canal-Area Challenges
+## True Plumbing Emergencies
 
-### High Water Table
-Homes near the canal often experience:
-- Sump pump necessity
-- Basement moisture issues
-- Septic system complications
-- Foundation waterproofing needs
+### 1. Burst Pipes
+**Why it's urgent:** A burst pipe can release 4-8 gallons of water per minute, causing:
+- Structural damage to walls, floors, and ceilings
+- Electrical hazards from water near wiring
+- Mold growth within 24-48 hours
+- Destroyed personal belongings
 
-### Salt Air and Humidity
-The canal environment means:
-- Accelerated fixture corrosion
-- Outdoor plumbing deterioration
-- Increased mold potential
-- Marine-grade materials recommended
+**Immediate steps:**
+- Shut off the main water valve
+- Turn off electricity to affected areas
+- Call a plumber immediately
+- Begin removing standing water
 
-### Tidal Influence
-Some areas experience:
-- Groundwater level fluctuations
-- Septic system performance variations
-- Drainage challenges during high tides
+### 2. Sewage Backup
+**Why it's urgent:** Sewage contains harmful bacteria and pathogens:
+- Health hazard for your family
+- Contaminates surfaces and belongings
+- Worsens rapidly without intervention
+- May indicate a major sewer line failure
 
-## Sump Pump Essentials
+**Immediate steps:**
+- Stop using all water in the home
+- Ventilate the affected area
+- Keep children and pets away
+- Call for emergency service
 
-For canal-area Bourne homes, sump pumps are often critical:
+### 3. Gas Leak
+**Why it's urgent:** Gas leaks are a fire and explosion risk:
+- Rotten egg smell near gas appliances
+- Hissing sound from gas lines
+- Dead vegetation near gas lines outside
 
-### Primary Pump Requirements
-- Adequate capacity for water volume
-- Reliable float switch
-- Quality check valve
-- Proper discharge routing
+**Immediate steps:**
+- Do NOT use light switches or electronics
+- Open windows for ventilation
+- Leave the house immediately
+- Call 911 and your gas company
 
-### Backup Systems
-Consider:
-- Battery backup pumps
-- Water-powered backup options
-- Alarm systems for pump failure
-- Generator compatibility
+### 4. No Water Supply
+**Why it's urgent:**
+- May indicate a main line break
+- Could signal well pump failure
+- Affects basic sanitation and cooking
 
-## Septic System Considerations
+### 5. Water Heater Failure
+**Why it can be urgent:**
+- Leaking tanks can cause flooding
+- Gas water heater malfunctions are dangerous
+- No hot water in winter is a health concern
 
-### High Water Table Impacts
-- Raised or mound systems may be needed
-- More frequent pumping required
-- Careful landscaping to prevent saturation
-- Regular inspections essential
+## When It Can Wait
 
-### Maintenance Tips
-- Pump every 2-3 years
-- Conserve water during wet periods
-- Avoid garbage disposals
-- Use septic-safe products
+These issues are important but typically not emergencies:
+- A single slow drain
+- Minor dripping faucet
+- Running toilet
+- Low water pressure (gradual decline)
 
-## Outdoor Plumbing Protection
+## Emergency Preparedness Tips
 
-### Materials Matter
-- Choose stainless steel or brass
-- Avoid galvanized in exposed locations
-- Use marine-grade components when possible
-- Apply protective coatings
+1. **Know your shut-off locations** — main valve, water heater, individual fixtures
+2. **Keep a plumber's number handy** — saved in your phone
+3. **Have basic tools available** — plunger, adjustable wrench, pipe tape
+4. **Know how to turn off your water heater** — both gas and electric types
 
-### Seasonal Preparation
-- Winterize thoroughly
-- Inspect after major storms
-- Check for salt damage regularly
-
-For professional plumbing services in Bourne and the canal area, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) has the local expertise you need.
+For plumbing emergencies on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides responsive professional service when you need it most.
     `,
-    category: 'coastal',
-    town: 'bourne',
-    readTime: 6,
+    category: 'emergency',
+    readTime: 4,
     publishedAt: '2024-05-01',
   },
   {
-    id: '10',
-    slug: 'emergency-water-shutoff-cape-cod-guide',
-    title: 'Emergency Water Shut-Off Guide for Cape Cod Homeowners',
-    excerpt: 'Know how to quickly shut off your water in an emergency. This guide covers every type of Cape Cod home.',
-    metaDescription: 'Emergency water shut-off guide for Cape Cod homes. Locate and operate main valves, well pumps, and individual fixture shutoffs to prevent flood damage in MA.',
+    id: '9',
+    slug: 'how-salt-air-affects-water-heater',
+    title: 'How Salt Air Affects Your Water Heater',
+    excerpt: "Coastal living accelerates water heater wear. Understand the impact and how to extend your unit's lifespan on Cape Cod.",
+    metaDescription: 'How salt air affects water heaters on Cape Cod. Protect your unit from coastal corrosion, extend its lifespan, and know when replacement is needed.',
     content: `
-# Emergency Water Shut-Off Guide for Cape Cod Homeowners
+# How Salt Air Affects Your Water Heater
 
-When a pipe bursts or a major leak occurs, every second counts. Knowing how to quickly shut off your water can prevent thousands of dollars in damage.
+Living on Cape Cod means enjoying beautiful ocean views and refreshing sea breezes. But that same salt-laden air that makes coastal living special can significantly shorten the life of your water heater.
 
-## Why Speed Matters
+## The Corrosion Process
 
-A typical broken pipe can release:
-- 4-8 gallons per minute for supply lines
-- Hundreds of gallons within an hour
-- Catastrophic damage to floors, walls, and belongings
-- Mold growth within 24-48 hours
+### How Salt Air Damages Water Heaters
 
-## Locating Your Main Shut-Off
+Salt air creates an accelerated corrosion cycle:
+- **Moisture carries salt particles** into your home and utility spaces
+- **Salt deposits** form on metal components
+- **Electrochemical corrosion** eats away at steel, copper, and aluminum
+- **Humidity** keeps the corrosion process active year-round
 
-### Municipal Water (Town Supply)
+### Components Most Affected
+- Tank exterior and jacket
+- Flue pipes and venting
+- Gas control valves
+- Electrical connections
+- Anode rod (consumed faster)
+- Relief valve
 
-The main valve is typically located:
-- In the basement near the front foundation wall
-- In a utility closet or mechanical room
-- Near the water meter
-- At the point where the service line enters
+## Impact on Water Heater Lifespan
 
-### Private Well Systems
+### Inland vs. Coastal Comparison
+- **Inland water heater lifespan:** 10-15 years
+- **Coastal Cape Cod lifespan:** 6-10 years
+- **Beachfront properties:** 5-8 years
 
-For well-supplied homes:
-- Main valve near the pressure tank
-- Electrical shutoff at the breaker panel
-- Pressure switch on the tank
-- Some have inline valves after the tank
+That's a significant reduction that directly impacts your wallet.
 
-## Types of Shut-Off Valves
+## Protection Strategies
 
-### Gate Valves
-- Round wheel handle
-- Turn clockwise to close
-- May require multiple turns
-- Can be stiff if rarely used
+### Installation Location
+- Install in an enclosed, ventilated utility space
+- Keep away from direct ocean exposure
+- Ensure proper drainage around the unit
+- Consider a dehumidifier in the utility room
 
-### Ball Valves
-- Lever handle
-- Quarter-turn operation
-- More reliable long-term
-- Easy to see if open or closed
+### Maintenance Schedule (Coastal)
+- Inspect exterior for rust every 3 months
+- Check and replace anode rod annually (vs. every 2-3 years inland)
+- Flush the tank every 6 months
+- Test the pressure relief valve twice yearly
+- Inspect venting for corrosion annually
 
-### Curb Stops
-- Located at the property line
-- Requires special key to operate
-- Backup if interior valve fails
-- Call water department if needed
+### Material Choices
+- Consider stainless steel tanks
+- Tankless units with marine-grade housings
+- Plastic-lined tanks for ultimate corrosion resistance
+- Stainless steel or PVC venting
 
-## Individual Fixture Shut-Offs
+## When to Replace
 
-Know these locations:
-- Under sinks (hot and cold)
-- Behind toilets
-- Behind washing machine
-- Near dishwasher
-- At water heater
+Signs your coastal water heater is failing:
+- Rust-colored hot water
+- Visible rust on tank exterior
+- Leaking from the tank (not connections)
+- Rumbling or popping sounds
+- Inconsistent water temperature
+- Unit is over 8 years old near the coast
 
-## Emergency Action Steps
+## Making the Right Choice
 
-1. **Locate the active leak** if safe to do so
-2. **Shut off the nearest valve** to the leak
-3. **If unclear, shut the main valve**
-4. **Open faucets** to drain remaining water
-5. **Turn off water heater** if draining significantly
-6. **Call for professional help**
-
-## Prevention Tips
-
-- Label all shut-off valves clearly
-- Test valves annually to ensure operation
-- Replace corroded or stuck valves
-- Show family members valve locations
-
-For plumbing emergencies on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides responsive professional service.
+When replacing, discuss coastal-specific options with your plumber. [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) understands the unique demands of Cape Cod coastal environments.
     `,
-    category: 'emergency',
+    category: 'coastal',
     readTime: 5,
     publishedAt: '2024-05-15',
   },
   {
-    id: '11',
-    slug: 'osterville-luxury-home-plumbing-features',
-    title: 'Plumbing Features in Osterville Luxury Homes',
-    excerpt: 'High-end Osterville properties often include sophisticated plumbing systems. Learn what makes them special.',
-    metaDescription: 'Guide to luxury plumbing features in Osterville, MA waterfront estates. Understand radiant heating, whole-house filtration, and premium fixtures in upscale Cape Cod homes.',
+    id: '10',
+    slug: 'spring-plumbing-checklist-cape-cod',
+    title: 'Spring Plumbing Checklist for Cape Cod Homeowners',
+    excerpt: "Winter is over. Here's everything you should check and maintain to keep your plumbing running smoothly through the warmer months.",
+    metaDescription: 'Complete spring plumbing checklist for Cape Cod homeowners. Post-winter inspection guide for outdoor faucets, sump pumps, and seasonal property opening.',
     content: `
-# Plumbing Features in Osterville Luxury Homes
+# Spring Plumbing Checklist for Cape Cod Homeowners
 
-Osterville is known for its elegant waterfront estates and upscale properties. These luxury homes often include sophisticated plumbing systems that require specialized knowledge for maintenance and repair.
+As the snow melts and temperatures rise across Cape Cod, it's the ideal time to assess any winter damage and prepare your plumbing for the busy summer season ahead.
 
-## Common Luxury Plumbing Features
+## Exterior Inspection
 
-### Radiant Floor Heating
-Many Osterville homes feature:
-- Hydronic heating systems
-- Zone-controlled comfort
-- Integration with high-efficiency boilers
-- Specialized maintenance requirements
+### Check Outdoor Faucets
+1. Turn on each hose bib
+2. Check for leaks at the handle and spout
+3. Look for signs of frost damage
+4. Ensure proper drainage
 
-### Multiple Water Heaters
-Large homes often have:
-- Tankless water heater networks
-- Dedicated units for different zones
-- Recirculating hot water systems
-- Smart temperature controls
+### Inspect Visible Pipes
+- Look under decks and porches
+- Check crawl space access points
+- Note any new stains or wet spots
 
-### Whole-House Water Treatment
-Premium systems include:
-- Multi-stage filtration
-- Water softening
-- UV purification
-- Automatic backwash systems
+### Sump Pump Testing
+- Pour water into the pit
+- Verify pump activates
+- Check discharge line is clear
+- Test backup power if equipped
 
-## Outdoor Living Systems
+## Interior Checks
 
-### Pool and Spa Plumbing
-- Complex circulation systems
-- Chemical treatment integration
-- Heating equipment
-- Winter preparation needs
+### Water Heater Maintenance
+- Check for rust or leaks
+- Test pressure relief valve
+- Drain a few gallons to remove sediment
+- Note the age of your unit
 
-### Outdoor Kitchens
-- Hot and cold water supply
-- Proper drainage systems
-- Freeze protection
-- Gas line connections
+### Under-Sink Inspection
+- Look for moisture or water damage
+- Check P-traps for leaks
+- Test shut-off valves
 
-### Irrigation Systems
-- Zone-controlled watering
-- Rain sensors
-- Backflow prevention
-- Winterization requirements
+### Toilet Function
+- Check for running or leaking
+- Test flush mechanisms
+- Look for base leaks
 
-## Waterfront Considerations
+## Seasonal Transitions
 
-### Salt Exposure
-Osterville's coastal location means:
-- Premium corrosion-resistant materials
-- Regular fixture inspection
-- Marine-grade outdoor components
-- Protected mechanical rooms
+### Opening Seasonal Properties
+Many Cape Cod homes are seasonal. When opening:
+- Turn water on slowly
+- Check all fixtures systematically
+- Run each faucet to clear lines
+- Test water heater before regular use
 
-### Dock and Boat Systems
-Some properties include:
-- Water supply to docks
-- Boat wash stations
-- Fish cleaning stations
-- Outdoor showers
+## Professional Inspection
 
-## Maintaining Luxury Systems
-
-### Regular Professional Service
-- Quarterly inspections recommended
-- Annual system flushing
-- Water quality testing
-- Equipment calibration
-
-### Documentation
-- Keep records of all components
-- Maintain warranty information
-- Document service history
-- Update as upgrades occur
-
-For luxury home plumbing services in Osterville, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) has experience with high-end systems and sophisticated features.
+Spring is an excellent time for a professional plumbing inspection, especially for older Cape Cod homes. [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) offers comprehensive assessments for local homeowners.
     `,
-    category: 'maintenance',
-    town: 'osterville',
-    readTime: 6,
+    category: 'seasonal',
+    readTime: 5,
     publishedAt: '2024-06-01',
   },
   {
-    id: '12',
-    slug: 'hyannis-commercial-residential-plumbing-differences',
-    title: 'Plumbing Differences: Hyannis Commercial vs Residential',
-    excerpt: 'Hyannis features both busy commercial districts and residential neighborhoods. Understand the plumbing distinctions.',
-    metaDescription: 'Understanding plumbing differences between commercial and residential properties in Hyannis, MA. Code requirements, system scales, and maintenance needs explained.',
+    id: '11',
+    slug: 'what-homeowners-should-know-about-septic-systems',
+    title: 'What Cape Cod Homeowners Should Know About Septic Systems',
+    excerpt: "Septic systems are common on Cape Cod. Here's what every homeowner needs to know about maintenance and warning signs.",
+    metaDescription: 'Essential septic system guide for Cape Cod homeowners. Maintenance schedules, warning signs, Title 5 compliance, and protecting Cape Cod groundwater.',
     content: `
-# Plumbing Differences: Hyannis Commercial vs Residential
+# What Cape Cod Homeowners Should Know About Septic Systems
 
-As the commercial and transportation hub of Cape Cod, Hyannis features a diverse mix of properties from downtown businesses to residential neighborhoods. Understanding the plumbing differences helps property owners maintain their systems effectively.
+Septic systems serve a significant number of Cape Cod homes, particularly in areas without municipal sewer connections. Understanding your septic system is crucial for protecting both your property and Cape Cod's sensitive groundwater.
 
-## Commercial Plumbing Characteristics
+## How Septic Systems Work
 
-### Scale and Complexity
-Commercial buildings typically have:
-- Larger pipe diameters
-- Multiple water meters
-- Complex drainage systems
-- Commercial-grade fixtures
+A typical septic system consists of:
+- **Septic tank** — Separates solids from liquids
+- **Distribution box** — Distributes effluent evenly
+- **Leach field** — Allows treated water to percolate into the soil
+- **Soil** — Provides final treatment through natural filtration
 
-### Code Requirements
-Business properties must meet:
-- More stringent health codes
-- ADA accessibility requirements
-- Fire sprinkler integration
-- Backflow prevention mandates
+## Cape Cod's Unique Septic Challenges
 
-### Specialized Systems
-Many businesses require:
-- Grease traps (restaurants)
-- Floor drains (retail)
-- Break room facilities
-- Customer restrooms
+### Environmental Sensitivity
+- Cape Cod's sole-source aquifer means septic failures directly threaten drinking water
+- Nitrogen loading from septic systems affects ponds and harbors
+- Many communities are implementing enhanced nitrogen-removal requirements
 
-## Residential Plumbing Characteristics
+### High Water Table
+- Sandy soil drains quickly but offers less treatment
+- Seasonal water table changes affect leach field performance
+- Raised or mound systems may be required in some areas
 
-### Typical Systems
-Hyannis homes generally have:
-- Standard residential fixtures
-- Single water service
-- Traditional drain/waste/vent
-- Water heater (tank or tankless)
+### Title 5 Compliance
+Massachusetts Title 5 regulations govern septic systems:
+- Inspection required at property transfer
+- Systems must meet current standards or be upgraded
+- Regular pumping is recommended every 2-3 years
+- Failed inspections can be costly to resolve
 
-### Common Configurations
-- Municipal water supply
-- Town sewer connection
-- Standard bathroom counts
-- Kitchen and laundry facilities
+## Maintenance Best Practices
 
-## Mixed-Use Considerations
+### Regular Pumping
+- Pump every 2-3 years for year-round homes
+- Annual pumping for garbage disposal users
+- Pump before winterizing seasonal homes
 
-Hyannis has many properties that combine:
-- Ground-floor retail with upper apartments
-- Home-based businesses
-- Live-work spaces
-- Converted properties
+### Daily Care
+- Spread laundry loads throughout the week
+- Use septic-safe toilet paper
+- Never flush non-biodegradable items
+- Limit garbage disposal use
+- Avoid harsh chemical cleaners
 
-These require understanding of both commercial and residential requirements.
+### Protect the Leach Field
+- Don't park vehicles on the leach field
+- Keep tree roots away (plant trees at least 30 feet from the system)
+- Divert surface water and roof runoff away
+- Don't build structures over the system
 
-## Maintenance Differences
+## Warning Signs of Trouble
 
-### Commercial Frequency
-- More frequent inspections
-- Grease trap pumping schedules
-- Drain cleaning requirements
-- Water heater service
+- Slow drains throughout the house
+- Sewage odors in the yard
+- Standing water over the leach field
+- Unusually green or lush grass over the septic area
+- Sewage backup in the home
 
-### Residential Frequency
-- Annual inspections recommended
-- As-needed maintenance
-- Preventive care focus
-- Seasonal preparations
+## When to Call a Professional
 
-## Choosing the Right Plumber
-
-For both commercial and residential plumbing needs in Hyannis, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) serves property owners throughout the area with professional expertise.
+For septic system concerns or to schedule maintenance, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides expert septic services for Cape Cod homeowners.
     `,
-    category: 'maintenance',
-    town: 'hyannis',
-    readTime: 5,
+    category: 'septic',
+    readTime: 7,
     publishedAt: '2024-06-15',
+  },
+  {
+    id: '12',
+    slug: 'plumbing-tips-cape-cod-vacation-rental-owners',
+    title: 'Plumbing Tips for Cape Cod Vacation Rental Owners',
+    excerpt: 'Protect your rental investment with these essential plumbing maintenance tips for seasonal Cape Cod properties.',
+    metaDescription: 'Plumbing maintenance tips for Cape Cod vacation rental owners. Protect your investment, prevent guest disruptions, and reduce emergency repair costs.',
+    content: `
+# Plumbing Tips for Cape Cod Vacation Rental Owners
+
+Cape Cod vacation rentals are big business, but plumbing problems during peak rental season can mean lost income, unhappy guests, and emergency repair costs. Proactive maintenance is the key to protecting your investment.
+
+## Pre-Season Preparation
+
+### Before Your First Guest
+
+Every spring, complete these tasks:
+1. **Full plumbing inspection** — Check all fixtures, connections, and appliances
+2. **Water heater service** — Flush sediment, test relief valve, check temperature setting
+3. **Drain clearing** — Professional clearing of main drains
+4. **Outdoor plumbing** — Test hose bibs, outdoor showers, and irrigation
+
+### Guest-Proof Your Plumbing
+- Install drain screens in all sinks and showers
+- Post clear instructions about what can't be flushed
+- Provide a plunger in each bathroom
+- Label the main water shut-off clearly
+- Consider smart water leak detectors
+
+## During Rental Season
+
+### Between-Guest Checklist
+- Run all faucets to check for leaks
+- Check under sinks for moisture
+- Test toilet fill and flush mechanisms
+- Verify water heater is functioning
+- Check outdoor shower drains
+- Inspect washing machine hoses
+
+### Common Guest-Caused Issues
+- Flushing inappropriate items (wipes, feminine products)
+- Overloading garbage disposals
+- Leaving outdoor hoses connected and running
+- Ignoring slow drains until they're fully blocked
+- Misusing the septic system
+
+## Post-Season Winterization
+
+### Critical Steps
+- Professional winterization of all plumbing
+- Drain outdoor showers completely
+- Disconnect and store hoses
+- Set thermostats to prevent freezing (55°F minimum)
+- Consider smart thermostats for remote monitoring
+
+## Emergency Planning
+
+### Have a Plan in Place
+- Keep a local plumber's contact information posted
+- Provide emergency instructions for guests
+- Install smart water sensors at high-risk points
+- Consider a local property manager for emergencies
+
+## ROI of Preventive Maintenance
+
+Investing $500-$1,000 in annual plumbing maintenance can prevent:
+- $2,000-$10,000 emergency repairs
+- Lost rental income during repairs
+- Negative guest reviews
+- Property damage claims
+
+For reliable plumbing maintenance for your Cape Cod rental property, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) offers professional services throughout the Cape.
+    `,
+    category: 'rental',
+    readTime: 6,
+    publishedAt: '2024-07-01',
   },
 ];
 
@@ -944,12 +920,94 @@ export const towns: Town[] = [
     metaDescription: 'Plumbing resources for Hyannis, MA commercial and residential properties. Expert guidance for Cape Cod main hub.',
     image: hyannisImg,
   },
+  {
+    slug: 'barnstable',
+    name: 'Barnstable',
+    description: "Cape Cod's largest town with diverse neighborhoods",
+    metaDescription: 'Plumbing resources for Barnstable, MA homeowners. Expert guidance for Cape Cod largest town.',
+    image: falmouthImg,
+  },
+  {
+    slug: 'yarmouth',
+    name: 'Yarmouth',
+    description: 'Mid-Cape community with year-round and seasonal homes',
+    metaDescription: 'Plumbing tips for Yarmouth, MA homeowners. Seasonal and year-round plumbing guidance.',
+    image: mashpeeImg,
+  },
+  {
+    slug: 'dennis',
+    name: 'Dennis',
+    description: 'Charming town with bayside and oceanside properties',
+    metaDescription: 'Plumbing resources for Dennis, MA homeowners. Bayside and oceanside property plumbing tips.',
+    image: sandwichImg,
+  },
+  {
+    slug: 'brewster',
+    name: 'Brewster',
+    description: 'Quiet residential town with older Cape-style homes',
+    metaDescription: 'Plumbing tips for Brewster, MA older Cape-style homes. Maintenance and repair guidance.',
+    image: bourneImg,
+  },
+  {
+    slug: 'harwich',
+    name: 'Harwich',
+    description: 'Family-friendly town with growing residential areas',
+    metaDescription: 'Plumbing resources for Harwich, MA homeowners. Family-friendly plumbing guidance.',
+    image: ostervilleImg,
+  },
+  {
+    slug: 'chatham',
+    name: 'Chatham',
+    description: 'Iconic coastal town with upscale properties',
+    metaDescription: 'Plumbing guide for Chatham, MA coastal properties. Expert tips for upscale Cape Cod homes.',
+    image: hyannisImg,
+  },
+  {
+    slug: 'orleans',
+    name: 'Orleans',
+    description: 'Lower Cape hub with historic and modern homes',
+    metaDescription: 'Plumbing resources for Orleans, MA homeowners. Historic and modern home plumbing tips.',
+    image: falmouthImg,
+  },
+  {
+    slug: 'eastham',
+    name: 'Eastham',
+    description: 'Outer Cape town with many seasonal cottages',
+    metaDescription: 'Plumbing tips for Eastham, MA seasonal cottages and year-round homes.',
+    image: mashpeeImg,
+  },
+  {
+    slug: 'wellfleet',
+    name: 'Wellfleet',
+    description: 'Artist community with older, character-rich homes',
+    metaDescription: 'Plumbing resources for Wellfleet, MA character homes. Older home plumbing guidance.',
+    image: sandwichImg,
+  },
+  {
+    slug: 'truro',
+    name: 'Truro',
+    description: 'Rural Outer Cape town with scattered residential properties',
+    metaDescription: 'Plumbing tips for Truro, MA rural properties. Well water and septic system guidance.',
+    image: bourneImg,
+  },
+  {
+    slug: 'provincetown',
+    name: 'Provincetown',
+    description: 'Vibrant tip of Cape Cod with historic and eclectic housing',
+    metaDescription: 'Plumbing resources for Provincetown, MA historic properties. Expert guidance for Cape tip homes.',
+    image: ostervilleImg,
+  },
 ];
 
 export const categories = [
   { slug: 'seasonal', name: 'Seasonal Tips', icon: '❄️', description: 'Prepare your plumbing for every Cape Cod season' },
   { slug: 'emergency', name: 'Emergency Guides', icon: '🚨', description: 'What to do when plumbing problems strike' },
-  { slug: 'maintenance', name: 'Maintenance', icon: '🔧', description: 'Keep your system running smoothly year-round' },
-  { slug: 'older-homes', name: 'Older Homes', icon: '🏠', description: 'Special considerations for historic Cape properties' },
   { slug: 'coastal', name: 'Coastal Living', icon: '🌊', description: 'Address salt air and waterfront challenges' },
+  { slug: 'older-homes', name: 'Older Homes', icon: '🏠', description: 'Special considerations for historic Cape properties' },
+  { slug: 'well-water', name: 'Well Water', icon: '💧', description: 'Private well water challenges and solutions' },
+  { slug: 'cost-guide', name: 'Cost Guides', icon: '💰', description: 'Transparent pricing for plumbing services' },
+  { slug: 'homeowner-guide', name: 'Homeowner Guides', icon: '🔍', description: 'Essential knowledge for Cape Cod homeowners' },
+  { slug: 'septic', name: 'Septic Systems', icon: '🏡', description: 'Septic maintenance and compliance' },
+  { slug: 'rental', name: 'Vacation Rentals', icon: '🏖️', description: 'Plumbing tips for rental property owners' },
+  { slug: 'maintenance', name: 'Maintenance', icon: '🔧', description: 'Keep your system running smoothly year-round' },
 ];
