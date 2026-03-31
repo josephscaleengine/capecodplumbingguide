@@ -15,9 +15,7 @@ const ServiceDetail = () => {
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="font-heading text-3xl font-bold mb-4">Service Not Found</h1>
           <p className="text-muted-foreground mb-6">We couldn't find the service you're looking for.</p>
-          <Link to="/services">
-            <Button>View All Services</Button>
-          </Link>
+          <Link to="/services"><Button>View All Services</Button></Link>
         </div>
       </Layout>
     );
@@ -36,35 +34,24 @@ const ServiceDetail = () => {
             name: service.name,
             description: service.metaDescription,
             url: `https://capecodplumbingguide.com/services/${service.slug}`,
-            provider: {
-              '@type': 'Organization',
-              name: 'Blue Pacific Cape Cod',
-              url: 'https://bluepacificcapecod.com/plumbing-falmouth-ma/',
-            },
-            areaServed: {
-              '@type': 'Place',
-              name: 'Cape Cod, Massachusetts',
-            },
+            provider: { '@type': 'Organization', name: 'Blue Pacific Cape Cod', url: 'https://bluepacificcapecod.com/plumbing-falmouth-ma/' },
+            areaServed: { '@type': 'Place', name: 'Cape Cod, Massachusetts' },
           })}
         </script>
       </Helmet>
       <Layout>
         {/* Header */}
-        <section className="bg-gradient-hero py-12 md:py-16">
+        <section className="bg-navy py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6"
-              >
+            <div className="max-w-4xl">
+              <Link to="/services" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-6">
                 <ArrowLeft className="w-4 h-4" />
                 All Services
               </Link>
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">
                 {service.name}
               </h1>
-              <p className="text-lg text-muted-foreground">{service.shortDescription}</p>
+              <p className="text-lg text-white/70">{service.shortDescription}</p>
             </div>
           </div>
         </section>
@@ -80,26 +67,20 @@ const ServiceDetail = () => {
                     <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
                       <Info className="w-5 h-5 text-primary" />
                     </div>
-                    <h2 className="font-heading text-2xl font-bold text-foreground">
-                      What Is This Service?
-                    </h2>
+                    <h2 className="font-heading text-2xl font-bold text-foreground">What Is This Service?</h2>
                   </div>
                   {service.content.whatIs.split('\n\n').map((paragraph, i) => (
-                    <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-                      {paragraph}
-                    </p>
+                    <p key={i} className="text-muted-foreground leading-relaxed mb-4">{paragraph}</p>
                   ))}
                 </div>
 
                 {/* Why Cape Cod */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent-foreground" />
+                    <div className="w-10 h-10 rounded-lg bg-sand flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-accent" />
                     </div>
-                    <h2 className="font-heading text-2xl font-bold text-foreground">
-                      Why Cape Cod Homeowners Need This
-                    </h2>
+                    <h2 className="font-heading text-2xl font-bold text-foreground">Why Cape Cod Homeowners Need This</h2>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">{service.content.whyCapeCod}</p>
                 </div>
@@ -108,11 +89,9 @@ const ServiceDetail = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-lg bg-coral-light flex items-center justify-center">
-                      <AlertTriangle className="w-5 h-5 text-coral" />
+                      <AlertTriangle className="w-5 h-5 text-accent" />
                     </div>
-                    <h2 className="font-heading text-2xl font-bold text-foreground">
-                      Common Signs You Need This Service
-                    </h2>
+                    <h2 className="font-heading text-2xl font-bold text-foreground">Common Signs You Need This Service</h2>
                   </div>
                   <ul className="space-y-3">
                     {service.content.signs.map((sign, i) => (
@@ -130,14 +109,12 @@ const ServiceDetail = () => {
                     <div className="w-10 h-10 rounded-lg bg-seafoam-light flex items-center justify-center">
                       <CheckCircle className="w-5 h-5 text-seafoam" />
                     </div>
-                    <h2 className="font-heading text-2xl font-bold text-foreground">
-                      What to Expect
-                    </h2>
+                    <h2 className="font-heading text-2xl font-bold text-foreground">What to Expect</h2>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">{service.content.whatToExpect}</p>
                   <div className="card-double-border p-5">
                     <div className="flex items-center gap-3 mb-2">
-                      <DollarSign className="w-5 h-5 text-primary" />
+                      <DollarSign className="w-5 h-5 text-accent" />
                       <span className="font-heading font-bold text-foreground">Typical Cost Range</span>
                     </div>
                     <p className="text-muted-foreground text-sm">{service.content.costRange}</p>
@@ -145,19 +122,15 @@ const ServiceDetail = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="card-double-border p-8 bg-secondary/30">
+                <div className="card-double-border p-8 bg-sand">
                   <h3 className="font-heading text-xl font-bold text-foreground mb-3">
                     Need {service.name}?
                   </h3>
                   <p className="text-muted-foreground mb-4">
                     For professional {service.name.toLowerCase()} throughout Cape Cod, we recommend Blue Pacific Cape Cod — licensed, insured, and locally trusted.
                   </p>
-                  <a
-                    href="https://bluepacificcapecod.com/plumbing-falmouth-ma/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="hero" size="lg">
+                  <a href="https://bluepacificcapecod.com/plumbing-falmouth-ma/" target="_blank" rel="noopener noreferrer">
+                    <Button variant="cta" size="lg">
                       Contact Blue Pacific Cape Cod
                       <ExternalLink className="w-4 h-4 ml-1" />
                     </Button>
@@ -167,24 +140,19 @@ const ServiceDetail = () => {
 
               {/* Sidebar */}
               <aside className="space-y-6">
-                <div className="bg-gradient-ocean rounded-xl p-6 text-primary-foreground sticky top-24">
+                <div className="bg-navy rounded-xl p-6 text-white sticky top-24">
                   <h3 className="font-heading text-xl font-bold mb-3">Need Professional Help?</h3>
-                  <p className="text-primary-foreground/90 mb-4 text-sm">
+                  <p className="text-white/70 mb-4 text-sm">
                     Blue Pacific Cape Cod provides trusted plumbing services throughout Cape Cod.
                   </p>
-                  <a
-                    href="https://bluepacificcapecod.com/plumbing-falmouth-ma/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+                  <a href="https://bluepacificcapecod.com/plumbing-falmouth-ma/" target="_blank" rel="noopener noreferrer">
+                    <Button variant="cta" className="w-full">
                       Visit Blue Pacific
                       <ExternalLink className="w-4 h-4 ml-1" />
                     </Button>
                   </a>
                 </div>
 
-                {/* Other Services */}
                 <div className="bg-card rounded-xl p-6 shadow-soft border border-border">
                   <h3 className="font-heading text-lg font-bold text-foreground mb-4">Other Services</h3>
                   <div className="space-y-2">
@@ -197,7 +165,6 @@ const ServiceDetail = () => {
                           to={`/services/${s.slug}`}
                           className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors py-1 text-sm"
                         >
-                          <span>{s.icon}</span>
                           <span>{s.name}</span>
                         </Link>
                       ))}

@@ -41,32 +41,32 @@ const Blog = () => {
       </Helmet>
       <Layout>
         {/* Hero */}
-        <section className="bg-gradient-hero py-16 md:py-20">
+        <section className="bg-navy py-16 md:py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-secondary/80 px-4 py-2 rounded-full mb-6">
-                <BookOpen className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-secondary-foreground">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full mb-6">
+                <BookOpen className="w-4 h-4 text-[hsl(var(--warm-orange))]" />
+                <span className="text-sm font-semibold text-white/80">
                   Educational Resources
                 </span>
               </div>
-              <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+              <h1 className="font-heading text-4xl md:text-5xl font-black text-white mb-4">
                 Plumbing Resources
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-white/70">
                 Expert guidance to help you understand and maintain your Cape Cod home's plumbing system.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Categories */}
-        <section className="py-8 bg-secondary/30 border-b border-border">
+        {/* Categories — pills */}
+        <section className="py-6 bg-sand border-b border-border">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <Link
                 to="/blog"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-semibold"
               >
                 All Articles
               </Link>
@@ -74,9 +74,9 @@ const Blog = () => {
                 <Link
                   key={category.slug}
                   to={`/blog/category/${category.slug}`}
-                  className="px-4 py-2 bg-card border border-border rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                  className="px-4 py-2 bg-card border border-border rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
                 >
-                  {category.icon} {category.name}
+                  {category.name}
                 </Link>
               ))}
             </div>
@@ -92,24 +92,22 @@ const Blog = () => {
                 return (
                   <article
                     key={article.id}
-                    className="bg-card rounded-xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
+                    className="card-double-border overflow-hidden animate-fade-up"
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     <div className="p-6">
                       {/* Category */}
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="text-lg">{category?.icon}</span>
-                        <span className="text-sm font-medium text-muted-foreground">
+                        <span className="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
                           {category?.name}
                         </span>
                         {article.featured && (
-                          <span className="ml-auto px-2 py-0.5 bg-seafoam/10 text-seafoam text-xs font-medium rounded-full">
+                          <span className="ml-auto px-2 py-0.5 bg-accent/10 text-accent text-xs font-semibold rounded-full">
                             Featured
                           </span>
                         )}
                       </div>
 
-                      {/* Title */}
                       <h2 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2">
                         <Link
                           to={`/blog/${article.slug}`}
@@ -119,12 +117,10 @@ const Blog = () => {
                         </Link>
                       </h2>
 
-                      {/* Excerpt */}
                       <p className="text-muted-foreground mb-4 line-clamp-3">
                         {article.excerpt}
                       </p>
 
-                      {/* Meta */}
                       <div className="flex items-center justify-between pt-4 border-t border-border">
                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
                           <div className="flex items-center gap-1">
@@ -140,7 +136,7 @@ const Blog = () => {
                         </div>
                         <Link
                           to={`/blog/${article.slug}`}
-                          className="text-primary hover:text-ocean-light transition-colors"
+                          className="text-accent hover:text-[hsl(var(--warm-orange-hover))] transition-colors"
                         >
                           <ArrowRight className="w-5 h-5" />
                         </Link>
