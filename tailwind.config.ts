@@ -78,6 +78,10 @@ export default {
         cape: {
           sky: "hsl(var(--cape-sky))",
         },
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          light: "hsl(var(--coral-light))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
