@@ -7,31 +7,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-navy-deep text-white">
-      {/* Professional Services Banner */}
-      <div className="bg-primary py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-white">
-              <Phone className="w-5 h-5" />
-              <p className="font-semibold">
-                Need a licensed plumber? Professional services provided by Blue Pacific Cape Cod.
-              </p>
-            </div>
-            <a
-              href="https://bluepacificcapecod.com/plumbing-falmouth-ma/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white text-primary px-5 py-2 rounded-md font-bold hover:bg-white/90 transition-colors"
-            >
-              Visit Blue Pacific Cape Cod
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
@@ -55,8 +32,8 @@ const Footer = () => {
 
           {/* Towns */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-4">Towns We Cover</h4>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+            <h4 className="font-heading font-bold text-base mb-3">Towns We Cover</h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-0.5">
               {towns.map((town) => (
                 <Link
                   key={town.slug}
@@ -69,11 +46,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Resources — NO emojis */}
+          {/* Resources */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-4">Resources</h4>
-            <ul className="space-y-2">
-              {categories.slice(0, 7).map((cat) => (
+            <h4 className="font-heading font-bold text-base mb-3">Resources</h4>
+            <ul className="space-y-1">
+              {categories.map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     to={`/blog/category/${cat.slug}`}
@@ -88,11 +65,11 @@ const Footer = () => {
 
           {/* Professional Services */}
           <div>
-            <h4 className="font-heading font-bold text-lg mb-4">Professional Services</h4>
-            <p className="text-white/70 text-sm mb-4">
-              For professional plumbing services throughout Cape Cod, we recommend Blue Pacific Cape Cod — trusted local experts.
+            <h4 className="font-heading font-bold text-base mb-3">Professional Services</h4>
+            <p className="text-white/70 text-sm mb-3">
+              For professional plumbing services throughout Cape Cod, we recommend Blue Pacific Cape Cod.
             </p>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-1.5 text-sm">
               <a
                 href="https://bluepacificcapecod.com/plumbing-falmouth-ma/"
                 target="_blank"
@@ -115,8 +92,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-10 pt-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
+        <div className="border-t border-white/10 mt-8 pt-5">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
             <p>&copy; {currentYear} Cape Cod Plumbing Guide. All rights reserved.</p>
             <p>
               Professional plumbing services by{' '}

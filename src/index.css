@@ -115,6 +115,10 @@
   .bg-navy {
     background-color: hsl(var(--navy-deep));
   }
+
+  .bg-navy-deep {
+    background-color: hsl(var(--navy-deep));
+  }
   
   .shadow-soft {
     box-shadow: var(--shadow-soft);
@@ -144,6 +148,31 @@
       0 0 0 7px hsl(var(--ocean-teal) / 0.12),
       var(--shadow-hover);
     transform: translateY(-4px);
+  }
+
+  /* Static double border — always visible, no hover expand */
+  .card-double-border-static {
+    @apply relative rounded-xl bg-card;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 
+      0 0 0 4px hsl(var(--border) / 0.3),
+      var(--shadow-card);
+  }
+
+  /* Hover-only double border — subtle normally, expands on hover */
+  .card-hover-border {
+    @apply relative rounded-xl bg-card;
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+  }
+
+  .card-hover-border:hover {
+    border-color: hsl(var(--ocean-teal) / 0.4);
+    box-shadow: 
+      0 0 0 5px hsl(var(--ocean-teal) / 0.1),
+      var(--shadow-hover);
+    transform: translateY(-2px);
   }
 }
 

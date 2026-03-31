@@ -10,9 +10,9 @@ const TrustBar = () => {
   return (
     <section className="py-10 bg-background border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
           {items.map((item) => (
-            <div key={item.title} className="flex items-center gap-4">
+            <div key={item.title} className="flex items-center gap-4 justify-center">
               <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0">
                 <item.icon className="w-6 h-6 text-primary" />
               </div>
