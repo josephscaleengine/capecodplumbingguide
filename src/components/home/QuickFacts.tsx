@@ -1,77 +1,144 @@
-import { HelpCircle } from 'lucide-react';
-import { useState } from 'react';
+import { DollarSign, Thermometer, Droplets, Calendar, Wind, Snowflake, Flame, FileText } from 'lucide-react';
 
-const facts = [
+interface Fact {
+  category: string;
+  categoryColor: string;
+  cardBg: string;
+  icon: React.ElementType;
+  q: string;
+  a: string;
+  visual?: React.ReactNode;
+}
+
+const PriceBar = () => (
+  <div className="mt-3 flex items-center gap-2 text-xs font-semibold">
+    <span className="text-foreground">$150</span>
+    <div className="flex-1 h-2 rounded-full bg-border overflow-hidden">
+      <div className="h-full rounded-full bg-gradient-to-r from-[hsl(var(--ocean-teal))] to-[hsl(var(--warm-orange))]" style={{ width: '70%' }} />
+    </div>
+    <span className="text-foreground">$450</span>
+  </div>
+);
+
+const LifespanBar = () => (
+  <div className="mt-3 flex items-center gap-2 text-xs font-semibold">
+    <span className="text-foreground">8 yrs</span>
+    <div className="flex-1 h-2 rounded-full bg-border overflow-hidden">
+      <div className="h-full rounded-full bg-gradient-to-r from-[hsl(var(--warm-orange))] to-[hsl(var(--ocean-teal))]" style={{ width: '80%' }} />
+    </div>
+    <span className="text-foreground">12 yrs</span>
+  </div>
+);
+
+const FrequencyBadge = () => (
+  <div className="mt-3 inline-flex items-center gap-2 bg-[hsl(var(--ocean-teal)/0.1)] px-3 py-1.5 rounded-full">
+    <Calendar className="w-3.5 h-3.5 text-[hsl(var(--ocean-teal))]" />
+    <span className="text-xs font-bold text-[hsl(var(--ocean-teal))]">Every 1–2 years</span>
+  </div>
+);
+
+const facts: Fact[] = [
   {
+    category: 'Cost',
+    categoryColor: 'bg-[hsl(var(--warm-orange)/0.15)] text-[hsl(var(--warm-orange))]',
+    cardBg: 'bg-[hsl(var(--warm-orange)/0.04)]',
+    icon: DollarSign,
     q: "What's the average cost of a plumber on Cape Cod?",
     a: "Most plumbing service calls on Cape Cod range from $150–$450 depending on the job. Water heater replacements typically run $1,200–$3,000 installed.",
+    visual: <PriceBar />,
   },
   {
+    category: 'Seasonal',
+    categoryColor: 'bg-[hsl(174,40%,48%,0.15)] text-[hsl(var(--ocean-teal))]',
+    cardBg: 'bg-[hsl(174,40%,48%,0.04)]',
+    icon: Thermometer,
     q: "Why do Cape Cod homes have so many frozen pipe issues?",
     a: "Cape Cod's combination of older construction, crawl spaces, shallow foundations, and harsh coastal winters makes pipes especially vulnerable to freezing.",
   },
   {
+    category: 'Water Quality',
+    categoryColor: 'bg-[hsl(200,60%,50%,0.15)] text-[hsl(200,60%,40%)]',
+    cardBg: 'bg-[hsl(200,60%,50%,0.04)]',
+    icon: Droplets,
     q: "Do most Cape Cod homes use well water or town water?",
     a: "It varies by town. Many homes in mid and outer Cape towns rely on private wells, which require different plumbing maintenance than municipal water systems.",
   },
   {
+    category: 'Maintenance',
+    categoryColor: 'bg-[hsl(var(--ocean-teal)/0.15)] text-[hsl(var(--ocean-teal))]',
+    cardBg: 'bg-[hsl(var(--ocean-teal)/0.04)]',
+    icon: Calendar,
     q: "How often should I get my drains cleaned?",
     a: "For Cape Cod homes, professional drain cleaning every 1–2 years helps prevent buildup, especially in older homes with cast iron or galvanized pipes.",
+    visual: <FrequencyBadge />,
   },
   {
+    category: 'Coastal',
+    categoryColor: 'bg-[hsl(168,45%,42%,0.15)] text-[hsl(var(--seafoam))]',
+    cardBg: 'bg-[hsl(168,45%,42%,0.04)]',
+    icon: Wind,
     q: "Is salt air really bad for my plumbing?",
     a: "Yes. Salt air accelerates corrosion on exposed pipes, fittings, water heaters, and outdoor fixtures. Coastal Cape Cod homes need more frequent inspections.",
   },
   {
+    category: 'Seasonal',
+    categoryColor: 'bg-[hsl(174,40%,48%,0.15)] text-[hsl(var(--ocean-teal))]',
+    cardBg: 'bg-[hsl(174,40%,48%,0.04)]',
+    icon: Snowflake,
     q: "When should I winterize my vacation home?",
     a: "Winterize before the first hard freeze, typically by late October on Cape Cod. This includes draining pipes, shutting off the water supply, and protecting the water heater.",
   },
   {
+    category: 'Maintenance',
+    categoryColor: 'bg-[hsl(var(--ocean-teal)/0.15)] text-[hsl(var(--ocean-teal))]',
+    cardBg: 'bg-[hsl(var(--ocean-teal)/0.04)]',
+    icon: Flame,
     q: "What are signs I need to replace my water heater?",
     a: "Rusty water, inconsistent temperature, strange noises, leaking around the base, or age over 10–12 years. Salt air can shorten lifespan to 8–10 years on Cape Cod.",
+    visual: <LifespanBar />,
   },
   {
+    category: 'Permits',
+    categoryColor: 'bg-[hsl(var(--navy)/0.12)] text-[hsl(var(--navy))]',
+    cardBg: 'bg-[hsl(var(--navy)/0.03)]',
+    icon: FileText,
     q: "Do I need a permit for plumbing work on Cape Cod?",
     a: "Most towns on Cape Cod require permits for significant plumbing work. Your licensed plumber should handle the permitting process.",
   },
 ];
 
 const QuickFacts = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
     <section className="py-16 md:py-20 bg-sand">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mb-10">
           <p className="text-accent font-bold text-sm uppercase tracking-widest mb-2">Quick Reference</p>
-          <h2 className="font-heading text-3xl md:text-4xl font-black text-foreground mb-8">
+          <h2 className="font-heading text-3xl md:text-4xl font-black text-foreground mb-3">
             Cape Cod Plumbing Quick Facts
           </h2>
+          <p className="text-muted-foreground text-lg">Essential info at a glance for Cape Cod homeowners.</p>
+        </div>
 
-          <div className="space-y-3">
-            {facts.map((fact, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {facts.map((fact, i) => {
+            const Icon = fact.icon;
+            return (
               <div
                 key={i}
-                className="bg-card rounded-lg border border-border overflow-hidden transition-all duration-300"
+                className={`rounded-xl border border-border p-5 transition-all duration-300 hover:shadow-soft hover:-translate-y-1 ${fact.cardBg}`}
               >
-                <button
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center gap-3 p-5 text-left hover:bg-secondary/30 transition-colors"
-                >
-                  <HelpCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="font-bold text-foreground">{fact.q}</span>
-                  <span className={`ml-auto text-muted-foreground transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}>
-                    ▾
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${fact.categoryColor}`}>
+                    {fact.category}
                   </span>
-                </button>
-                {openIndex === i && (
-                  <div className="px-5 pb-5 pl-13 animate-fade-in">
-                    <p className="text-muted-foreground leading-relaxed pl-8">{fact.a}</p>
-                  </div>
-                )}
+                  <Icon className="w-5 h-5 text-muted-foreground/50" />
+                </div>
+                <h3 className="font-heading font-bold text-foreground mb-2 leading-snug">{fact.q}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{fact.a}</p>
+                {fact.visual}
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

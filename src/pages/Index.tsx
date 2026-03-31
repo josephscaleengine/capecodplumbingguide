@@ -4,7 +4,7 @@ import Hero from '@/components/home/Hero';
 import TrustBar from '@/components/home/TrustBar';
 import QuickFacts from '@/components/home/QuickFacts';
 import FeaturedArticles from '@/components/home/FeaturedArticles';
-import CategorySection from '@/components/home/CategorySection';
+import CTABanner from '@/components/home/CTABanner';
 import ServicesPreview from '@/components/home/ServicesPreview';
 import TownsReference from '@/components/home/TownsReference';
 import RecommendedPartner from '@/components/home/RecommendedPartner';
@@ -43,7 +43,7 @@ const Index = () => {
         <TrustBar />
         <QuickFacts />
         <FeaturedArticles />
-        <CategorySection />
+        <CTABanner />
         <ServicesPreview />
         <TownsReference />
         <RecommendedPartner />

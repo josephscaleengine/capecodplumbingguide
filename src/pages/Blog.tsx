@@ -4,6 +4,21 @@ import { Clock, Tag, ArrowRight, BookOpen } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { articles, categories } from '@/data/articles';
 
+const categoryColors: Record<string, { pill: string; cardBorder: string }> = {
+  seasonal: { pill: 'bg-[hsl(200,60%,50%,0.12)] text-[hsl(200,60%,40%)] hover:bg-[hsl(200,60%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(200,60%,50%)]' },
+  emergency: { pill: 'bg-[hsl(0,65%,55%,0.12)] text-[hsl(0,65%,45%)] hover:bg-[hsl(0,65%,55%)] hover:text-white', cardBorder: 'border-l-[hsl(0,65%,55%)]' },
+  coastal: { pill: 'bg-[hsl(174,55%,36%,0.12)] text-[hsl(var(--ocean-teal))] hover:bg-[hsl(var(--ocean-teal))] hover:text-white', cardBorder: 'border-l-[hsl(var(--ocean-teal))]' },
+  'older-homes': { pill: 'bg-[hsl(30,30%,50%,0.12)] text-[hsl(30,30%,40%)] hover:bg-[hsl(30,30%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(30,30%,50%)]' },
+  'well-water': { pill: 'bg-[hsl(190,55%,50%,0.12)] text-[hsl(190,55%,40%)] hover:bg-[hsl(190,55%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(190,55%,50%)]' },
+  'cost-guide': { pill: 'bg-[hsl(var(--warm-orange)/0.12)] text-[hsl(var(--warm-orange))] hover:bg-[hsl(var(--warm-orange))] hover:text-white', cardBorder: 'border-l-[hsl(var(--warm-orange))]' },
+  'homeowner-guide': { pill: 'bg-[hsl(var(--navy)/0.12)] text-[hsl(var(--navy))] hover:bg-[hsl(var(--navy))] hover:text-white', cardBorder: 'border-l-[hsl(var(--navy))]' },
+  septic: { pill: 'bg-[hsl(140,40%,45%,0.12)] text-[hsl(140,40%,35%)] hover:bg-[hsl(140,40%,45%)] hover:text-white', cardBorder: 'border-l-[hsl(140,40%,45%)]' },
+  rental: { pill: 'bg-[hsl(var(--sand)/0.5)] text-[hsl(var(--sand-dark))] hover:bg-[hsl(var(--sand-dark))] hover:text-white', cardBorder: 'border-l-[hsl(var(--sand-dark))]' },
+  maintenance: { pill: 'bg-[hsl(220,10%,50%,0.12)] text-[hsl(220,10%,40%)] hover:bg-[hsl(220,10%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(220,10%,50%)]' },
+};
+
+const getArticleCount = (slug: string) => articles.filter((a) => a.category === slug).length;
+
 const Blog = () => {
   const getCategoryInfo = (categorySlug: string) => {
     return categories.find((cat) => cat.slug === categorySlug);
@@ -60,45 +75,46 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Categories — pills */}
-        <section className="py-6 bg-sand border-b border-border">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                to="/blog"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-semibold"
-              >
-                All Articles
-              </Link>
-              {categories.map((category) => (
-                <Link
-                  key={category.slug}
-                  to={`/blog/category/${category.slug}`}
-                  className="px-4 py-2 bg-card border border-border rounded-full text-sm font-semibold text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
-                >
-                  {category.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Articles Grid */}
+        {/* Unified: Pills + Articles */}
         <section className="py-12 md:py-16 bg-background">
           <div className="container mx-auto px-4">
+            {/* Topic pills */}
+            <div className="flex flex-wrap items-center gap-2 mb-10">
+              <Link
+                to="/blog"
+                className="px-3.5 py-1.5 bg-primary text-primary-foreground rounded-full text-xs font-semibold"
+              >
+                All ({articles.length})
+              </Link>
+              {categories.map((category) => {
+                const colors = categoryColors[category.slug] || categoryColors.maintenance;
+                return (
+                  <Link
+                    key={category.slug}
+                    to={`/blog/category/${category.slug}`}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${colors.pill}`}
+                  >
+                    {category.name} ({getArticleCount(category.slug)})
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Articles Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, index) => {
                 const category = getCategoryInfo(article.category);
+                const colors = categoryColors[article.category] || categoryColors.maintenance;
                 return (
                   <article
                     key={article.id}
-                    className="card-double-border overflow-hidden animate-fade-up"
+                    className={`card-double-border overflow-hidden animate-fade-up border-l-4 ${colors.cardBorder}`}
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     <div className="p-6">
                       {/* Category */}
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${colors.pill}`}>
                           {category?.name}
                         </span>
                         {article.featured && (

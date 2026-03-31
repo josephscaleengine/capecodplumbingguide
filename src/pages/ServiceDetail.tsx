@@ -5,6 +5,21 @@ import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { services } from '@/data/services';
 
+// Services Blue Pacific definitively offers
+const bluePacificServices = [
+  'water-heater-repair',
+  'drain-cleaning',
+  'pipe-leak-repair',
+  'bathroom-kitchen-remodel',
+  'sewer-line-repair',
+  'frozen-pipe-repair',
+  'sump-pump-installation',
+  'garbage-disposal',
+];
+
+// Services where we use softer language
+const maybeBluePacific = ['well-pump-services', 'water-filtration', 'septic-system-services'];
+
 const ServiceDetail = () => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
   const service = services.find((s) => s.slug === serviceSlug);
@@ -21,6 +36,9 @@ const ServiceDetail = () => {
     );
   }
 
+  const isBluePacific = bluePacificServices.includes(service.slug);
+  const isMaybe = maybeBluePacific.includes(service.slug);
+
   return (
     <>
       <Helmet>
@@ -34,7 +52,9 @@ const ServiceDetail = () => {
             name: service.name,
             description: service.metaDescription,
             url: `https://capecodplumbingguide.com/services/${service.slug}`,
-            provider: { '@type': 'Organization', name: 'Blue Pacific Cape Cod', url: 'https://bluepacificcapecod.com/plumbing-falmouth-ma/' },
+            ...(isBluePacific && {
+              provider: { '@type': 'Organization', name: 'Blue Pacific Cape Cod', url: 'https://bluepacificcapecod.com/plumbing-falmouth-ma/' },
+            }),
             areaServed: { '@type': 'Place', name: 'Cape Cod, Massachusetts' },
           })}
         </script>
@@ -121,37 +141,47 @@ const ServiceDetail = () => {
                   </div>
                 </div>
 
-                {/* CTA */}
+                {/* CTA — varies based on Blue Pacific match */}
                 <div className="card-double-border p-8 bg-sand">
                   <h3 className="font-heading text-xl font-bold text-foreground mb-3">
                     Need {service.name}?
                   </h3>
-                  <p className="text-muted-foreground mb-4">
-                    For professional {service.name.toLowerCase()} throughout Cape Cod, we recommend Blue Pacific Cape Cod — licensed, insured, and locally trusted.
-                  </p>
-                  <a href="https://bluepacificcapecod.com/plumbing-falmouth-ma/" target="_blank" rel="noopener noreferrer">
-                    <Button variant="cta" size="lg">
-                      Contact Blue Pacific Cape Cod
-                      <ExternalLink className="w-4 h-4 ml-1" />
-                    </Button>
-                  </a>
+                  {isBluePacific ? (
+                    <>
+                      <p className="text-muted-foreground mb-4">
+                        For professional {service.name.toLowerCase()} throughout Cape Cod, we recommend Blue Pacific Cape Cod — licensed, insured, and locally trusted.
+                      </p>
+                      <a href="https://bluepacificcapecod.com/plumbing-falmouth-ma/" target="_blank" rel="noopener noreferrer">
+                        <Button variant="cta" size="lg">
+                          Contact Blue Pacific Cape Cod
+                          <ExternalLink className="w-4 h-4 ml-1" />
+                        </Button>
+                      </a>
+                    </>
+                  ) : (
+                    <p className="text-muted-foreground">
+                      Contact a licensed local plumber for this service. Make sure they are experienced with Cape Cod's unique conditions and hold proper Massachusetts licensing.
+                    </p>
+                  )}
                 </div>
               </div>
 
               {/* Sidebar */}
               <aside className="space-y-6">
-                <div className="bg-navy rounded-xl p-6 text-white sticky top-24">
-                  <h3 className="font-heading text-xl font-bold mb-3">Need Professional Help?</h3>
-                  <p className="text-white/70 mb-4 text-sm">
-                    Blue Pacific Cape Cod provides trusted plumbing services throughout Cape Cod.
-                  </p>
-                  <a href="https://bluepacificcapecod.com/plumbing-falmouth-ma/" target="_blank" rel="noopener noreferrer">
-                    <Button variant="cta" className="w-full">
-                      Visit Blue Pacific
-                      <ExternalLink className="w-4 h-4 ml-1" />
-                    </Button>
-                  </a>
-                </div>
+                {isBluePacific && (
+                  <div className="bg-navy rounded-xl p-6 text-white sticky top-24">
+                    <h3 className="font-heading text-xl font-bold mb-3">Need Professional Help?</h3>
+                    <p className="text-white/70 mb-4 text-sm">
+                      Blue Pacific Cape Cod provides trusted plumbing services throughout Cape Cod.
+                    </p>
+                    <a href="https://bluepacificcapecod.com/plumbing-falmouth-ma/" target="_blank" rel="noopener noreferrer">
+                      <Button variant="cta" className="w-full">
+                        Visit Blue Pacific
+                        <ExternalLink className="w-4 h-4 ml-1" />
+                      </Button>
+                    </a>
+                  </div>
+                )}
 
                 <div className="bg-card rounded-xl p-6 shadow-soft border border-border">
                   <h3 className="font-heading text-lg font-bold text-foreground mb-4">Other Services</h3>
