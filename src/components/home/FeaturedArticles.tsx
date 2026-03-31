@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock, Tag } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { articles, categories } from '@/data/articles';
 import { Button } from '@/components/ui/button';
 
@@ -11,13 +11,14 @@ const FeaturedArticles = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-secondary/30">
+    <section className="py-16 md:py-24 bg-sand">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="max-w-4xl mb-12">
+          <p className="text-accent font-bold text-sm uppercase tracking-widest mb-2">Resources</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-black text-foreground mb-4">
             Featured Plumbing Guides
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground">
             In-depth guides on common plumbing challenges facing Cape Cod homeowners.
           </p>
         </div>
@@ -29,15 +30,12 @@ const FeaturedArticles = () => {
               <article
                 key={article.id}
                 className="card-double-border overflow-hidden animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
                 <div className="p-6 pb-0">
-                  <div className="inline-flex items-center gap-2 bg-secondary px-3 py-1.5 rounded-full">
-                    <span>{category?.icon}</span>
-                    <span className="text-xs font-medium text-secondary-foreground">
-                      {category?.name}
-                    </span>
-                  </div>
+                  <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">
+                    {category?.name}
+                  </span>
                 </div>
 
                 <div className="p-6">
@@ -54,15 +52,13 @@ const FeaturedArticles = () => {
                   </p>
 
                   <div className="flex items-center justify-between pt-4 border-t border-border">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        <span>{article.readTime} min read</span>
-                      </div>
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <Clock className="w-4 h-4" />
+                      <span>{article.readTime} min read</span>
                     </div>
                     <Link
                       to={`/blog/${article.slug}`}
-                      className="text-primary hover:text-ocean-light transition-colors"
+                      className="text-accent hover:text-[hsl(var(--warm-orange-hover))] transition-colors"
                     >
                       <ArrowRight className="w-5 h-5" />
                     </Link>
@@ -73,7 +69,7 @@ const FeaturedArticles = () => {
           })}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="mt-12">
           <Link to="/blog">
             <Button variant="outline" size="lg">
               View All Resources
