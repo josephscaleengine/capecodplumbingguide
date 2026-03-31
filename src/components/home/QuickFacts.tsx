@@ -1,4 +1,4 @@
-import { DollarSign, Thermometer, Droplets, Calendar, Wind, Snowflake, Flame, FileText } from 'lucide-react';
+import { DollarSign, Thermometer, Droplets, Calendar, Wind, Flame } from 'lucide-react';
 
 interface Fact {
   category: string;
@@ -31,9 +31,9 @@ const LifespanBar = () => (
 );
 
 const FrequencyBadge = () => (
-  <div className="mt-3 inline-flex items-center gap-2 bg-[hsl(var(--ocean-teal)/0.1)] px-3 py-1.5 rounded-full">
-    <Calendar className="w-3.5 h-3.5 text-[hsl(var(--ocean-teal))]" />
-    <span className="text-xs font-bold text-[hsl(var(--ocean-teal))]">Every 1–2 years</span>
+  <div className="mt-3 inline-flex items-center gap-2 bg-[hsl(140,40%,45%,0.1)] px-3 py-1.5 rounded-full">
+    <Calendar className="w-3.5 h-3.5 text-[hsl(140,40%,35%)]" />
+    <span className="text-xs font-bold text-[hsl(140,40%,35%)]">Every 1–2 years</span>
   </div>
 );
 
@@ -49,24 +49,24 @@ const facts: Fact[] = [
   },
   {
     category: 'Seasonal',
-    categoryColor: 'bg-[hsl(174,40%,48%,0.15)] text-[hsl(var(--ocean-teal))]',
-    cardBg: 'bg-[hsl(174,40%,48%,0.04)]',
+    categoryColor: 'bg-[hsl(200,60%,50%,0.15)] text-[hsl(200,60%,40%)]',
+    cardBg: 'bg-[hsl(200,60%,50%,0.04)]',
     icon: Thermometer,
     q: "Why do Cape Cod homes have so many frozen pipe issues?",
     a: "Cape Cod's combination of older construction, crawl spaces, shallow foundations, and harsh coastal winters makes pipes especially vulnerable to freezing.",
   },
   {
     category: 'Water Quality',
-    categoryColor: 'bg-[hsl(200,60%,50%,0.15)] text-[hsl(200,60%,40%)]',
-    cardBg: 'bg-[hsl(200,60%,50%,0.04)]',
+    categoryColor: 'bg-[hsl(190,55%,45%,0.15)] text-[hsl(190,55%,35%)]',
+    cardBg: 'bg-[hsl(190,55%,45%,0.04)]',
     icon: Droplets,
     q: "Do most Cape Cod homes use well water or town water?",
     a: "It varies by town. Many homes in mid and outer Cape towns rely on private wells, which require different plumbing maintenance than municipal water systems.",
   },
   {
     category: 'Maintenance',
-    categoryColor: 'bg-[hsl(var(--ocean-teal)/0.15)] text-[hsl(var(--ocean-teal))]',
-    cardBg: 'bg-[hsl(var(--ocean-teal)/0.04)]',
+    categoryColor: 'bg-[hsl(140,40%,45%,0.15)] text-[hsl(140,40%,35%)]',
+    cardBg: 'bg-[hsl(140,40%,45%,0.04)]',
     icon: Calendar,
     q: "How often should I get my drains cleaned?",
     a: "For Cape Cod homes, professional drain cleaning every 1–2 years helps prevent buildup, especially in older homes with cast iron or galvanized pipes.",
@@ -74,42 +74,26 @@ const facts: Fact[] = [
   },
   {
     category: 'Coastal',
-    categoryColor: 'bg-[hsl(168,45%,42%,0.15)] text-[hsl(var(--seafoam))]',
-    cardBg: 'bg-[hsl(168,45%,42%,0.04)]',
+    categoryColor: 'bg-[hsl(var(--sand)/0.6)] text-[hsl(30,30%,35%)]',
+    cardBg: 'bg-[hsl(var(--sand)/0.25)]',
     icon: Wind,
     q: "Is salt air really bad for my plumbing?",
     a: "Yes. Salt air accelerates corrosion on exposed pipes, fittings, water heaters, and outdoor fixtures. Coastal Cape Cod homes need more frequent inspections.",
   },
   {
-    category: 'Seasonal',
-    categoryColor: 'bg-[hsl(174,40%,48%,0.15)] text-[hsl(var(--ocean-teal))]',
-    cardBg: 'bg-[hsl(174,40%,48%,0.04)]',
-    icon: Snowflake,
-    q: "When should I winterize my vacation home?",
-    a: "Winterize before the first hard freeze, typically by late October on Cape Cod. This includes draining pipes, shutting off the water supply, and protecting the water heater.",
-  },
-  {
     category: 'Maintenance',
-    categoryColor: 'bg-[hsl(var(--ocean-teal)/0.15)] text-[hsl(var(--ocean-teal))]',
-    cardBg: 'bg-[hsl(var(--ocean-teal)/0.04)]',
+    categoryColor: 'bg-[hsl(140,40%,45%,0.15)] text-[hsl(140,40%,35%)]',
+    cardBg: 'bg-[hsl(140,40%,45%,0.04)]',
     icon: Flame,
     q: "What are signs I need to replace my water heater?",
     a: "Rusty water, inconsistent temperature, strange noises, leaking around the base, or age over 10–12 years. Salt air can shorten lifespan to 8–10 years on Cape Cod.",
     visual: <LifespanBar />,
   },
-  {
-    category: 'Permits',
-    categoryColor: 'bg-[hsl(var(--navy)/0.12)] text-[hsl(var(--navy))]',
-    cardBg: 'bg-[hsl(var(--navy)/0.03)]',
-    icon: FileText,
-    q: "Do I need a permit for plumbing work on Cape Cod?",
-    a: "Most towns on Cape Cod require permits for significant plumbing work. Your licensed plumber should handle the permitting process.",
-  },
 ];
 
 const QuickFacts = () => {
   return (
-    <section className="py-16 md:py-20 bg-sand">
+    <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mb-10">
           <p className="text-accent font-bold text-sm uppercase tracking-widest mb-2">Quick Reference</p>

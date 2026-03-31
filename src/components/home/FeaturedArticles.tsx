@@ -3,17 +3,17 @@ import { ArrowRight, Clock } from 'lucide-react';
 import { articles, categories } from '@/data/articles';
 import { Button } from '@/components/ui/button';
 
-const categoryColors: Record<string, { pill: string; cardBorder: string }> = {
-  seasonal: { pill: 'bg-[hsl(200,60%,50%,0.12)] text-[hsl(200,60%,40%)] hover:bg-[hsl(200,60%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(200,60%,50%)]' },
-  emergency: { pill: 'bg-[hsl(0,65%,55%,0.12)] text-[hsl(0,65%,45%)] hover:bg-[hsl(0,65%,55%)] hover:text-white', cardBorder: 'border-l-[hsl(0,65%,55%)]' },
-  coastal: { pill: 'bg-[hsl(174,55%,36%,0.12)] text-[hsl(var(--ocean-teal))] hover:bg-[hsl(var(--ocean-teal))] hover:text-white', cardBorder: 'border-l-[hsl(var(--ocean-teal))]' },
-  'older-homes': { pill: 'bg-[hsl(30,30%,50%,0.12)] text-[hsl(30,30%,40%)] hover:bg-[hsl(30,30%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(30,30%,50%)]' },
-  'well-water': { pill: 'bg-[hsl(190,55%,50%,0.12)] text-[hsl(190,55%,40%)] hover:bg-[hsl(190,55%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(190,55%,50%)]' },
-  'cost-guide': { pill: 'bg-[hsl(var(--warm-orange)/0.12)] text-[hsl(var(--warm-orange))] hover:bg-[hsl(var(--warm-orange))] hover:text-white', cardBorder: 'border-l-[hsl(var(--warm-orange))]' },
-  'homeowner-guide': { pill: 'bg-[hsl(var(--navy)/0.12)] text-[hsl(var(--navy))] hover:bg-[hsl(var(--navy))] hover:text-white', cardBorder: 'border-l-[hsl(var(--navy))]' },
-  septic: { pill: 'bg-[hsl(140,40%,45%,0.12)] text-[hsl(140,40%,35%)] hover:bg-[hsl(140,40%,45%)] hover:text-white', cardBorder: 'border-l-[hsl(140,40%,45%)]' },
-  rental: { pill: 'bg-[hsl(var(--sand)/0.5)] text-[hsl(var(--sand-dark))] hover:bg-[hsl(var(--sand-dark))] hover:text-white', cardBorder: 'border-l-[hsl(var(--sand-dark))]' },
-  maintenance: { pill: 'bg-[hsl(220,10%,50%,0.12)] text-[hsl(220,10%,40%)] hover:bg-[hsl(220,10%,50%)] hover:text-white', cardBorder: 'border-l-[hsl(220,10%,50%)]' },
+const categoryColors: Record<string, { pill: string }> = {
+  seasonal: { pill: 'bg-[hsl(200,60%,50%,0.15)] text-[hsl(200,60%,35%)] hover:bg-[hsl(200,60%,50%)] hover:text-white' },
+  emergency: { pill: 'bg-[hsl(0,65%,55%,0.15)] text-[hsl(0,65%,40%)] hover:bg-[hsl(0,65%,55%)] hover:text-white' },
+  coastal: { pill: 'bg-[hsl(174,55%,36%,0.15)] text-[hsl(174,55%,30%)] hover:bg-[hsl(var(--ocean-teal))] hover:text-white' },
+  'older-homes': { pill: 'bg-[hsl(30,30%,50%,0.15)] text-[hsl(30,30%,32%)] hover:bg-[hsl(30,30%,50%)] hover:text-white' },
+  'well-water': { pill: 'bg-[hsl(190,55%,50%,0.15)] text-[hsl(190,55%,32%)] hover:bg-[hsl(190,55%,50%)] hover:text-white' },
+  'cost-guide': { pill: 'bg-[hsl(var(--warm-orange)/0.15)] text-[hsl(14,76%,48%)] hover:bg-[hsl(var(--warm-orange))] hover:text-white' },
+  'homeowner-guide': { pill: 'bg-[hsl(var(--navy)/0.15)] text-[hsl(var(--navy))] hover:bg-[hsl(var(--navy))] hover:text-white' },
+  septic: { pill: 'bg-[hsl(140,40%,45%,0.15)] text-[hsl(140,40%,30%)] hover:bg-[hsl(140,40%,45%)] hover:text-white' },
+  rental: { pill: 'bg-[hsl(30,40%,50%,0.15)] text-[hsl(30,40%,32%)] hover:bg-[hsl(30,40%,45%)] hover:text-white' },
+  maintenance: { pill: 'bg-[hsl(220,15%,50%,0.15)] text-[hsl(220,15%,35%)] hover:bg-[hsl(220,15%,50%)] hover:text-white' },
 };
 
 const getArticleCount = (slug: string) => articles.filter((a) => a.category === slug).length;
@@ -61,7 +61,7 @@ const FeaturedArticles = () => {
             return (
               <article
                 key={article.id}
-                className={`card-double-border overflow-hidden animate-fade-up border-l-4 ${colors.cardBorder}`}
+                className="card-double-border overflow-hidden animate-fade-up"
                 style={{ animationDelay: `${index * 0.08}s` }}
               >
                 <div className="p-6 pb-0">

@@ -29,7 +29,7 @@ const About = () => {
         </section>
 
         {/* Mission */}
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-sand">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
               <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -43,22 +43,22 @@ const About = () => {
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-sand rounded-xl p-6 text-center">
+                  <div className="bg-background rounded-xl p-6 text-center border border-border">
                     <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold text-foreground">Local Focus</h3>
                     <p className="text-sm text-muted-foreground mt-1">Cape Cod-specific content</p>
                   </div>
-                  <div className="bg-sand rounded-xl p-6 text-center">
+                  <div className="bg-background rounded-xl p-6 text-center border border-border">
                     <BookOpen className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold text-foreground">Educational</h3>
                     <p className="text-sm text-muted-foreground mt-1">Not salesy or pushy</p>
                   </div>
-                  <div className="bg-sand rounded-xl p-6 text-center">
+                  <div className="bg-background rounded-xl p-6 text-center border border-border">
                     <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold text-foreground">Trusted</h3>
                     <p className="text-sm text-muted-foreground mt-1">Backed by local pros</p>
                   </div>
-                  <div className="bg-sand rounded-xl p-6 text-center">
+                  <div className="bg-background rounded-xl p-6 text-center border border-border">
                     <Heart className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-bold text-foreground">Free</h3>
                     <p className="text-sm text-muted-foreground mt-1">Always accessible</p>
@@ -70,7 +70,7 @@ const About = () => {
         </section>
 
         {/* Professional Services */}
-        <section className="py-16 bg-sand">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
               <div className="card-double-border p-8 md:p-12">
@@ -95,7 +95,7 @@ const About = () => {
         </section>
 
         {/* Disclaimer */}
-        <section className="py-12 bg-background">
+        <section className="py-12 bg-sand">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
               <h3 className="font-heading text-lg font-bold text-foreground mb-3">Important Note</h3>

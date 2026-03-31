@@ -6,8 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
-import Towns from "./pages/Towns";
-import TownDetail from "./pages/TownDetail";
 import Blog from "./pages/Blog";
 import BlogCategory from "./pages/BlogCategory";
 import ArticleDetail from "./pages/ArticleDetail";
@@ -28,8 +26,6 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/towns" element={<Towns />} />
-            <Route path="/towns/:townSlug" element={<TownDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/category/:categorySlug" element={<BlogCategory />} />
             <Route path="/blog/:slug" element={<ArticleDetail />} />

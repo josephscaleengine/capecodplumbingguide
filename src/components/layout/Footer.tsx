@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-deep text-white">
+    <footer className="bg-[hsl(174,45%,18%)] text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -35,13 +35,12 @@ const Footer = () => {
             <h4 className="font-heading font-bold text-base mb-3">Towns We Cover</h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-0.5">
               {towns.map((town) => (
-                <Link
+                <span
                   key={town.slug}
-                  to={`/towns/${town.slug}`}
-                  className="text-white/70 hover:text-white transition-colors text-sm py-0.5"
+                  className="text-white/70 text-sm py-0.5"
                 >
                   {town.name}
-                </Link>
+                </span>
               ))}
             </div>
           </div>
