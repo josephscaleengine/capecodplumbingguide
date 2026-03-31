@@ -1,7 +1,7 @@
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import heroBg from '@/assets/hero-cape-cod.jpg';
+import heroBg from '@/assets/hero-cape-cod-new.jpg';
 
 const Hero = () => {
   return (
@@ -26,7 +26,7 @@ const Hero = () => {
 
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight animate-fade-up" style={{ animationDelay: '0.1s' }}>
             Your Local Cape Cod{' '}
-            <span className="text-[hsl(var(--ocean-light))]">Plumbing Resource</span>
+            <span className="text-sand">Plumbing Resource</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
