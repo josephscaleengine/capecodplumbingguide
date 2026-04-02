@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Droplets, ExternalLink, Phone, MapPin, Mail } from 'lucide-react';
+import { ExternalLink, Phone, MapPin, Mail } from 'lucide-react';
+import logo from '@/assets/logo.png';
 import { towns, categories } from '@/data/articles';
 
 const Footer = () => {
@@ -13,8 +14,8 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                <Droplets className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                <img src={logo} alt="Cape Cod Plumbing Guide logo" className="w-10 h-10 object-contain" />
               </div>
               <div>
                 <span className="font-heading font-black text-lg">Cape Cod</span>
