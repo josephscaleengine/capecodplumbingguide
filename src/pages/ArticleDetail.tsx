@@ -186,6 +186,20 @@ const ArticleDetail = () => {
           </div>
         </section>
 
+        {/* Article Header Image */}
+        {articleImages[article.slug] && (
+          <section className="bg-[hsl(var(--pale-white))]">
+            <div className="container mx-auto px-4 pt-8">
+              <img
+                src={articleImages[article.slug].url}
+                alt={articleImages[article.slug].alt}
+                className="w-full object-cover rounded-lg max-h-[300px]"
+                loading="lazy"
+              />
+            </div>
+          </section>
+        )}
+
         {/* Article Content */}
         <section className="py-12 md:py-16 bg-[hsl(var(--pale-white))]">
           <div className="container mx-auto px-4">
