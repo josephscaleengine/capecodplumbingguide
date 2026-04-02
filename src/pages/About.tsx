@@ -55,12 +55,6 @@ const About = () => {
             <div className="max-w-4xl">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <img
-                    src="https://images.unsplash.com/photo-1686950429623-abb1ef6ea8e8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0"
-                    alt="Professional plumbing services on Cape Cod"
-                    className="w-full object-cover rounded-lg max-h-[300px] mb-6"
-                    loading="lazy"
-                  />
                   <h2 className="font-heading text-3xl font-black text-foreground mb-4">Our Mission</h2>
                   <p className="text-muted-foreground mb-4">
                     Cape Cod presents unique challenges for homeowners—from historic properties with aging plumbing to coastal homes affected by salt air and harsh winters. We created this resource to help local homeowners navigate these challenges.
@@ -101,12 +95,6 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
               <div className="card-double-border p-8 md:p-12">
-                <img
-                  src="https://images.unsplash.com/photo-1558873072-e1243a49a2d5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0"
-                  alt="Cape Cod well water and plumbing infrastructure"
-                  className="w-full object-cover rounded-lg max-h-[300px] mb-6"
-                  loading="lazy"
-                />
                 <h2 className="font-heading text-2xl md:text-3xl font-black text-foreground mb-4">
                   Professional Plumbing Services
                 </h2>
