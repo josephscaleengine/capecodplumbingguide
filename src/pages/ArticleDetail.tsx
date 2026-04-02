@@ -36,7 +36,7 @@ const ArticleDetail = () => {
           <div className="container mx-auto px-4 py-20 text-center">
             <h1 className="font-heading text-3xl font-bold mb-4">Article Not Found</h1>
             <p className="text-muted-foreground mb-6">We couldn't find the article you're looking for.</p>
-            <Link to="/blog"><Button>Browse All Resources</Button></Link>
+            <Link to="/resources"><Button>Browse All Resources</Button></Link>
           </div>
         </Layout>
       </>
