@@ -59,7 +59,7 @@ const Blog = () => {
               '@type': 'BlogPosting',
               headline: article.title,
               description: article.metaDescription,
-              url: `${SITE_URL}/blog/${article.slug}`,
+              url: `${SITE_URL}/resources/${article.slug}`,
               datePublished: new Date(article.publishedAt).toISOString(),
             })),
           })}
