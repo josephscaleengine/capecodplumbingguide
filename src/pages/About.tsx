@@ -24,6 +24,15 @@ const About = () => {
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
         <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Cape Cod Plumbing Guide',
+            url: SITE_URL,
+            description: 'Free plumbing resource for Cape Cod homeowners',
+          })}
+        </script>
       </Helmet>
       <Layout>
         {/* Hero */}

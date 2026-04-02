@@ -207,7 +207,7 @@ const ServiceDetail = () => {
                       {relatedArticles.map((a: any) => (
                         <Link
                           key={a.slug}
-                          to={`/blog/${a.slug}`}
+                          to={`/resources/${a.slug}`}
                           className="block text-primary hover:underline font-medium"
                         >
                           {a.title} →

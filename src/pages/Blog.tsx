@@ -23,7 +23,7 @@ const getArticleCount = (slug: string) => articles.filter((a) => a.category === 
 const Blog = () => {
   const seoTitle = 'Cape Cod Plumbing Guides & Tips for Homeowners';
   const seoDescription = 'Browse free plumbing guides for Cape Cod homeowners. Seasonal tips, emergency guides, cost breakdowns, and expert advice for coastal homes.';
-  const pageUrl = `${SITE_URL}/blog`;
+  const pageUrl = `${SITE_URL}/resources`;
 
   const getCategoryInfo = (categorySlug: string) => {
     return categories.find((cat) => cat.slug === categorySlug);
@@ -59,7 +59,7 @@ const Blog = () => {
               '@type': 'BlogPosting',
               headline: article.title,
               description: article.metaDescription,
-              url: `${SITE_URL}/blog/${article.slug}`,
+              url: `${SITE_URL}/resources/${article.slug}`,
               datePublished: new Date(article.publishedAt).toISOString(),
             })),
           })}
@@ -92,7 +92,7 @@ const Blog = () => {
             {/* Topic pills */}
             <div className="flex flex-wrap items-center gap-2 mb-10">
               <Link
-                to="/blog"
+                to="/resources"
                 className="px-3.5 py-1.5 bg-primary text-primary-foreground rounded-full text-xs font-semibold"
               >
                 All ({articles.length})
@@ -102,7 +102,7 @@ const Blog = () => {
                 return (
                   <Link
                     key={category.slug}
-                    to={`/blog/category/${category.slug}`}
+                    to={`/resources/category/${category.slug}`}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${colors}`}
                   >
                     {category.name} ({getArticleCount(category.slug)})
@@ -137,7 +137,7 @@ const Blog = () => {
 
                       <h2 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2">
                         <Link
-                          to={`/blog/${article.slug}`}
+                          to={`/resources/${article.slug}`}
                           className="hover:text-primary transition-colors"
                         >
                           {article.title}
@@ -162,7 +162,7 @@ const Blog = () => {
                           )}
                         </div>
                         <Link
-                          to={`/blog/${article.slug}`}
+                          to={`/resources/${article.slug}`}
                           className="text-accent hover:text-[hsl(var(--warm-orange-hover))] transition-colors"
                         >
                           <ArrowRight className="w-5 h-5" />

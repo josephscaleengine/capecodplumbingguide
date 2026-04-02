@@ -45,7 +45,7 @@ const FeaturedArticles = () => {
             return (
               <Link
                 key={cat.slug}
-                to={`/blog/category/${cat.slug}`}
+                to={`/resources/category/${cat.slug}`}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${colors.pill}`}
               >
                 {cat.name} ({getArticleCount(cat.slug)})
@@ -73,7 +73,7 @@ const FeaturedArticles = () => {
                 <div className="p-6">
                   <h3 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2">
                     <Link
-                      to={`/blog/${article.slug}`}
+                      to={`/resources/${article.slug}`}
                       className="hover:text-primary transition-colors"
                     >
                       {article.title}
@@ -89,7 +89,7 @@ const FeaturedArticles = () => {
                       <span>{article.readTime} min read</span>
                     </div>
                     <Link
-                      to={`/blog/${article.slug}`}
+                      to={`/resources/${article.slug}`}
                       className="text-accent hover:text-[hsl(var(--warm-orange-hover))] transition-colors"
                     >
                       <ArrowRight className="w-5 h-5" />
@@ -102,7 +102,7 @@ const FeaturedArticles = () => {
         </div>
 
         <div className="mt-12">
-          <Link to="/blog">
+          <Link to="/resources">
             <Button variant="outline" size="lg">
               View All Resources
               <ArrowRight className="w-5 h-5" />

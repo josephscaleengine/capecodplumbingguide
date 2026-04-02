@@ -10,7 +10,7 @@ import { DEFAULT_OG_IMAGE, SITE_URL, buildArticleSeoDescription, buildArticleSeo
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const article = articles.find((a) => a.slug === slug);
-  const pageUrl = `${SITE_URL}/blog/${slug ?? ''}`;
+  const pageUrl = `${SITE_URL}/resources/${slug ?? ''}`;
 
   if (!article) {
     const seoTitle = 'Article Not Found — Cape Cod Plumbing Guide';
@@ -36,7 +36,7 @@ const ArticleDetail = () => {
           <div className="container mx-auto px-4 py-20 text-center">
             <h1 className="font-heading text-3xl font-bold mb-4">Article Not Found</h1>
             <p className="text-muted-foreground mb-6">We couldn't find the article you're looking for.</p>
-            <Link to="/blog"><Button>Browse All Resources</Button></Link>
+            <Link to="/resources"><Button>Browse All Resources</Button></Link>
           </div>
         </Layout>
       </>
@@ -111,7 +111,7 @@ const ArticleDetail = () => {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SITE_URL}/blog` },
+              { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SITE_URL}/resources` },
               { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl },
             ],
           })}
@@ -122,14 +122,14 @@ const ArticleDetail = () => {
         <section className="bg-navy py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
-              <Link to="/blog" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-6">
+              <Link to="/resources" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-6">
                 <ArrowLeft className="w-4 h-4" />
                 Back to Resources
               </Link>
 
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <Link
-                  to={`/blog/category/${article.category}`}
+                  to={`/resources/category/${article.category}`}
                   className="inline-flex items-center gap-2 bg-primary/20 text-[hsl(var(--ocean-light))] px-3 py-1.5 rounded-full hover:bg-primary/30 transition-colors"
                 >
                   <span className="text-sm font-semibold">{category?.name}</span>
@@ -227,8 +227,8 @@ const ArticleDetail = () => {
                   <div className="bg-card rounded-xl p-6 shadow-soft border border-border">
                     <h3 className="font-heading text-lg font-bold text-foreground mb-4">Related Articles</h3>
                     <div className="space-y-4">
-                      {relatedArticles.map((related) => (
-                        <Link key={related.id} to={`/blog/${related.slug}`} className="block group">
+                        {relatedArticles.map((related) => (
+                         <Link key={related.id} to={`/resources/${related.slug}`} className="block group">
                           <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">{related.title}</h4>
                           <p className="text-sm text-muted-foreground mt-1">{related.readTime} min read</p>
                         </Link>
