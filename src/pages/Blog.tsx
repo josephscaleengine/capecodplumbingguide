@@ -92,7 +92,7 @@ const Blog = () => {
             {/* Topic pills */}
             <div className="flex flex-wrap items-center gap-2 mb-10">
               <Link
-                to="/blog"
+                to="/resources"
                 className="px-3.5 py-1.5 bg-primary text-primary-foreground rounded-full text-xs font-semibold"
               >
                 All ({articles.length})
