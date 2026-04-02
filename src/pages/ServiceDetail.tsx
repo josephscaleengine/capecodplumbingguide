@@ -7,25 +7,6 @@ import { services } from '@/data/services';
 import { articles } from '@/data/articles';
 import { DEFAULT_OG_IMAGE, SITE_URL, buildServiceSeoDescription, buildServiceSeoTitle } from '@/seo/titles';
 
-// Service header images
-const serviceImages: Record<string, { url: string; alt: string }> = {
-  'water-heater-repair': { url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Water heater tank installation on Cape Cod' },
-  'drain-cleaning': { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Kitchen sink drain cleaning on Cape Cod' },
-  'sewer-line-repair': { url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Underground sewer pipe repair on Cape Cod' },
-  'pipe-leak-repair': { url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Copper pipes and plumbing leak repair on Cape Cod' },
-  'frozen-pipe-repair': { url: 'https://images.unsplash.com/photo-1607220523685-75f2044e3195?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Frozen pipe repair and prevention on Cape Cod' },
-  'well-pump-services': { url: 'https://images.unsplash.com/photo-1558873072-e1243a49a2d5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Well pump system servicing on Cape Cod' },
-  'water-filtration': { url: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Clean water filtration system for Cape Cod homes' },
-  'sump-pump-installation': { url: 'https://images.unsplash.com/photo-1525438160292-a4a860951216?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Basement flooding prevention sump pump on Cape Cod' },
-  'garbage-disposal': { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Kitchen sink garbage disposal installation on Cape Cod' },
-  'septic-system-services': { url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod home septic system yard maintenance' },
-  'bathroom-kitchen-remodel': { url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Modern bathroom renovation plumbing on Cape Cod' },
-  'toilet-repair-installation': { url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Toilet repair and installation services on Cape Cod' },
-  'faucet-fixture-replacement': { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Faucet and fixture replacement on Cape Cod' },
-  'water-line-repair': { url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Water line repair and replacement on Cape Cod' },
-  'outdoor-plumbing-hose-bibs': { url: 'https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Outdoor plumbing and hose bibs on Cape Cod property' },
-  'backflow-prevention': { url: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Backflow prevention device for Cape Cod water protection' },
-};
 
 // Services Blue Pacific definitively offers
 const bluePacificServices = [
