@@ -80,7 +80,7 @@ const BlogCategory = () => {
         </section>
 
         {/* Articles */}
-        <section className="py-12 md:py-16 bg-sand">
+        <section className="py-12 md:py-16 bg-[#f7f7f7]">
           <div className="container mx-auto px-4">
             {categoryArticles.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
