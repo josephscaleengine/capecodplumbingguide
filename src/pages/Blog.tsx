@@ -102,7 +102,7 @@ const Blog = () => {
                 return (
                   <Link
                     key={category.slug}
-                    to={`/blog/category/${category.slug}`}
+                    to={`/resources/category/${category.slug}`}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${colors}`}
                   >
                     {category.name} ({getArticleCount(category.slug)})
