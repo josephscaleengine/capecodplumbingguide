@@ -137,7 +137,7 @@ const Blog = () => {
 
                       <h2 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2">
                         <Link
-                          to={`/blog/${article.slug}`}
+                          to={`/resources/${article.slug}`}
                           className="hover:text-primary transition-colors"
                         >
                           {article.title}
