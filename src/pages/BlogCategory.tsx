@@ -64,7 +64,7 @@ const BlogCategory = () => {
         {/* Hero */}
         <section className="bg-navy py-16 md:py-20">
           <div className="container mx-auto px-4">
-            <Link to="/blog" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-6">
+            <Link to="/resources" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-6">
               <ArrowLeft className="w-4 h-4" />
               Back to All Resources
             </Link>
