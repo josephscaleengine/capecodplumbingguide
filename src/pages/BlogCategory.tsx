@@ -4,28 +4,45 @@ import { Clock, Tag, ArrowRight, ArrowLeft } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { articles, categories } from '@/data/articles';
-import { SITE_URL } from '@/seo/titles';
+import { DEFAULT_OG_IMAGE, SITE_URL } from '@/seo/titles';
 
 const BlogCategory = () => {
   const { categorySlug } = useParams<{ categorySlug: string }>();
   const category = categories.find((c) => c.slug === categorySlug);
   const categoryArticles = articles.filter((article) => article.category === categorySlug);
+  const pageUrl = `${SITE_URL}/blog/category/${categorySlug ?? ''}`;
+  const seoTitle = category ? `${category.name} — Cape Cod Plumbing Guide` : 'Category Not Found — Cape Cod Plumbing Guide';
+  const seoDescription = category
+    ? `${category.name} plumbing resources and tips for Cape Cod homeowners. Expert guidance for coastal homes.`
+    : 'The requested resource category could not be found. Browse Cape Cod plumbing guides, services, and homeowner tips.';
 
   if (!category) {
     return (
-      <Layout>
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="font-heading text-3xl font-bold mb-4">Category Not Found</h1>
-          <p className="text-muted-foreground mb-6">We couldn't find the category you're looking for.</p>
-          <Link to="/blog"><Button>Browse All Resources</Button></Link>
-        </div>
-      </Layout>
+      <>
+        <Helmet>
+          <title>{seoTitle}</title>
+          <meta name="description" content={seoDescription} />
+          <link rel="canonical" href={pageUrl} />
+          <meta property="og:title" content={seoTitle} />
+          <meta property="og:description" content={seoDescription} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={pageUrl} />
+          <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+          <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+          <meta name="twitter:title" content={seoTitle} />
+          <meta name="twitter:description" content={seoDescription} />
+          <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        </Helmet>
+        <Layout>
+          <div className="container mx-auto px-4 py-20 text-center">
+            <h1 className="font-heading text-3xl font-bold mb-4">Category Not Found</h1>
+            <p className="text-muted-foreground mb-6">We couldn't find the category you're looking for.</p>
+            <Link to="/blog"><Button>Browse All Resources</Button></Link>
+          </div>
+        </Layout>
+      </>
     );
   }
-
-  const pageUrl = `${SITE_URL}/blog/category/${categorySlug}`;
-  const seoTitle = `${category.name} — Cape Cod Plumbing Guide`;
-  const seoDescription = `${category.name} plumbing resources and tips for Cape Cod homeowners. Expert guidance for coastal homes.`;
 
   return (
     <>
@@ -38,6 +55,10 @@ const BlogCategory = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
       </Helmet>
       <Layout>
         {/* Hero */}

@@ -2,23 +2,28 @@ import { Helmet } from 'react-helmet-async';
 import { Heart, MapPin, ExternalLink, Shield, BookOpen } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { SITE_URL } from '@/seo/titles';
+import { DEFAULT_OG_IMAGE, SITE_URL } from '@/seo/titles';
 
 const About = () => {
+  const seoTitle = 'About Cape Cod Plumbing Guide';
+  const seoDescription = 'Cape Cod Plumbing Guide is a free resource helping homeowners maintain their plumbing. We recommend Blue Pacific Cape Cod for professional service.';
+  const pageUrl = `${SITE_URL}/about`;
+
   return (
     <>
       <Helmet>
-        <title>About Cape Cod Plumbing Guide</title>
-        <meta
-          name="description"
-          content="Cape Cod Plumbing Guide is a free resource helping homeowners maintain their plumbing. We recommend Blue Pacific Cape Cod for professional service."
-        />
-        <link rel="canonical" href={`${SITE_URL}/about`} />
-        <meta property="og:title" content="About Cape Cod Plumbing Guide" />
-        <meta property="og:description" content="Cape Cod Plumbing Guide is a free resource helping homeowners maintain their plumbing. We recommend Blue Pacific Cape Cod for professional service." />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${SITE_URL}/about`} />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
       </Helmet>
       <Layout>
         {/* Hero */}

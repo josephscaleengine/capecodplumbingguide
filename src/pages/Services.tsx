@@ -3,30 +3,35 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Wrench } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { services } from '@/data/services';
-import { SITE_URL } from '@/seo/titles';
+import { DEFAULT_OG_IMAGE, SITE_URL } from '@/seo/titles';
 
 const Services = () => {
+  const seoTitle = 'Plumbing Services on Cape Cod — What to Know';
+  const seoDescription = 'Learn about common plumbing services on Cape Cod. What to expect, typical costs, and when to call a professional.';
+  const pageUrl = `${SITE_URL}/services`;
+
   return (
     <>
       <Helmet>
-        <title>Plumbing Services on Cape Cod — What to Know</title>
-        <meta
-          name="description"
-          content="Learn about common plumbing services on Cape Cod. What to expect, typical costs, and when to call a professional."
-        />
-        <link rel="canonical" href={`${SITE_URL}/services`} />
-        <meta property="og:title" content="Plumbing Services on Cape Cod — What to Know" />
-        <meta property="og:description" content="Learn about common plumbing services on Cape Cod. What to expect, typical costs, and when to call a professional." />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${SITE_URL}/services`} />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
             name: 'Plumbing Services Guide - Cape Cod',
-            description: 'Learn about common plumbing services on Cape Cod. What to expect, typical costs, and when to call a professional.',
-            url: `${SITE_URL}/services`,
+            description: seoDescription,
+            url: pageUrl,
           })}
         </script>
       </Helmet>

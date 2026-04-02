@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Clock, Tag, ArrowRight, BookOpen } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { articles, categories } from '@/data/articles';
-import { SITE_URL } from '@/seo/titles';
+import { DEFAULT_OG_IMAGE, SITE_URL } from '@/seo/titles';
 
 const categoryColors: Record<string, string> = {
   seasonal: 'bg-[hsl(200,60%,50%,0.15)] text-[hsl(200,60%,35%)] hover:bg-[hsl(200,60%,50%)] hover:text-white',
@@ -21,6 +21,10 @@ const categoryColors: Record<string, string> = {
 const getArticleCount = (slug: string) => articles.filter((a) => a.category === slug).length;
 
 const Blog = () => {
+  const seoTitle = 'Cape Cod Plumbing Guides & Tips for Homeowners';
+  const seoDescription = 'Browse free plumbing guides for Cape Cod homeowners. Seasonal tips, emergency guides, cost breakdowns, and expert advice for coastal homes.';
+  const pageUrl = `${SITE_URL}/blog`;
+
   const getCategoryInfo = (categorySlug: string) => {
     return categories.find((cat) => cat.slug === categorySlug);
   };
@@ -28,24 +32,25 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Cape Cod Plumbing Guides & Tips for Homeowners</title>
-        <meta
-          name="description"
-          content="Browse free plumbing guides for Cape Cod homeowners. Seasonal tips, emergency guides, cost breakdowns, and expert advice for coastal homes."
-        />
-        <link rel="canonical" href={`${SITE_URL}/blog`} />
-        <meta property="og:title" content="Cape Cod Plumbing Guides & Tips for Homeowners" />
-        <meta property="og:description" content="Browse free plumbing guides for Cape Cod homeowners. Seasonal tips, emergency guides, cost breakdowns, and expert advice for coastal homes." />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${SITE_URL}/blog`} />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Blog',
             name: 'Cape Cod Plumbing Guide Resources',
             description: 'Free plumbing guides and tips for Cape Cod homeowners',
-            url: `${SITE_URL}/blog`,
+            url: pageUrl,
             publisher: {
               '@type': 'Organization',
               name: 'Cape Cod Plumbing Guide',
