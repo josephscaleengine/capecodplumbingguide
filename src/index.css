@@ -136,7 +136,7 @@
   /* Double-border card treatment — outer border EXPANDS on hover */
   .card-double-border {
     @apply relative rounded-xl bg-card;
-    border: 1px solid hsl(var(--border));
+    border: none;
     box-shadow: 
       0 0 0 3px hsl(var(--border) / 0.25),
       var(--shadow-card);
@@ -144,7 +144,6 @@
   }
   
   .card-double-border:hover {
-    border-color: hsl(var(--ocean-teal) / 0.5);
     box-shadow: 
       0 0 0 7px hsl(var(--ocean-teal) / 0.12),
       var(--shadow-hover);
@@ -154,7 +153,7 @@
   /* Static double border — always visible, no hover expand */
   .card-double-border-static {
     @apply relative rounded-xl bg-card;
-    border: 1px solid hsl(var(--border));
+    border: none;
     box-shadow: 
       0 0 0 4px hsl(var(--border) / 0.3),
       var(--shadow-card);
@@ -163,13 +162,12 @@
   /* Hover-only double border — subtle normally, expands on hover */
   .card-hover-border {
     @apply relative rounded-xl bg-card;
-    border: 1px solid hsl(var(--border));
+    border: none;
     box-shadow: var(--shadow-soft);
     transition: all 0.3s ease;
   }
 
   .card-hover-border:hover {
-    border-color: hsl(var(--ocean-teal) / 0.4);
     box-shadow: 
       0 0 0 5px hsl(var(--ocean-teal) / 0.1),
       var(--shadow-hover);
