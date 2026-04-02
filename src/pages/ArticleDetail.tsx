@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { articles, categories } from '@/data/articles';
+import { articleTitles, articleMetaDescriptions, SITE_URL } from '@/seo/titles';
 
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -27,22 +28,42 @@ const ArticleDetail = () => {
     .filter((a) => a.id !== article.id && a.category === article.category)
     .slice(0, 3);
 
+  // Find a related service to link to
+  const serviceLinks: Record<string, string> = {
+    'why-cape-cod-homes-prone-frozen-pipes': '/services/frozen-pipe-repair',
+    'salt-air-plumbing-corrosion-cape-cod': '/services/pipe-leak-repair',
+    'winterizing-cape-cod-vacation-home-plumbing': '/services/frozen-pipe-repair',
+    'common-plumbing-problems-older-cape-cod-homes': '/services/pipe-leak-repair',
+    'average-plumbing-costs-cape-cod': '/services/drain-cleaning',
+    'how-to-choose-plumber-cape-cod': '/services/water-heater-repair',
+    'cape-cod-well-water-plumbing-issues': '/services/well-pump-services',
+    'signs-you-need-emergency-plumbing-help': '/services/pipe-leak-repair',
+    'how-salt-air-affects-water-heater': '/services/water-heater-repair',
+    'spring-plumbing-checklist-cape-cod': '/services/sump-pump-installation',
+    'what-homeowners-should-know-about-septic-systems': '/services/septic-system-services',
+    'plumbing-tips-cape-cod-vacation-rental-owners': '/services/drain-cleaning',
+  };
+
   const formatDate = (dateStr: string) => {
     return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   };
 
   const isoDate = new Date(article.publishedAt).toISOString();
+  const seoTitle = articleTitles[article.slug] || `${article.title} — Cape Cod Plumbing Guide`;
+  const seoDescription = articleMetaDescriptions[article.slug] || article.metaDescription;
+  const pageUrl = `${SITE_URL}/blog/${article.slug}`;
 
   return (
     <>
       <Helmet>
-        <title>{article.title} | Cape Cod Plumbing Guide</title>
-        <meta name="description" content={article.metaDescription} />
-        <link rel="canonical" href={`https://capecodplumbingguide.com/blog/${article.slug}`} />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.metaDescription} />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://capecodplumbingguide.com/blog/${article.slug}`} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
         <meta property="article:published_time" content={isoDate} />
         <meta property="article:section" content={category?.name} />
         <script type="application/ld+json">
@@ -50,14 +71,15 @@ const ArticleDetail = () => {
             '@context': 'https://schema.org',
             '@type': 'Article',
             headline: article.title,
-            description: article.metaDescription,
+            description: seoDescription,
             datePublished: isoDate,
             dateModified: isoDate,
-            author: { '@type': 'Organization', name: 'Cape Cod Plumbing Guide', url: 'https://capecodplumbingguide.com' },
-            publisher: { '@type': 'Organization', name: 'Cape Cod Plumbing Guide', url: 'https://capecodplumbingguide.com' },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://capecodplumbingguide.com/blog/${article.slug}` },
+            author: { '@type': 'Organization', name: 'Cape Cod Plumbing Guide', url: SITE_URL },
+            publisher: { '@type': 'Organization', name: 'Cape Cod Plumbing Guide', url: SITE_URL },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
             articleSection: category?.name,
             wordCount: article.content.split(/\s+/).length,
+            about: { '@type': 'Place', name: 'Cape Cod, Massachusetts' },
           })}
         </script>
         <script type="application/ld+json">
@@ -65,9 +87,9 @@ const ArticleDetail = () => {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://capecodplumbingguide.com' },
-              { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://capecodplumbingguide.com/blog' },
-              { '@type': 'ListItem', position: 3, name: article.title, item: `https://capecodplumbingguide.com/blog/${article.slug}` },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+              { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SITE_URL}/blog` },
+              { '@type': 'ListItem', position: 3, name: article.title, item: pageUrl },
             ],
           })}
         </script>
@@ -148,6 +170,19 @@ const ArticleDetail = () => {
                     {article.content}
                   </ReactMarkdown>
                 </div>
+
+                {/* Related service link */}
+                {serviceLinks[article.slug] && (
+                  <div className="mt-8 p-6 bg-secondary/30 rounded-xl border border-border">
+                    <p className="text-muted-foreground mb-3">Looking for professional help with this?</p>
+                    <Link
+                      to={serviceLinks[article.slug]}
+                      className="text-primary font-semibold hover:underline"
+                    >
+                      View related service guide →
+                    </Link>
+                  </div>
+                )}
               </article>
 
               {/* Sidebar */}

@@ -8,32 +8,33 @@ import CTABanner from '@/components/home/CTABanner';
 import ServicesPreview from '@/components/home/ServicesPreview';
 import TownsReference from '@/components/home/TownsReference';
 import RecommendedPartner from '@/components/home/RecommendedPartner';
+import { SITE_URL } from '@/seo/titles';
 
 const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Cape Cod Plumbing Guide | Local Plumbing Resources & Tips</title>
+        <title>Cape Cod Plumber — Local Plumbing Tips & Resources</title>
         <meta
           name="description"
-          content="Your trusted Cape Cod plumbing resource. Expert tips, local insights, and professional guidance for homeowners in Falmouth, Mashpee, Sandwich, and beyond."
+          content="Free plumbing tips and guides for Cape Cod homeowners. Frozen pipes, drain cleaning, water heaters, and more. From Falmouth to Provincetown."
         />
-        <meta
-          name="keywords"
-          content="Cape Cod plumbing, plumbing tips, frozen pipes, older home plumbing, Falmouth plumbing, Mashpee plumbing"
-        />
-        <link rel="canonical" href="https://capecodplumbingguide.com/" />
+        <link rel="canonical" href={`${SITE_URL}/`} />
+        <meta property="og:title" content="Cape Cod Plumber — Local Plumbing Tips & Resources" />
+        <meta property="og:description" content="Free plumbing tips and guides for Cape Cod homeowners. Frozen pipes, drain cleaning, water heaters, and more. From Falmouth to Provincetown." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/`} />
+        <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'Cape Cod Plumbing Guide',
-            description: 'Local plumbing resources and tips for Cape Cod homeowners',
-            url: 'https://capecodplumbingguide.com/',
-            publisher: {
-              '@type': 'Organization',
-              name: 'Cape Cod Plumbing Guide',
-              sameAs: 'https://bluepacificcapecod.com/plumbing-falmouth-ma/',
+            url: SITE_URL,
+            description: 'Free plumbing tips and guides for Cape Cod homeowners',
+            about: {
+              '@type': 'Place',
+              name: 'Cape Cod, Massachusetts',
             },
           })}
         </script>

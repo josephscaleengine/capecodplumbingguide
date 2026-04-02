@@ -4,6 +4,7 @@ import { Clock, Tag, ArrowRight, ArrowLeft } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { articles, categories } from '@/data/articles';
+import { SITE_URL } from '@/seo/titles';
 
 const BlogCategory = () => {
   const { categorySlug } = useParams<{ categorySlug: string }>();
@@ -22,11 +23,21 @@ const BlogCategory = () => {
     );
   }
 
+  const pageUrl = `${SITE_URL}/blog/category/${categorySlug}`;
+  const seoTitle = `${category.name} — Cape Cod Plumbing Guide`;
+  const seoDescription = `${category.name} plumbing resources and tips for Cape Cod homeowners. Expert guidance for coastal homes.`;
+
   return (
     <>
       <Helmet>
-        <title>{category.name} | Cape Cod Plumbing Guide</title>
-        <meta name="description" content={`${category.name} resources for Cape Cod homeowners. Expert plumbing tips and guidance.`} />
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
       </Helmet>
       <Layout>
         {/* Hero */}
