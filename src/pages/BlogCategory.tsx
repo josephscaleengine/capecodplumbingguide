@@ -121,7 +121,7 @@ const BlogCategory = () => {
             ) : (
               <div className="text-center py-12">
                 <p className="text-muted-foreground mb-4">No articles in this category yet.</p>
-                <Link to="/blog"><Button variant="outline">Browse All Resources</Button></Link>
+                <Link to="/resources"><Button variant="outline">Browse All Resources</Button></Link>
               </div>
             )}
           </div>

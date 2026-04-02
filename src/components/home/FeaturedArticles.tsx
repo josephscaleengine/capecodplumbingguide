@@ -102,7 +102,7 @@ const FeaturedArticles = () => {
         </div>
 
         <div className="mt-12">
-          <Link to="/blog">
+          <Link to="/resources">
             <Button variant="outline" size="lg">
               View All Resources
               <ArrowRight className="w-5 h-5" />

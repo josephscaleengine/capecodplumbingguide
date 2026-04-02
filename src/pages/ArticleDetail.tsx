@@ -227,8 +227,8 @@ const ArticleDetail = () => {
                   <div className="bg-card rounded-xl p-6 shadow-soft border border-border">
                     <h3 className="font-heading text-lg font-bold text-foreground mb-4">Related Articles</h3>
                     <div className="space-y-4">
-                      {relatedArticles.map((related) => (
-                        <Link key={related.id} to={`/blog/${related.slug}`} className="block group">
+                        {relatedArticles.map((related) => (
+                         <Link key={related.id} to={`/resources/${related.slug}`} className="block group">
                           <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">{related.title}</h4>
                           <p className="text-sm text-muted-foreground mt-1">{related.readTime} min read</p>
                         </Link>

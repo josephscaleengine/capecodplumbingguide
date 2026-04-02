@@ -52,7 +52,7 @@ const Footer = () => {
               {categories.map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    to={`/blog/category/${cat.slug}`}
+                    to={`/resources/category/${cat.slug}`}
                     className="text-white/70 hover:text-white transition-colors text-sm"
                   >
                     {cat.name}
