@@ -59,6 +59,24 @@ const BlogCategory = () => {
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
         <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: category.name,
+            url: pageUrl,
+            description: seoDescription,
+            mainEntity: {
+              '@type': 'ItemList',
+              itemListElement: categoryArticles.map((article, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                url: `${SITE_URL}/resources/${article.slug}`,
+                name: article.title,
+              })),
+            },
+          })}
+        </script>
       </Helmet>
       <Layout>
         {/* Hero */}
