@@ -95,12 +95,6 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl">
               <div className="card-double-border p-8 md:p-12">
-                <img
-                  src="https://images.unsplash.com/photo-1558873072-e1243a49a2d5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0"
-                  alt="Cape Cod well water and plumbing infrastructure"
-                  className="w-full object-cover rounded-lg max-h-[300px] mb-6"
-                  loading="lazy"
-                />
                 <h2 className="font-heading text-2xl md:text-3xl font-black text-foreground mb-4">
                   Professional Plumbing Services
                 </h2>
