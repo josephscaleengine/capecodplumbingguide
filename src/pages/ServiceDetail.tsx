@@ -145,19 +145,8 @@ const ServiceDetail = () => {
           </div>
         </section>
 
-        {/* Service Header Image */}
-        {serviceImages[service.slug] && (
-          <section className="bg-[#f7f7f7]">
-            <div className="container mx-auto px-4 pt-8">
-              <img
-                src={serviceImages[service.slug].url}
-                alt={serviceImages[service.slug].alt}
-                className="w-full object-cover rounded-lg max-h-[300px]"
-                loading="lazy"
-              />
-            </div>
-          </section>
-        )}
+
+        {/* Content */}
         <section className="py-12 md:py-16 bg-[#f7f7f7]">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 gap-12">
