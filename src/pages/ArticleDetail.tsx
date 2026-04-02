@@ -10,7 +10,7 @@ import { DEFAULT_OG_IMAGE, SITE_URL, buildArticleSeoDescription, buildArticleSeo
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const article = articles.find((a) => a.slug === slug);
-  const pageUrl = `${SITE_URL}/blog/${slug ?? ''}`;
+  const pageUrl = `${SITE_URL}/resources/${slug ?? ''}`;
 
   if (!article) {
     const seoTitle = 'Article Not Found — Cape Cod Plumbing Guide';

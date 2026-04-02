@@ -110,7 +110,7 @@ const BlogCategory = () => {
                             </div>
                           )}
                         </div>
-                        <Link to={`/blog/${article.slug}`} className="text-accent hover:text-[hsl(var(--warm-orange-hover))] transition-colors">
+                        <Link to={`/resources/${article.slug}`} className="text-accent hover:text-[hsl(var(--warm-orange-hover))] transition-colors">
                           <ArrowRight className="w-5 h-5" />
                         </Link>
                       </div>
