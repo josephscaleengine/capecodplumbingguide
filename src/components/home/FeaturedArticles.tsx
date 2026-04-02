@@ -73,7 +73,7 @@ const FeaturedArticles = () => {
                 <div className="p-6">
                   <h3 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2">
                     <Link
-                      to={`/blog/${article.slug}`}
+                      to={`/resources/${article.slug}`}
                       className="hover:text-primary transition-colors"
                     >
                       {article.title}
