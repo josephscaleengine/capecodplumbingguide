@@ -89,7 +89,7 @@ const FeaturedArticles = () => {
                       <span>{article.readTime} min read</span>
                     </div>
                     <Link
-                      to={`/blog/${article.slug}`}
+                      to={`/resources/${article.slug}`}
                       className="text-accent hover:text-[hsl(var(--warm-orange-hover))] transition-colors"
                     >
                       <ArrowRight className="w-5 h-5" />
