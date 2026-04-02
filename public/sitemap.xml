@@ -81,6 +81,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/emergency-plumber-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/water-heater-replacement-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/sump-pump-guide-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/bathroom-remodel-plumbing-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/well-water-vs-town-water-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/garbage-disposal-problems-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/prevent-plumbing-problems-vacation-homes-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/resources/plumbing-permits-cape-cod</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Services -->
   <url>
     <loc>https://capecodplumbingresources.com/services/water-heater-repair</loc>
@@ -134,6 +174,31 @@
   </url>
   <url>
     <loc>https://capecodplumbingresources.com/services/bathroom-kitchen-remodel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/services/toilet-repair-installation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/services/faucet-fixture-replacement</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/services/water-line-repair</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/services/outdoor-plumbing-hose-bibs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://capecodplumbingresources.com/services/backflow-prevention</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

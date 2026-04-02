@@ -7,6 +7,30 @@ import { Button } from '@/components/ui/button';
 import { articles, categories } from '@/data/articles';
 import { DEFAULT_OG_IMAGE, SITE_URL, buildArticleSeoDescription, buildArticleSeoTitle } from '@/seo/titles';
 
+// Article header images
+const articleImages: Record<string, { url: string; alt: string }> = {
+  'why-cape-cod-homes-prone-frozen-pipes': { url: 'https://images.unsplash.com/photo-1607220523685-75f2044e3195?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Frozen pipes in a Cape Cod home during winter' },
+  'salt-air-plumbing-corrosion-cape-cod': { url: 'https://images.unsplash.com/photo-1629259398284-864e5810536c?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Salt air corrosion effects on Cape Cod coastal plumbing' },
+  'winterizing-cape-cod-vacation-home-plumbing': { url: 'https://images.unsplash.com/photo-1653769349817-f09a50c54553?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod vacation home winterization preparation' },
+  'common-plumbing-problems-older-cape-cod-homes': { url: 'https://images.unsplash.com/photo-1646569278927-6f1a9b20cb8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Older Cape Cod home with historic plumbing challenges' },
+  'average-plumbing-costs-cape-cod': { url: 'https://images.unsplash.com/photo-1728927471523-487819893bdc?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod plumbing cost guide for homeowners' },
+  'how-to-choose-plumber-cape-cod': { url: 'https://images.unsplash.com/photo-1686950429623-abb1ef6ea8e8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Choosing a professional plumber on Cape Cod' },
+  'cape-cod-well-water-plumbing-issues': { url: 'https://images.unsplash.com/photo-1558873072-e1243a49a2d5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod well water system and plumbing' },
+  'signs-you-need-emergency-plumbing-help': { url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Emergency water damage requiring Cape Cod plumber' },
+  'how-salt-air-affects-water-heater': { url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Water heater affected by Cape Cod salt air' },
+  'spring-plumbing-checklist-cape-cod': { url: 'https://images.unsplash.com/photo-1462275646964-a0e3c11f18a6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Spring in New England - Cape Cod plumbing checklist season' },
+  'what-homeowners-should-know-about-septic-systems': { url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod home with backyard lawn and septic system' },
+  'plumbing-tips-cape-cod-vacation-rental-owners': { url: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod beach cottage vacation rental property' },
+  'emergency-plumber-cape-cod': { url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Emergency water damage in Cape Cod home' },
+  'water-heater-replacement-cape-cod': { url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Water heater replacement on Cape Cod' },
+  'sump-pump-guide-cape-cod': { url: 'https://images.unsplash.com/photo-1525438160292-a4a860951216?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Basement flooding prevention with sump pump on Cape Cod' },
+  'bathroom-remodel-plumbing-cape-cod': { url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Modern bathroom renovation plumbing on Cape Cod' },
+  'well-water-vs-town-water-cape-cod': { url: 'https://images.unsplash.com/photo-1558873072-e1243a49a2d5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod well water vs municipal town water' },
+  'garbage-disposal-problems-cape-cod': { url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Kitchen sink and garbage disposal in Cape Cod home' },
+  'prevent-plumbing-problems-vacation-homes-cape-cod': { url: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Cape Cod vacation home plumbing prevention' },
+  'plumbing-permits-cape-cod': { url: 'https://images.unsplash.com/photo-1686950429623-abb1ef6ea8e8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0', alt: 'Plumbing permits and licensing on Cape Cod' },
+};
+
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const article = articles.find((a) => a.slug === slug);
@@ -62,6 +86,14 @@ const ArticleDetail = () => {
     'spring-plumbing-checklist-cape-cod': '/services/sump-pump-installation',
     'what-homeowners-should-know-about-septic-systems': '/services/septic-system-services',
     'plumbing-tips-cape-cod-vacation-rental-owners': '/services/drain-cleaning',
+    'emergency-plumber-cape-cod': '/services/pipe-leak-repair',
+    'water-heater-replacement-cape-cod': '/services/water-heater-repair',
+    'sump-pump-guide-cape-cod': '/services/sump-pump-installation',
+    'bathroom-remodel-plumbing-cape-cod': '/services/bathroom-kitchen-remodel',
+    'well-water-vs-town-water-cape-cod': '/services/well-pump-services',
+    'garbage-disposal-problems-cape-cod': '/services/garbage-disposal',
+    'prevent-plumbing-problems-vacation-homes-cape-cod': '/services/frozen-pipe-repair',
+    'plumbing-permits-cape-cod': '/services/bathroom-kitchen-remodel',
   };
 
   const formatDate = (dateStr: string) => {
@@ -153,6 +185,20 @@ const ArticleDetail = () => {
             </div>
           </div>
         </section>
+
+        {/* Article Header Image */}
+        {articleImages[article.slug] && (
+          <section className="bg-[hsl(var(--pale-white))]">
+            <div className="container mx-auto px-4 pt-8">
+              <img
+                src={articleImages[article.slug].url}
+                alt={articleImages[article.slug].alt}
+                className="w-full object-cover rounded-lg max-h-[300px]"
+                loading="lazy"
+              />
+            </div>
+          </section>
+        )}
 
         {/* Article Content */}
         <section className="py-12 md:py-16 bg-[hsl(var(--pale-white))]">
