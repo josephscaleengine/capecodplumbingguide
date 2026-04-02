@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Droplets, ExternalLink, Phone, MapPin, Mail } from 'lucide-react';
+import { ExternalLink, Phone, MapPin, Mail } from 'lucide-react';
+import logo from '@/assets/logo.png';
 import { towns, categories } from '@/data/articles';
 
 const Footer = () => {
