@@ -13,7 +13,7 @@ const TownsReference = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3 max-w-4xl">
+        <div className="flex flex-wrap gap-3 justify-center">
           {towns.map((town) => (
             <div
               key={town.slug}
