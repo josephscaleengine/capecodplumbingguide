@@ -4,6 +4,8 @@ import { ArrowLeft, ExternalLink, CheckCircle, DollarSign, AlertTriangle, Info, 
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { services } from '@/data/services';
+import { articles } from '@/data/articles';
+import { serviceTitles, SITE_URL } from '@/seo/titles';
 
 // Services Blue Pacific definitively offers
 const bluePacificServices = [
@@ -17,8 +19,20 @@ const bluePacificServices = [
   'garbage-disposal',
 ];
 
-// Services where we use softer language
-const maybeBluePacific = ['well-pump-services', 'water-filtration', 'septic-system-services'];
+// Map services to related article slugs
+const serviceArticleLinks: Record<string, string[]> = {
+  'water-heater-repair': ['how-salt-air-affects-water-heater', 'average-plumbing-costs-cape-cod'],
+  'drain-cleaning': ['average-plumbing-costs-cape-cod', 'common-plumbing-problems-older-cape-cod-homes'],
+  'pipe-leak-repair': ['salt-air-plumbing-corrosion-cape-cod', 'common-plumbing-problems-older-cape-cod-homes'],
+  'frozen-pipe-repair': ['why-cape-cod-homes-prone-frozen-pipes', 'winterizing-cape-cod-vacation-home-plumbing'],
+  'sewer-line-repair': ['common-plumbing-problems-older-cape-cod-homes', 'signs-you-need-emergency-plumbing-help'],
+  'well-pump-services': ['cape-cod-well-water-plumbing-issues'],
+  'water-filtration': ['cape-cod-well-water-plumbing-issues'],
+  'sump-pump-installation': ['spring-plumbing-checklist-cape-cod', 'signs-you-need-emergency-plumbing-help'],
+  'garbage-disposal': ['average-plumbing-costs-cape-cod'],
+  'septic-system-services': ['what-homeowners-should-know-about-septic-systems'],
+  'bathroom-kitchen-remodel': ['common-plumbing-problems-older-cape-cod-homes', 'average-plumbing-costs-cape-cod'],
+};
 
 const ServiceDetail = () => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
@@ -37,24 +51,45 @@ const ServiceDetail = () => {
   }
 
   const isBluePacific = bluePacificServices.includes(service.slug);
+  const seoTitle = serviceTitles[service.slug] || `${service.name} — Cape Cod Plumbing Guide`;
+  const pageUrl = `${SITE_URL}/services/${service.slug}`;
+
+  // Get related articles for this service
+  const relatedArticleSlugs = serviceArticleLinks[service.slug] || [];
+  const relatedArticles = relatedArticleSlugs
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter(Boolean);
 
   return (
     <>
       <Helmet>
-        <title>{service.name} | Cape Cod Plumbing Guide</title>
+        <title>{seoTitle}</title>
         <meta name="description" content={service.metaDescription} />
-        <link rel="canonical" href={`https://capecodplumbingguide.com/services/${service.slug}`} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={service.metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: service.name,
             description: service.metaDescription,
-            url: `https://capecodplumbingguide.com/services/${service.slug}`,
-            ...(isBluePacific && {
-              provider: { '@type': 'Organization', name: 'Blue Pacific Cape Cod', url: 'https://bluepacificcapecod.com/plumbing-falmouth-ma/' },
-            }),
+            url: pageUrl,
             areaServed: { '@type': 'Place', name: 'Cape Cod, Massachusetts' },
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'Blue Pacific Cape Cod',
+              telephone: '(508) 274-9939',
+              email: 'BluePacificCapeCod@gmail.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Falmouth',
+                addressRegion: 'MA',
+              },
+            },
           })}
         </script>
       </Helmet>
@@ -139,6 +174,24 @@ const ServiceDetail = () => {
                     <p className="text-muted-foreground text-sm">{service.content.costRange}</p>
                   </div>
                 </div>
+
+                {/* Related Articles */}
+                {relatedArticles.length > 0 && (
+                  <div className="p-6 bg-secondary/30 rounded-xl border border-border">
+                    <h3 className="font-heading text-lg font-bold text-foreground mb-3">Related Articles</h3>
+                    <div className="space-y-2">
+                      {relatedArticles.map((a: any) => (
+                        <Link
+                          key={a.slug}
+                          to={`/blog/${a.slug}`}
+                          className="block text-primary hover:underline font-medium"
+                        >
+                          {a.title} →
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* CTA — varies based on Blue Pacific match */}
                 <div className="card-double-border p-8 bg-background">

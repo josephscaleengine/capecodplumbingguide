@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Clock, Tag, ArrowRight, BookOpen } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { articles, categories } from '@/data/articles';
+import { SITE_URL } from '@/seo/titles';
 
 const categoryColors: Record<string, string> = {
   seasonal: 'bg-[hsl(200,60%,50%,0.15)] text-[hsl(200,60%,35%)] hover:bg-[hsl(200,60%,50%)] hover:text-white',
@@ -27,19 +28,24 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Plumbing Resources & Tips | Cape Cod Plumbing Guide</title>
+        <title>Cape Cod Plumbing Guides & Tips for Homeowners</title>
         <meta
           name="description"
-          content="Expert plumbing tips, guides, and resources for Cape Cod homeowners. Covering seasonal issues, emergency repairs, maintenance, and historic home plumbing."
+          content="Browse free plumbing guides for Cape Cod homeowners. Seasonal tips, emergency guides, cost breakdowns, and expert advice for coastal homes."
         />
-        <link rel="canonical" href="https://capecodplumbingguide.com/blog" />
+        <link rel="canonical" href={`${SITE_URL}/blog`} />
+        <meta property="og:title" content="Cape Cod Plumbing Guides & Tips for Homeowners" />
+        <meta property="og:description" content="Browse free plumbing guides for Cape Cod homeowners. Seasonal tips, emergency guides, cost breakdowns, and expert advice for coastal homes." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/blog`} />
+        <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Blog',
             name: 'Cape Cod Plumbing Guide Resources',
-            description: 'Expert plumbing tips and guides for Cape Cod homeowners',
-            url: 'https://capecodplumbingguide.com/blog',
+            description: 'Free plumbing guides and tips for Cape Cod homeowners',
+            url: `${SITE_URL}/blog`,
             publisher: {
               '@type': 'Organization',
               name: 'Cape Cod Plumbing Guide',
@@ -48,7 +54,7 @@ const Blog = () => {
               '@type': 'BlogPosting',
               headline: article.title,
               description: article.metaDescription,
-              url: `https://capecodplumbingguide.com/blog/${article.slug}`,
+              url: `${SITE_URL}/blog/${article.slug}`,
               datePublished: new Date(article.publishedAt).toISOString(),
             })),
           })}

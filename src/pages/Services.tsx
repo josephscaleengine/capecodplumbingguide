@@ -3,24 +3,30 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Wrench } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import { services } from '@/data/services';
+import { SITE_URL } from '@/seo/titles';
 
 const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Plumbing Services Guide | Cape Cod Plumbing Guide</title>
+        <title>Plumbing Services on Cape Cod — What to Know</title>
         <meta
           name="description"
-          content="Learn about common plumbing services Cape Cod homeowners need. Educational guides on water heaters, drain cleaning, pipe repair, and more."
+          content="Learn about common plumbing services on Cape Cod. What to expect, typical costs, and when to call a professional."
         />
-        <link rel="canonical" href="https://capecodplumbingguide.com/services" />
+        <link rel="canonical" href={`${SITE_URL}/services`} />
+        <meta property="og:title" content="Plumbing Services on Cape Cod — What to Know" />
+        <meta property="og:description" content="Learn about common plumbing services on Cape Cod. What to expect, typical costs, and when to call a professional." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/services`} />
+        <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
             name: 'Plumbing Services Guide - Cape Cod',
-            description: 'Educational guides on common plumbing services for Cape Cod homeowners',
-            url: 'https://capecodplumbingguide.com/services',
+            description: 'Learn about common plumbing services on Cape Cod. What to expect, typical costs, and when to call a professional.',
+            url: `${SITE_URL}/services`,
           })}
         </script>
       </Helmet>
