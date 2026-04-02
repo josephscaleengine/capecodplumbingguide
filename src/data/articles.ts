@@ -867,6 +867,671 @@ For reliable plumbing maintenance for your Cape Cod rental property, [Blue Pacif
     readTime: 6,
     publishedAt: '2024-07-01',
   },
+  {
+    id: '13',
+    slug: 'emergency-plumber-cape-cod',
+    title: 'Emergency Plumber on Cape Cod — What to Know',
+    excerpt: 'What to do when you need an emergency plumber on Cape Cod. Costs, response times, and how to handle burst pipes, flooding, and gas leaks.',
+    metaDescription: 'What to do when you need an emergency plumber on Cape Cod. Costs, response times, and how to handle burst pipes, flooding, and gas leaks fast.',
+    content: `
+# Emergency Plumber on Cape Cod — What to Know
+
+When a plumbing emergency strikes, every minute counts. Knowing what qualifies as an emergency, what to do before the plumber arrives, and what to expect in terms of cost can save you thousands of dollars and prevent serious damage to your Cape Cod home.
+
+## When Is It a Plumbing Emergency?
+
+Not every plumbing problem needs an after-hours call. True emergencies include:
+
+- **Burst pipes** — Water gushing into your home causes structural damage fast
+- **Sewage backup** — Raw sewage in your home is a health hazard
+- **Gas smell near plumbing appliances** — Leave the house and call 911 first
+- **Complete loss of water** — Especially in winter when pipes may be frozen
+- **Uncontrollable flooding** — From any source including water heater failure
+
+## Average Emergency Plumber Costs on Cape Cod
+
+Emergency plumbing services cost more than scheduled work:
+
+- **After-hours service call fee:** $150–$300
+- **Emergency burst pipe repair:** $500–$2,000
+- **Emergency water heater replacement:** $1,500–$3,500
+- **Sewage backup clearing:** $200–$600
+- **Total emergency visit (parts + labor):** $200–$600 typical range
+
+## What to Do Before the Plumber Arrives
+
+### Shut Off the Water
+The most important step. Locate your main water shutoff valve:
+- In most Cape Cod homes, it's in the basement near the front foundation wall
+- For homes on slabs, check near the water heater or in a utility closet
+- Well water homes: also turn off the well pump breaker
+
+### Shut Off the Gas
+If you smell gas near a water heater or gas line:
+- Do NOT flip any light switches
+- Open windows
+- Leave the house
+- Call 911 and your gas company from outside
+
+### Protect Your Belongings
+- Move valuables away from standing water
+- Place towels or buckets to contain spreading water
+- Turn off electricity to affected areas if safe to do so
+
+## Why Cape Cod Emergency Calls Cost More
+
+Several factors drive up emergency plumbing costs on the Cape:
+
+- **Limited contractors** — Fewer plumbers serve the Cape compared to mainland areas
+- **Island logistics** — Parts and materials take longer to source
+- **Seasonal demand spikes** — Summer population surges strain available plumbers
+- **Travel distances** — Cape Cod's spread-out geography means longer response times
+- **Older housing stock** — Complex repairs in historic homes take more time
+
+## Finding an Emergency Plumber
+
+When you need emergency plumbing help on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) offers responsive emergency services throughout the area.
+    `,
+    category: 'emergency',
+    readTime: 5,
+    publishedAt: '2024-07-15',
+    featured: false,
+  },
+  {
+    id: '14',
+    slug: 'water-heater-replacement-cape-cod',
+    title: 'Cape Cod Water Heater Replacement Guide',
+    excerpt: 'When to replace your water heater on Cape Cod. Tank vs tankless, costs, and how salt air affects lifespan.',
+    metaDescription: 'When to replace your water heater on Cape Cod. Tank vs tankless, costs, salt air lifespan impact, and what to expect from installation.',
+    content: `
+# Cape Cod Water Heater Replacement Guide
+
+Your water heater is one of the hardest-working appliances in your home. On Cape Cod, salt air and coastal conditions mean water heaters don't last as long as they do inland. Here's everything you need to know about replacement.
+
+## Signs Your Water Heater Needs Replacing
+
+Watch for these warning signs:
+
+- **Age** — Tank water heaters last 8–10 years on Cape Cod (vs 12–15 inland)
+- **Rust-colored hot water** — Indicates internal tank corrosion
+- **Leaking from the tank** — Not from fittings, but the tank itself
+- **Inconsistent temperature** — Water fluctuates between hot and cold
+- **Rumbling or popping sounds** — Sediment buildup inside the tank
+- **Increasing energy bills** — Declining efficiency as the unit ages
+
+## Tank vs Tankless: Which Is Right for You?
+
+### Tank Water Heaters
+- **Cost:** $1,200–$2,500 installed
+- **Lifespan on Cape Cod:** 8–10 years
+- **Pros:** Lower upfront cost, simpler installation, works during power outages (gas models)
+- **Cons:** Takes up space, standby energy loss, shorter life near the coast
+
+### Tankless Water Heaters
+- **Cost:** $2,500–$5,000 installed
+- **Lifespan on Cape Cod:** 15–20 years
+- **Pros:** Endless hot water, space-saving, longer lifespan, energy efficient
+- **Cons:** Higher upfront cost, may need gas line or electrical upgrades, flow rate limitations
+
+## How Salt Air Shortens Water Heater Life
+
+Cape Cod's salt-laden coastal air accelerates corrosion:
+
+- **Tank exteriors** rust faster from salt moisture
+- **Venting systems** corrode and may need replacement sooner
+- **Anode rods** deplete faster, leaving the tank unprotected
+- **Electrical connections** corrode, causing control failures
+- **Result:** 8–10 year lifespan vs 12–15 years for inland homes
+
+## Permits and Code Requirements
+
+Massachusetts requires:
+- A plumbing permit for water heater replacement
+- Installation by a licensed plumber
+- Proper venting to current code (many older Cape homes need venting upgrades)
+- Expansion tanks on closed-loop systems
+- Earthquake straps in some jurisdictions
+
+Your plumber should handle all permit requirements.
+
+## What to Expect from Installation
+
+A typical water heater replacement takes 3–6 hours and includes:
+1. Removal and disposal of the old unit
+2. Installation of the new water heater
+3. Connection to water, gas/electric, and venting
+4. Testing and temperature adjustment
+5. Cleanup and permit sign-off
+
+For professional water heater installation on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) handles the entire process from selection to installation.
+    `,
+    category: 'homeowner-guide',
+    readTime: 6,
+    publishedAt: '2024-08-01',
+    featured: false,
+  },
+  {
+    id: '15',
+    slug: 'sump-pump-guide-cape-cod',
+    title: 'Sump Pump Guide for Cape Cod Basements',
+    excerpt: 'Do you need a sump pump on Cape Cod? Guide to basement flooding, high water tables, and choosing the right pump.',
+    metaDescription: 'Do you need a sump pump on Cape Cod? Guide to basement flooding, high water tables, and choosing the right sump pump for coastal MA homes.',
+    content: `
+# Sump Pump Guide for Cape Cod Basements
+
+Basement water problems are extremely common on Cape Cod. The peninsula's high water table, sandy soil, and coastal weather patterns make sump pumps essential for many homes.
+
+## Why Cape Cod Homes Are Prone to Basement Water
+
+Several factors contribute to wet basements on the Cape:
+
+- **High water table** — In many areas, groundwater sits just a few feet below the surface
+- **Sandy soil** — While it drains quickly, it also allows water to reach foundations easily
+- **Coastal flooding** — Storm surges and heavy rain events overwhelm natural drainage
+- **Older foundations** — Many Cape homes have stone or block foundations that aren't waterproof
+- **Flat terrain** — Limited natural slope means water pools around foundations
+
+## How Sump Pumps Work
+
+A sump pump system is straightforward:
+
+1. **Sump pit** — A hole cut into the basement floor that collects water
+2. **Pump** — Sits in the pit and activates when water reaches a certain level
+3. **Float switch** — Triggers the pump automatically
+4. **Discharge pipe** — Carries water away from the foundation
+5. **Check valve** — Prevents water from flowing back into the pit
+
+## Types of Sump Pumps
+
+### Submersible Pumps
+- Sit inside the sump pit, underwater
+- Quieter operation
+- Better for finished basements
+- More expensive ($200–$500 for the pump alone)
+
+### Pedestal Pumps
+- Motor sits above the pit
+- Easier to service
+- Louder
+- Less expensive ($75–$200)
+
+### Battery Backup Systems
+- Essential for Cape Cod (nor'easters knock out power regularly)
+- Runs on a 12V marine battery
+- Provides 6–12 hours of pumping during outages
+- Cost: $200–$600 additional
+
+## Installation Costs on Cape Cod
+
+- **Basic sump pump installation:** $500–$1,200
+- **With battery backup:** $800–$1,500
+- **Pump replacement only:** $300–$800
+- **Adding drainage channels:** $2,000–$5,000
+
+## Maintenance Schedule
+
+Keep your sump pump reliable with regular maintenance:
+
+- **Monthly:** Test the pump by pouring water into the pit
+- **Quarterly:** Check the discharge line for blockages
+- **Annually:** Clean the pit of debris and sediment
+- **Every 2–3 years:** Replace the battery backup battery
+- **Every 7–10 years:** Consider replacing the pump itself
+
+## Why Battery Backup Matters on Cape Cod
+
+Nor'easters and coastal storms frequently knock out power across Cape Cod — sometimes for days. Without a battery backup, your sump pump is useless exactly when you need it most. This single upgrade can prevent thousands of dollars in water damage.
+
+For sump pump installation and maintenance on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides expert service throughout the area.
+    `,
+    category: 'homeowner-guide',
+    readTime: 5,
+    publishedAt: '2024-08-15',
+    featured: false,
+  },
+  {
+    id: '16',
+    slug: 'bathroom-remodel-plumbing-cape-cod',
+    title: 'Bathroom Remodel Plumbing on Cape Cod',
+    excerpt: 'Planning a bathroom remodel on Cape Cod? What to know about plumbing costs, permits, and challenges in older Cape homes.',
+    metaDescription: 'Planning a bathroom remodel on Cape Cod? What to know about plumbing costs, permits, and challenges in older Cape homes.',
+    content: `
+# Bathroom Remodel Plumbing on Cape Cod
+
+A bathroom remodel is one of the most popular home improvement projects, and on Cape Cod, the plumbing portion often presents unique challenges due to older homes, tight spaces, and outdated materials.
+
+## Common Plumbing Work During a Bathroom Remodel
+
+Most bathroom remodels involve some or all of these plumbing tasks:
+
+- **Relocating drain lines** — Moving a toilet, shower, or vanity to a new position
+- **New supply lines** — Running hot and cold water to relocated fixtures
+- **Fixture installation** — Toilets, sinks, showers, tubs, and faucets
+- **Valve replacement** — Upgrading old shutoff valves to modern quarter-turn valves
+- **Vent pipe work** — Ensuring proper venting to prevent slow drains and sewer gas
+- **Water heater assessment** — Confirming your water heater can handle a new shower or tub
+
+## Typical Plumbing Costs for a Cape Cod Bathroom Remodel
+
+The plumbing portion of a bathroom remodel typically runs:
+
+- **Simple fixture swap (same locations):** $1,000–$2,500
+- **Moderate remodel (some relocation):** $2,000–$4,000
+- **Full gut renovation:** $4,000–$6,000+
+- **Adding a new bathroom:** $5,000–$10,000+
+
+These costs are for plumbing only — not tile, vanities, or general contracting.
+
+## Challenges in Older Cape Cod Homes
+
+Cape Cod's older housing stock creates specific plumbing challenges:
+
+### Galvanized Pipes
+- Many homes built before 1960 have galvanized steel supply lines
+- These corrode from the inside, reducing flow and water quality
+- A remodel is an ideal time to replace with copper or PEX
+
+### Low Ceilings and Tight Spaces
+- Traditional Cape Cod architecture features low basement ceilings
+- Running new drain lines may require creative routing
+- Access to existing pipes can be difficult
+
+### Cast Iron Drains
+- Older homes often have cast iron drain, waste, and vent (DWV) pipes
+- These corrode over decades and may need replacement
+- Connecting new PVC to old cast iron requires proper fittings
+
+### Narrow Spaces
+- Half-Cape and three-quarter Cape homes have compact floor plans
+- Fitting modern fixtures in small bathrooms requires careful planning
+
+## Permit Requirements
+
+On Cape Cod, plumbing permits are required for:
+- Moving any drain or supply lines
+- Adding new fixtures
+- Installing new shut-off valves on the main line
+- Any work involving the sewer or septic connection
+
+Your plumber should pull all necessary permits and schedule inspections.
+
+## Planning Tips
+
+1. **Choose your plumber before your fixtures** — They can advise on what works with your existing layout
+2. **Get a camera inspection** — Understand the condition of your existing drain lines before opening walls
+3. **Budget for surprises** — Older homes often reveal hidden issues during demolition
+4. **Plan the plumbing first** — Fixture placement depends on where drains and supply lines can go
+
+For bathroom remodel plumbing on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) handles everything from rough-in to fixture installation.
+    `,
+    category: 'homeowner-guide',
+    readTime: 5,
+    publishedAt: '2024-09-01',
+    featured: false,
+  },
+  {
+    id: '17',
+    slug: 'well-water-vs-town-water-cape-cod',
+    title: 'Well Water vs Town Water on Cape Cod',
+    excerpt: 'How well water and town water affect your plumbing differently. Maintenance, costs, and what Cape Cod homeowners need to know.',
+    metaDescription: 'Well water vs town water on Cape Cod. How each affects your plumbing, maintenance differences, and what homeowners need to know.',
+    content: `
+# Well Water vs Town Water on Cape Cod
+
+Cape Cod homeowners are split between private well water and municipal (town) water systems. Each comes with distinct plumbing implications, maintenance needs, and costs.
+
+## Which Cape Cod Towns Use Which?
+
+### Primarily Municipal Water
+- Hyannis, Barnstable, Falmouth, Sandwich, Bourne (parts), Yarmouth, Dennis
+
+### Primarily Well Water
+- Wellfleet, Truro, Eastham (many areas), Brewster (parts), Chatham (parts)
+
+### Mixed (Both Available)
+- Orleans, Harwich, Mashpee, Provincetown
+
+*Note: Even in towns with municipal water, some neighborhoods use private wells.*
+
+## How Well Water Affects Plumbing
+
+### Common Issues
+- **Mineral buildup** — Iron and manganese stain fixtures and clog pipes
+- **Hard water** — Causes scale in water heaters and reduces soap effectiveness
+- **Pressure fluctuations** — Depend on pump and pressure tank condition
+- **Acidic water (low pH)** — Corrodes copper pipes, causing pinhole leaks
+
+### Maintenance Requirements
+- Annual water quality testing ($50–$200)
+- Well pump inspection every 1–2 years
+- Pressure tank monitoring
+- Water treatment system maintenance (filter changes, salt refills)
+
+### Equipment Needs
+- Pressure tank and well pump
+- Potentially: water softener, iron filter, acid neutralizer, sediment filter
+
+## How Town Water Affects Plumbing
+
+### Common Issues
+- **Chlorine** — Can dry out rubber seals and gaskets faster
+- **Consistent pressure** — Generally reliable, but municipal main breaks can affect supply
+- **Municipal line responsibility** — The town maintains the main; you maintain from the curb to your house
+
+### Maintenance Requirements
+- Less equipment to maintain
+- Still need to inspect supply line from curb to house
+- Water heater maintenance is the same regardless of source
+
+## Water Testing Recommendations
+
+### For Well Water Homes
+- Test annually for bacteria, nitrates, pH, and hardness
+- Test every 3 years for a broader panel (iron, manganese, arsenic, VOCs)
+- Test after any flooding, construction nearby, or taste/smell changes
+
+### For Town Water Homes
+- Municipal water is tested by the town and reports are published annually
+- Consider testing if your home has old pipes (lead, galvanized)
+
+## Filtration and Treatment Options
+
+### Well Water
+- Whole-house sediment filter: $200–$500
+- Iron filter: $1,200–$3,500
+- Water softener: $1,000–$3,000
+- Acid neutralizer: $800–$2,000
+- UV purification: $500–$1,500
+
+### Town Water
+- Under-sink carbon filter: $100–$300 (for taste/chlorine)
+- Whole-house carbon filter: $500–$1,500
+- Generally less treatment needed
+
+## Cost Differences
+
+| | Well Water | Town Water |
+|---|---|---|
+| Monthly water bill | $0 (electricity for pump) | $40–$100+ |
+| Annual maintenance | $200–$500 | Minimal |
+| Equipment replacement | $1,500–$3,500 (pump) | N/A |
+| Treatment systems | $1,000–$5,000+ | $100–$500 |
+
+For plumbing issues related to either water source on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) serves homeowners throughout the area.
+    `,
+    category: 'well-water',
+    readTime: 5,
+    publishedAt: '2024-09-15',
+    featured: false,
+  },
+  {
+    id: '18',
+    slug: 'garbage-disposal-problems-cape-cod',
+    title: 'Garbage Disposal Problems in Cape Cod Homes',
+    excerpt: 'Common garbage disposal issues for Cape Cod homeowners. Troubleshooting jams, leaks, and when to replace.',
+    metaDescription: 'Common garbage disposal problems for Cape Cod homeowners. Troubleshooting jams, leaks, and when to replace your disposal.',
+    content: `
+# Garbage Disposal Problems in Cape Cod Homes
+
+Garbage disposals are a kitchen convenience, but they come with unique considerations for Cape Cod homeowners — especially those with septic systems.
+
+## Common Garbage Disposal Issues
+
+### Jammed Disposal
+- **Symptoms:** Humming sound but blades won't spin
+- **Cause:** Hard objects stuck between the impellers
+- **Fix:** Use the hex wrench (Allen key) on the bottom to manually rotate the motor. Never put your hand inside.
+
+### Leaking Disposal
+- **From the top:** Mounting ring or sink flange is loose
+- **From the bottom:** Internal seal failure — usually means replacement
+- **From the side:** Dishwasher connection or drain pipe connection is loose
+
+### Humming But Not Spinning
+- The motor is getting power but the flywheel is stuck
+- Try the reset button on the bottom of the unit
+- Use the Allen key to free the flywheel
+
+### Bad Smells
+- Caused by food buildup inside the unit
+- Run ice cubes and lemon peels through the disposal
+- Pour baking soda and vinegar, let sit, then flush with hot water
+
+### Won't Turn On at All
+- Check the reset button
+- Check the circuit breaker
+- If neither works, the motor may have burned out
+
+## What NOT to Put Down a Disposal
+
+This is especially relevant for Cape Cod homes:
+
+- **Shellfish shells** — Lobster, clam, oyster, and mussel shells will damage blades
+- **Fish grease and oil** — Solidifies in pipes, especially in cold Cape Cod winters
+- **Bones** — Only small chicken bones; never beef or pork bones
+- **Fibrous vegetables** — Celery, corn husks, artichokes wrap around blades
+- **Pasta and rice** — Expand with water and cause clogs
+- **Coffee grounds** — Accumulate in pipes over time
+
+## When to Repair vs Replace
+
+### Repair If:
+- It's a simple jam you can clear
+- A connection is loose and can be tightened
+- The reset button fixes the issue
+
+### Replace If:
+- Leaking from the bottom (internal seal failure)
+- Motor won't turn on after reset and breaker check
+- Frequent jams despite proper use
+- Unit is over 8–10 years old
+
+### Replacement Costs
+- Basic disposal + installation: $150–$300
+- Mid-range disposal + installation: $250–$400
+- Premium disposal + installation: $400–$500
+
+## Septic System Considerations
+
+**This is critical for Cape Cod homeowners.** Many Cape homes use septic systems, and garbage disposals can overload them:
+
+- Disposals add 50% more solids to your septic tank
+- Grease from disposal use coats the leach field
+- More frequent pumping is required (annually vs every 2–3 years)
+- Some plumbers recommend against disposals entirely for septic homes
+- If you must use one, choose a "septic assist" model
+
+For garbage disposal repair or replacement on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) handles installation and troubleshooting.
+    `,
+    category: 'homeowner-guide',
+    readTime: 4,
+    publishedAt: '2024-10-01',
+    featured: false,
+  },
+  {
+    id: '19',
+    slug: 'prevent-plumbing-problems-vacation-homes-cape-cod',
+    title: 'How to Prevent Plumbing Problems in Cape Cod Vacation Homes',
+    excerpt: 'Prevent plumbing disasters in your Cape Cod vacation home with year-round maintenance tips for seasonal property owners.',
+    metaDescription: 'Prevent plumbing disasters in your Cape Cod vacation home. Year-round maintenance tips for seasonal property owners.',
+    content: `
+# How to Prevent Plumbing Problems in Cape Cod Vacation Homes
+
+Owning a vacation home on Cape Cod is a dream — until you arrive in May to find burst pipes, a flooded basement, or a failed water heater. Preventive maintenance and smart monitoring can protect your investment year-round.
+
+## Biggest Risks for Unoccupied Cape Cod Homes
+
+### Frozen Pipes
+The #1 threat to seasonal Cape Cod homes. When pipes freeze, they expand and burst, causing catastrophic water damage. Risk is highest in:
+- Exterior walls
+- Crawl spaces
+- Unheated garages
+- Kitchen cabinets on outside walls
+
+### Slow Leaks
+A small leak under a sink or at a toilet supply line can cause thousands of dollars in damage over weeks or months of undetected dripping — including mold growth, floor rot, and ceiling collapse.
+
+### Water Heater Failure
+Water heaters left idle for months can develop:
+- Sediment buildup that causes tank failure
+- Anode rod depletion leading to internal rust
+- Pressure relief valve corrosion
+
+### Sump Pump Failure
+If the power goes out during a storm and your sump pump has no battery backup, your basement can flood in hours.
+
+## Smart Home Monitoring
+
+Technology has made it much easier to monitor vacant properties:
+
+### Water Leak Sensors
+- Place under sinks, near water heater, by washing machine, and in basement
+- Wi-Fi connected sensors alert your phone immediately
+- Cost: $20–$50 per sensor
+
+### Smart Thermostats
+- Monitor and control temperature remotely
+- Set low-temperature alerts (below 55°F)
+- Some insurance companies offer discounts for smart thermostats
+- Cost: $100–$250
+
+### Remote Water Shutoff Valves
+- Automatically shut off water when a leak is detected
+- Can be controlled from your phone
+- Prevents catastrophic damage from undetected leaks
+- Cost: $200–$500 installed
+
+## Seasonal Maintenance Checklist
+
+### Before Closing (Fall)
+- Winterize all plumbing (drain pipes, add antifreeze to traps)
+- Shut off main water supply
+- Drain water heater
+- Disconnect outdoor hoses
+- Set thermostat to 55°F minimum (or winterize fully)
+- Test sump pump and battery backup
+- Have a plumber perform a closing inspection
+
+### Before Opening (Spring)
+- Turn water on slowly, checking for leaks at every fixture
+- Test water heater before using
+- Run all faucets to clear stale water
+- Check under sinks and around toilets for moisture
+- Test sump pump
+- Inspect outdoor plumbing and hose bibs
+- Schedule a professional inspection if the home was unheated all winter
+
+## Having a Local Contact
+
+Don't manage your Cape Cod vacation home remotely without:
+- A local property manager or trusted neighbor who can check on the home
+- A plumber's contact information for emergencies
+- A clear plan for who to call if sensors alert
+
+## Insurance Considerations
+
+Many homeowner's insurance policies have specific requirements for vacant seasonal homes:
+- Some require winterization or the policy is voided
+- Some require the home be checked every 72 hours in winter
+- Smart home monitoring devices may reduce premiums
+- Document your winterization process for insurance purposes
+
+For vacation home plumbing maintenance on Cape Cod, [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) provides seasonal opening and closing services.
+    `,
+    category: 'rental',
+    readTime: 5,
+    publishedAt: '2024-10-15',
+    featured: false,
+  },
+  {
+    id: '20',
+    slug: 'plumbing-permits-cape-cod',
+    title: 'Cape Cod Plumbing Permits — What Homeowners Need to Know',
+    excerpt: 'Do you need a plumbing permit on Cape Cod? What work requires permits, how to get them, and why it matters.',
+    metaDescription: 'Do you need a plumbing permit on Cape Cod? What work requires permits, how to get them, and why it matters for homeowners.',
+    content: `
+# Cape Cod Plumbing Permits — What Homeowners Need to Know
+
+Plumbing permits might not be the most exciting part of home improvement, but they're essential for safety, insurance, and resale value. Here's what Cape Cod homeowners need to know.
+
+## What Plumbing Work Requires a Permit?
+
+In Massachusetts, permits are required for:
+
+- **Water heater replacement** — Even a like-for-like swap
+- **Adding new fixtures** — New toilet, sink, shower, or tub
+- **Repiping** — Replacing supply lines or drain lines
+- **Sewer line work** — Repairs or replacement of the main sewer line
+- **Gas line work** — Any modification to gas piping
+- **Moving existing fixtures** — Relocating a toilet, sink, or shower during a remodel
+- **Adding a bathroom** — New bathrooms always require permits
+- **Backflow prevention installation** — Required for irrigation and some commercial uses
+
+## What Doesn't Require a Permit?
+
+Generally, you don't need a permit for:
+
+- **Faucet replacement** — Swapping a kitchen or bathroom faucet
+- **Unclogging drains** — Snaking or hydro-jetting
+- **Toilet repairs** — Replacing internal components (flapper, fill valve)
+- **Fixing leaks** — Minor repairs to existing connections
+- **Replacing a showerhead** — Simple fixture swaps
+- **Garbage disposal replacement** — Like-for-like swap
+
+## How to Get a Plumbing Permit on Cape Cod
+
+The process works through your town's building department:
+
+1. **Your licensed plumber applies** — In Massachusetts, only licensed plumbers can pull plumbing permits
+2. **Town reviews the application** — Usually approved within a few days
+3. **Work is performed** — Must be done by the licensed plumber who pulled the permit
+4. **Inspection is scheduled** — The town inspector verifies the work meets code
+5. **Permit is closed** — Once approved, the work is officially on record
+
+### Where to Apply (by Town)
+Each Cape Cod town has its own building department. Contact your town hall or visit their website for permit applications.
+
+## Why Permits Matter
+
+### Insurance
+- Insurance companies may deny claims if unpermitted work caused the damage
+- Unpermitted work discovered during a claim investigation can void coverage
+
+### Resale Value
+- Home inspectors flag unpermitted work
+- Buyers may negotiate lower prices or walk away
+- Title 5 inspections for septic systems are separate but equally important
+
+### Code Compliance
+- Building codes exist to protect safety
+- Improper plumbing can cause water damage, gas leaks, or sewage problems
+- Code violations can result in fines
+
+### Safety
+- Licensed plumbers understand current safety requirements
+- Proper venting prevents sewer gas from entering your home
+- Correct pipe sizing ensures adequate water flow and drainage
+
+## Common Permit Costs on Cape Cod
+
+Permit fees vary by town but typically range:
+
+- **Simple permit (water heater, single fixture):** $50–$100
+- **Moderate permit (bathroom remodel):** $100–$200
+- **Major permit (new bathroom, repiping):** $150–$400
+- **Re-inspection fees (if work fails first inspection):** $25–$75
+
+These fees are in addition to the plumber's charges for the actual work.
+
+## Working with a Licensed Plumber
+
+The easiest way to handle permits is to hire a licensed plumber who manages the entire process. [Blue Pacific Cape Cod](https://bluepacificcapecod.com/plumbing-falmouth-ma/) handles all permits and inspections for their work throughout Cape Cod.
+    `,
+    category: 'homeowner-guide',
+    readTime: 4,
+    publishedAt: '2024-11-01',
+    featured: false,
+  },
 ];
 
 export interface Town {
