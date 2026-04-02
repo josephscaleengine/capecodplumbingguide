@@ -5,21 +5,41 @@ import ReactMarkdown from 'react-markdown';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { articles, categories } from '@/data/articles';
-import { articleTitles, articleMetaDescriptions, SITE_URL } from '@/seo/titles';
+import { DEFAULT_OG_IMAGE, SITE_URL, buildArticleSeoDescription, buildArticleSeoTitle } from '@/seo/titles';
 
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const article = articles.find((a) => a.slug === slug);
+  const pageUrl = `${SITE_URL}/blog/${slug ?? ''}`;
 
   if (!article) {
+    const seoTitle = 'Article Not Found — Cape Cod Plumbing Guide';
+    const seoDescription = 'The requested Cape Cod plumbing article could not be found. Browse homeowner resources, service guides, and local plumbing tips.';
+
     return (
-      <Layout>
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="font-heading text-3xl font-bold mb-4">Article Not Found</h1>
-          <p className="text-muted-foreground mb-6">We couldn't find the article you're looking for.</p>
-          <Link to="/blog"><Button>Browse All Resources</Button></Link>
-        </div>
-      </Layout>
+      <>
+        <Helmet>
+          <title>{seoTitle}</title>
+          <meta name="description" content={seoDescription} />
+          <link rel="canonical" href={pageUrl} />
+          <meta property="og:title" content={seoTitle} />
+          <meta property="og:description" content={seoDescription} />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content={pageUrl} />
+          <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+          <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+          <meta name="twitter:title" content={seoTitle} />
+          <meta name="twitter:description" content={seoDescription} />
+          <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        </Helmet>
+        <Layout>
+          <div className="container mx-auto px-4 py-20 text-center">
+            <h1 className="font-heading text-3xl font-bold mb-4">Article Not Found</h1>
+            <p className="text-muted-foreground mb-6">We couldn't find the article you're looking for.</p>
+            <Link to="/blog"><Button>Browse All Resources</Button></Link>
+          </div>
+        </Layout>
+      </>
     );
   }
 
@@ -49,9 +69,8 @@ const ArticleDetail = () => {
   };
 
   const isoDate = new Date(article.publishedAt).toISOString();
-  const seoTitle = articleTitles[article.slug] || `${article.title} — Cape Cod Plumbing Guide`;
-  const seoDescription = articleMetaDescriptions[article.slug] || article.metaDescription;
-  const pageUrl = `${SITE_URL}/blog/${article.slug}`;
+  const seoTitle = buildArticleSeoTitle(article.title);
+  const seoDescription = buildArticleSeoDescription(article.metaDescription || article.excerpt);
 
   return (
     <>
@@ -64,6 +83,10 @@ const ArticleDetail = () => {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
         <meta property="article:published_time" content={isoDate} />
         <meta property="article:section" content={category?.name} />
         <script type="application/ld+json">

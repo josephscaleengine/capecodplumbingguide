@@ -5,7 +5,7 @@ import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { services } from '@/data/services';
 import { articles } from '@/data/articles';
-import { serviceTitles, SITE_URL } from '@/seo/titles';
+import { DEFAULT_OG_IMAGE, SITE_URL, buildServiceSeoDescription, buildServiceSeoTitle } from '@/seo/titles';
 
 // Services Blue Pacific definitively offers
 const bluePacificServices = [
@@ -37,22 +37,42 @@ const serviceArticleLinks: Record<string, string[]> = {
 const ServiceDetail = () => {
   const { serviceSlug } = useParams<{ serviceSlug: string }>();
   const service = services.find((s) => s.slug === serviceSlug);
+  const pageUrl = `${SITE_URL}/services/${serviceSlug ?? ''}`;
 
   if (!service) {
+    const seoTitle = 'Service Not Found — Cape Cod Plumbing Guide';
+    const seoDescription = 'The requested Cape Cod plumbing service guide could not be found. Browse services, resources, and homeowner tips.';
+
     return (
-      <Layout>
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="font-heading text-3xl font-bold mb-4">Service Not Found</h1>
-          <p className="text-muted-foreground mb-6">We couldn't find the service you're looking for.</p>
-          <Link to="/services"><Button>View All Services</Button></Link>
-        </div>
-      </Layout>
+      <>
+        <Helmet>
+          <title>{seoTitle}</title>
+          <meta name="description" content={seoDescription} />
+          <link rel="canonical" href={pageUrl} />
+          <meta property="og:title" content={seoTitle} />
+          <meta property="og:description" content={seoDescription} />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={pageUrl} />
+          <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+          <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+          <meta name="twitter:title" content={seoTitle} />
+          <meta name="twitter:description" content={seoDescription} />
+          <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+        </Helmet>
+        <Layout>
+          <div className="container mx-auto px-4 py-20 text-center">
+            <h1 className="font-heading text-3xl font-bold mb-4">Service Not Found</h1>
+            <p className="text-muted-foreground mb-6">We couldn't find the service you're looking for.</p>
+            <Link to="/services"><Button>View All Services</Button></Link>
+          </div>
+        </Layout>
+      </>
     );
   }
 
   const isBluePacific = bluePacificServices.includes(service.slug);
-  const seoTitle = serviceTitles[service.slug] || `${service.name} — Cape Cod Plumbing Guide`;
-  const pageUrl = `${SITE_URL}/services/${service.slug}`;
+  const seoTitle = buildServiceSeoTitle(service.name);
+  const seoDescription = buildServiceSeoDescription(service.name);
 
   // Get related articles for this service
   const relatedArticleSlugs = serviceArticleLinks[service.slug] || [];
@@ -64,19 +84,23 @@ const ServiceDetail = () => {
     <>
       <Helmet>
         <title>{seoTitle}</title>
-        <meta name="description" content={service.metaDescription} />
+        <meta name="description" content={seoDescription} />
         <link rel="canonical" href={pageUrl} />
         <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={service.metaDescription} />
+        <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="Cape Cod Plumbing Guide" />
+        <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: service.name,
-            description: service.metaDescription,
+            description: seoDescription,
             url: pageUrl,
             areaServed: { '@type': 'Place', name: 'Cape Cod, Massachusetts' },
             provider: {
