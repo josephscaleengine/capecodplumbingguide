@@ -92,7 +92,7 @@ const BlogCategory = () => {
                   >
                     <div className="p-6">
                       <h2 className="font-heading text-xl font-bold text-foreground mb-3 line-clamp-2">
-                        <Link to={`/blog/${article.slug}`} className="hover:text-primary transition-colors">
+                        <Link to={`/resources/${article.slug}`} className="hover:text-primary transition-colors">
                           {article.title}
                         </Link>
                       </h2>
