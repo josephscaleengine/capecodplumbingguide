@@ -135,7 +135,7 @@ const ServiceDetail = () => {
         </section>
 
         {/* Content */}
-        <section className="py-12 md:py-16 bg-sand">
+        <section className="py-12 md:py-16 bg-[#f7f7f7]">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2 space-y-10">
