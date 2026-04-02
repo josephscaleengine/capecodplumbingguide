@@ -45,7 +45,7 @@ const FeaturedArticles = () => {
             return (
               <Link
                 key={cat.slug}
-                to={`/blog/category/${cat.slug}`}
+                to={`/resources/category/${cat.slug}`}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${colors.pill}`}
               >
                 {cat.name} ({getArticleCount(cat.slug)})
