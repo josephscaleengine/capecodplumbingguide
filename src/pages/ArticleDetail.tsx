@@ -129,7 +129,7 @@ const ArticleDetail = () => {
 
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <Link
-                  to={`/blog/category/${article.category}`}
+                  to={`/resources/category/${article.category}`}
                   className="inline-flex items-center gap-2 bg-primary/20 text-[hsl(var(--ocean-light))] px-3 py-1.5 rounded-full hover:bg-primary/30 transition-colors"
                 >
                   <span className="text-sm font-semibold">{category?.name}</span>
