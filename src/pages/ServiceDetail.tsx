@@ -17,21 +17,31 @@ const bluePacificServices = [
   'frozen-pipe-repair',
   'sump-pump-installation',
   'garbage-disposal',
+  'toilet-repair-installation',
+  'faucet-fixture-replacement',
+  'water-line-repair',
+  'outdoor-plumbing-hose-bibs',
+  'backflow-prevention',
 ];
 
 // Map services to related article slugs
 const serviceArticleLinks: Record<string, string[]> = {
-  'water-heater-repair': ['how-salt-air-affects-water-heater', 'average-plumbing-costs-cape-cod'],
+  'water-heater-repair': ['how-salt-air-affects-water-heater', 'water-heater-replacement-cape-cod', 'average-plumbing-costs-cape-cod'],
   'drain-cleaning': ['average-plumbing-costs-cape-cod', 'common-plumbing-problems-older-cape-cod-homes'],
-  'pipe-leak-repair': ['salt-air-plumbing-corrosion-cape-cod', 'common-plumbing-problems-older-cape-cod-homes'],
-  'frozen-pipe-repair': ['why-cape-cod-homes-prone-frozen-pipes', 'winterizing-cape-cod-vacation-home-plumbing'],
+  'pipe-leak-repair': ['salt-air-plumbing-corrosion-cape-cod', 'common-plumbing-problems-older-cape-cod-homes', 'emergency-plumber-cape-cod'],
+  'frozen-pipe-repair': ['why-cape-cod-homes-prone-frozen-pipes', 'winterizing-cape-cod-vacation-home-plumbing', 'prevent-plumbing-problems-vacation-homes-cape-cod'],
   'sewer-line-repair': ['common-plumbing-problems-older-cape-cod-homes', 'signs-you-need-emergency-plumbing-help'],
-  'well-pump-services': ['cape-cod-well-water-plumbing-issues'],
-  'water-filtration': ['cape-cod-well-water-plumbing-issues'],
-  'sump-pump-installation': ['spring-plumbing-checklist-cape-cod', 'signs-you-need-emergency-plumbing-help'],
-  'garbage-disposal': ['average-plumbing-costs-cape-cod'],
-  'septic-system-services': ['what-homeowners-should-know-about-septic-systems'],
-  'bathroom-kitchen-remodel': ['common-plumbing-problems-older-cape-cod-homes', 'average-plumbing-costs-cape-cod'],
+  'well-pump-services': ['cape-cod-well-water-plumbing-issues', 'well-water-vs-town-water-cape-cod'],
+  'water-filtration': ['cape-cod-well-water-plumbing-issues', 'well-water-vs-town-water-cape-cod'],
+  'sump-pump-installation': ['sump-pump-guide-cape-cod', 'spring-plumbing-checklist-cape-cod', 'signs-you-need-emergency-plumbing-help'],
+  'garbage-disposal': ['garbage-disposal-problems-cape-cod', 'average-plumbing-costs-cape-cod'],
+  'septic-system-services': ['what-homeowners-should-know-about-septic-systems', 'garbage-disposal-problems-cape-cod'],
+  'bathroom-kitchen-remodel': ['bathroom-remodel-plumbing-cape-cod', 'common-plumbing-problems-older-cape-cod-homes', 'plumbing-permits-cape-cod'],
+  'toilet-repair-installation': ['average-plumbing-costs-cape-cod', 'bathroom-remodel-plumbing-cape-cod'],
+  'faucet-fixture-replacement': ['salt-air-plumbing-corrosion-cape-cod', 'average-plumbing-costs-cape-cod'],
+  'water-line-repair': ['emergency-plumber-cape-cod', 'common-plumbing-problems-older-cape-cod-homes'],
+  'outdoor-plumbing-hose-bibs': ['winterizing-cape-cod-vacation-home-plumbing', 'spring-plumbing-checklist-cape-cod', 'prevent-plumbing-problems-vacation-homes-cape-cod'],
+  'backflow-prevention': ['well-water-vs-town-water-cape-cod', 'plumbing-permits-cape-cod'],
 };
 
 const ServiceDetail = () => {

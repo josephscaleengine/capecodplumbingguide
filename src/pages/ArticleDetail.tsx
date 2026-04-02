@@ -62,6 +62,14 @@ const ArticleDetail = () => {
     'spring-plumbing-checklist-cape-cod': '/services/sump-pump-installation',
     'what-homeowners-should-know-about-septic-systems': '/services/septic-system-services',
     'plumbing-tips-cape-cod-vacation-rental-owners': '/services/drain-cleaning',
+    'emergency-plumber-cape-cod': '/services/pipe-leak-repair',
+    'water-heater-replacement-cape-cod': '/services/water-heater-repair',
+    'sump-pump-guide-cape-cod': '/services/sump-pump-installation',
+    'bathroom-remodel-plumbing-cape-cod': '/services/bathroom-kitchen-remodel',
+    'well-water-vs-town-water-cape-cod': '/services/well-pump-services',
+    'garbage-disposal-problems-cape-cod': '/services/garbage-disposal',
+    'prevent-plumbing-problems-vacation-homes-cape-cod': '/services/frozen-pipe-repair',
+    'plumbing-permits-cape-cod': '/services/bathroom-kitchen-remodel',
   };
 
   const formatDate = (dateStr: string) => {
