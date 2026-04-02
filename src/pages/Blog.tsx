@@ -23,7 +23,7 @@ const getArticleCount = (slug: string) => articles.filter((a) => a.category === 
 const Blog = () => {
   const seoTitle = 'Cape Cod Plumbing Guides & Tips for Homeowners';
   const seoDescription = 'Browse free plumbing guides for Cape Cod homeowners. Seasonal tips, emergency guides, cost breakdowns, and expert advice for coastal homes.';
-  const pageUrl = `${SITE_URL}/blog`;
+  const pageUrl = `${SITE_URL}/resources`;
 
   const getCategoryInfo = (categorySlug: string) => {
     return categories.find((cat) => cat.slug === categorySlug);
