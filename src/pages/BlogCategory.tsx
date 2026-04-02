@@ -10,7 +10,7 @@ const BlogCategory = () => {
   const { categorySlug } = useParams<{ categorySlug: string }>();
   const category = categories.find((c) => c.slug === categorySlug);
   const categoryArticles = articles.filter((article) => article.category === categorySlug);
-  const pageUrl = `${SITE_URL}/blog/category/${categorySlug ?? ''}`;
+  const pageUrl = `${SITE_URL}/resources/category/${categorySlug ?? ''}`;
   const seoTitle = category ? `${category.name} — Cape Cod Plumbing Guide` : 'Category Not Found — Cape Cod Plumbing Guide';
   const seoDescription = category
     ? `${category.name} plumbing resources and tips for Cape Cod homeowners. Expert guidance for coastal homes.`
